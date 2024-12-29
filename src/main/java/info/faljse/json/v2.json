@@ -1,0 +1,4704 @@
+{
+  "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224",
+  "station": "fm4",
+  "entity": "Broadcast",
+  "id": 35837,
+  "broadcastDay": 20241224,
+  "programKey": "4MO",
+  "program": "4MO",
+  "title": "Morning Show",
+  "subtitle": "<p>Getting up with someone who cares. Dein unterhaltsamer Start in den Tag mit Gästen, Spielen, Comedy, aktuellen Themen und News in Englisch und Deutsch.</p>",
+  "ressort": null,
+  "state": "C",
+  "isOnDemand": true,
+  "isGeoProtected": false,
+  "isAdFree": false,
+  "start": 1735016417000,
+  "startISO": "2024-12-24T06:00:17+01:00",
+  "startOffset": -3600000,
+  "scheduledStart": 1735016400000,
+  "scheduledStartISO": "2024-12-24T06:00:00+01:00",
+  "scheduledStartOffset": -3600000,
+  "end": 1735030817000,
+  "endISO": "2024-12-24T10:00:17+01:00",
+  "endOffset": -3600000,
+  "scheduledEnd": 1735030800000,
+  "scheduledEndISO": "2024-12-24T10:00:00+01:00",
+  "scheduledEndOffset": -3600000,
+  "niceTime": 1735016400000,
+  "niceTimeISO": "2024-12-24T06:00:00+01:00",
+  "niceTimeOffset": -3600000,
+  "description": "<p>The FM4 Morning Show with Hal Rock and Lena Raffetseder<br/>We're Santas little helpers today, waking you up in style on this Heiligabend! All day we'll fulfill your song requests in support of the initiative \"Mental Health Days\". And we're opening the final door of the FM4 Ticketadventkalender: It's tickets to the FM4 Geburtstagsfest in January! Join us and enjoy holiday cheer by Hal Rock and Lena Raffetseder!</p>",
+  "pressRelease": null,
+  "moderator": null,
+  "url": "http://fm4.orf.at/radio/stories/fm4morningshow",
+  "images": [
+    {
+      "alt": "Frühstück",
+      "mode": "default",
+      "text": "Morning Show",
+      "category": "imgprog",
+      "hashCode": 2024625600,
+      "versions": [
+        {
+          "path": "https://radiobilder.orf.at/fm4/imgprog/width1750/keep/4MO.jpg?etag=5090c6f4b06a7a8179ff13dc00f41e4d",
+          "width": 1750,
+          "hashCode": 1546727847
+        },
+        {
+          "path": "https://radiobilder.orf.at/fm4/imgprog/width875/keep/4MO.jpg?etag=85acaa1e920d0fc7deb3c67dd53c2e37",
+          "width": 875,
+          "hashCode": 1989980937
+        },
+        {
+          "path": "https://radiobilder.orf.at/fm4/imgprog/width434/keep/4MO.jpg?etag=72c7c26e8eabd8c38a72ac659ae2f58d",
+          "width": 434,
+          "hashCode": 1023027321
+        }
+      ],
+      "copyright": "Radio FM4"
+    }
+  ],
+  "tags": [],
+  "oe1tags": [],
+  "items": [
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743220",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743220,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "N",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 166000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "News",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735016417000,
+      "startISO": "2024-12-24T06:00:17+01:00",
+      "startOffset": -3600000,
+      "end": 1735016583000,
+      "endISO": "2024-12-24T06:03:03+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743221",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743221,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 11000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735016580000,
+      "startISO": "2024-12-24T06:03:00+01:00",
+      "startOffset": -3600000,
+      "end": 1735016591000,
+      "endISO": "2024-12-24T06:03:11+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739167",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739167,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 234000,
+      "images": [
+        {
+          "alt": "Cover: Free Yourself - Jessie Ware",
+          "mode": "default",
+          "text": "Free Yourself - Jessie Ware",
+          "category": "imgcov",
+          "hashCode": 1362359461,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/11/st/145980_001.jpg?etag=12b45e74aa1240d3cd965781881f4779",
+              "width": 400,
+              "hashCode": 832601686
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/11/ex/145980_001.jpg?etag=12b45e74aa1240d3cd965781881f4779",
+              "width": 320,
+              "hashCode": 1893870055
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/11/th/145980_001.jpg?etag=12b45e74aa1240d3cd965781881f4779",
+              "width": 100,
+              "hashCode": 842474426
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Free Yourself",
+      "interpreter": "Jessie Ware",
+      "start": 1735016600000,
+      "startISO": "2024-12-24T06:03:20+01:00",
+      "startOffset": -3600000,
+      "end": 1735016834000,
+      "endISO": "2024-12-24T06:07:14+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739168",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739168,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 211000,
+      "images": [
+        {
+          "alt": "Cover: Undercover Dreamer - Dramas",
+          "mode": "default",
+          "text": "Undercover Dreamer - Dramas",
+          "category": "imgcov",
+          "hashCode": 2082910648,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/43/st/87319_001.jpg?etag=8548ee5115f0db6b6bf38bfa3c88efbd",
+              "width": 400,
+              "hashCode": 1467048475
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/43/ex/87319_001.jpg?etag=8548ee5115f0db6b6bf38bfa3c88efbd",
+              "width": 320,
+              "hashCode": 1987030310
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/43/th/87319_001.jpg?etag=8548ee5115f0db6b6bf38bfa3c88efbd",
+              "width": 100,
+              "hashCode": 135696357
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Undercover Dreamer",
+      "interpreter": "Dramas",
+      "start": 1735016830000,
+      "startISO": "2024-12-24T06:07:10+01:00",
+      "startOffset": -3600000,
+      "end": 1735017041000,
+      "endISO": "2024-12-24T06:10:41+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743222",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743222,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 50000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735017040000,
+      "startISO": "2024-12-24T06:10:40+01:00",
+      "startOffset": -3600000,
+      "end": 1735017090000,
+      "endISO": "2024-12-24T06:11:30+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739170",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739170,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 168000,
+      "images": [
+        {
+          "alt": "Cover: Takes One To Know One - The Beaches",
+          "mode": "default",
+          "text": "Takes One To Know One - The Beaches",
+          "category": "imgcov",
+          "hashCode": 310652256,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/85/st/174417_001.jpg?etag=b1deb02938db7640a4d2c6703c44a224",
+              "width": 400,
+              "hashCode": 1680267852
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/85/ex/174417_001.jpg?etag=b1deb02938db7640a4d2c6703c44a224",
+              "width": 320,
+              "hashCode": 618999483
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/85/th/174417_001.jpg?etag=b1deb02938db7640a4d2c6703c44a224",
+              "width": 100,
+              "hashCode": 939623332
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Takes One To Know One",
+      "interpreter": "The Beaches",
+      "start": 1735017089000,
+      "startISO": "2024-12-24T06:11:29+01:00",
+      "startOffset": -3600000,
+      "end": 1735017257000,
+      "endISO": "2024-12-24T06:14:17+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739171",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739171,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 192000,
+      "images": [
+        {
+          "alt": "Cover: Last Nite - The Strokes",
+          "mode": "default",
+          "text": "Last Nite - The Strokes",
+          "category": "imgcov",
+          "hashCode": 565167531,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/01/st/82607_001.jpg?etag=2a5f25efbfc034b47436711d5f5eb659",
+              "width": 400,
+              "hashCode": 850341038
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/01/ex/82607_001.jpg?etag=2a5f25efbfc034b47436711d5f5eb659",
+              "width": 320,
+              "hashCode": 1370322873
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/01/th/82607_001.jpg?etag=2a5f25efbfc034b47436711d5f5eb659",
+              "width": 100,
+              "hashCode": 481011080
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Last Nite",
+      "interpreter": "The Strokes",
+      "start": 1735017252000,
+      "startISO": "2024-12-24T06:14:12+01:00",
+      "startOffset": -3600000,
+      "end": 1735017444000,
+      "endISO": "2024-12-24T06:17:24+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743223",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743223,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 97000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Past Presents: Gold, Weihrauch & Myrrhe",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735017444000,
+      "startISO": "2024-12-24T06:17:24+01:00",
+      "startOffset": -3600000,
+      "end": 1735017541000,
+      "endISO": "2024-12-24T06:19:01+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739173",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739173,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 179000,
+      "images": [
+        {
+          "alt": "Cover: Little Mystery - Fred Again.. & John Martyn",
+          "mode": "default",
+          "text": "Little Mystery - Fred Again.. & John Martyn",
+          "category": "imgcov",
+          "hashCode": 1915611391,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/33/st/182716_001.jpg?etag=797676fcb0e686a2714e430bc0a74094",
+              "width": 400,
+              "hashCode": 1558644778
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/33/ex/182716_001.jpg?etag=797676fcb0e686a2714e430bc0a74094",
+              "width": 320,
+              "hashCode": 1675054149
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/33/th/182716_001.jpg?etag=797676fcb0e686a2714e430bc0a74094",
+              "width": 100,
+              "hashCode": 116431334
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Little Mystery",
+      "interpreter": "Fred Again.. & John Martyn",
+      "start": 1735017537000,
+      "startISO": "2024-12-24T06:18:57+01:00",
+      "startOffset": -3600000,
+      "end": 1735017716000,
+      "endISO": "2024-12-24T06:21:56+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739174",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739174,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 220000,
+      "images": [
+        {
+          "alt": "Cover: Zukunft Pink (ft. Inéz) - Peter Fox",
+          "mode": "default",
+          "text": "Zukunft Pink (ft. Inéz) - Peter Fox",
+          "category": "imgcov",
+          "hashCode": 1524988022,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/46/st/134866_001.jpg?etag=d1f525a89c82d3fe74b360165e9f2616",
+              "width": 400,
+              "hashCode": 1004072037
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/46/ex/134866_001.jpg?etag=d1f525a89c82d3fe74b360165e9f2616",
+              "width": 320,
+              "hashCode": 57196332
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/46/th/134866_001.jpg?etag=d1f525a89c82d3fe74b360165e9f2616",
+              "width": 100,
+              "hashCode": 1615819147
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Zukunft Pink (ft. Inéz)",
+      "interpreter": "Peter Fox",
+      "start": 1735017707000,
+      "startISO": "2024-12-24T06:21:47+01:00",
+      "startOffset": -3600000,
+      "end": 1735017927000,
+      "endISO": "2024-12-24T06:25:27+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743229",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743229,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 67000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735017923000,
+      "startISO": "2024-12-24T06:25:23+01:00",
+      "startOffset": -3600000,
+      "end": 1735017990000,
+      "endISO": "2024-12-24T06:26:30+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2738735",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2738735,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 199000,
+      "images": [
+        {
+          "category": "imgcov-fallback",
+          "copyright": "",
+          "alt": "Cover: As Long As We Don't Lose Our Minds - Steaming Satellites",
+          "text": "As Long As We Don't Lose Our Minds - Steaming Satellites",
+          "versions": [
+            {
+              "width": 400,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width400/keep/fm4_cover.jpg?etag=1c8b717a8a1b3ffc52068df3f243e6a2",
+              "hashCode": 514453952
+            },
+            {
+              "width": 320,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width320/keep/fm4_cover.jpg?etag=18f69a683021d0478dffc168da611647",
+              "hashCode": 333853657
+            },
+            {
+              "width": 160,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width160/keep/fm4_cover.jpg?etag=6675b448ca972b7adba45a945c7c1f33",
+              "hashCode": 1269531944
+            },
+            {
+              "width": 100,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width100/keep/fm4_cover.jpg?etag=a904da6b802b402708eba6fc7f95f26b",
+              "hashCode": 580600737
+            }
+          ],
+          "mode": "default",
+          "hashCode": 1151465102
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "As Long As We Don't Lose Our Minds",
+      "interpreter": "Steaming Satellites",
+      "start": 1735017987000,
+      "startISO": "2024-12-24T06:26:27+01:00",
+      "startOffset": -3600000,
+      "end": 1735018186000,
+      "endISO": "2024-12-24T06:29:46+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743226",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743226,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 10000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735018180000,
+      "startISO": "2024-12-24T06:29:40+01:00",
+      "startOffset": -3600000,
+      "end": 1735018190000,
+      "endISO": "2024-12-24T06:29:50+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739176",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739176,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 160000,
+      "images": [
+        {
+          "alt": "Cover: 1/2 Cappuccino - Kapa Tult",
+          "mode": "default",
+          "text": "1/2 Cappuccino - Kapa Tult",
+          "category": "imgcov",
+          "hashCode": 1754509132,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/86/st/165692_001.jpg?etag=f61df8cebb2500becc57d27286109291",
+              "width": 400,
+              "hashCode": 448818517
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/86/ex/165692_001.jpg?etag=f61df8cebb2500becc57d27286109291",
+              "width": 320,
+              "hashCode": 612449852
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/86/th/165692_001.jpg?etag=f61df8cebb2500becc57d27286109291",
+              "width": 100,
+              "hashCode": 2123894629
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "1/2 Cappuccino",
+      "interpreter": "Kapa Tult",
+      "start": 1735018189000,
+      "startISO": "2024-12-24T06:29:49+01:00",
+      "startOffset": -3600000,
+      "end": 1735018349000,
+      "endISO": "2024-12-24T06:32:29+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2741203",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2741203,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 10000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Oskar Haag wünscht euch Frohe Weihnachten",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735018349000,
+      "startISO": "2024-12-24T06:32:29+01:00",
+      "startOffset": -3600000,
+      "end": 1735018359000,
+      "endISO": "2024-12-24T06:32:39+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739178",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739178,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 253000,
+      "images": [
+        {
+          "alt": "Cover: Wake the Neighbors - Oskar Haag",
+          "mode": "default",
+          "text": "Wake the Neighbors - Oskar Haag",
+          "category": "imgcov",
+          "hashCode": 1166230059,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/55/st/171380_001.jpg?etag=74c0f839c05e6b3a9cd3b174f49ec5d6",
+              "width": 400,
+              "hashCode": 586480308
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/55/ex/171380_001.jpg?etag=74c0f839c05e6b3a9cd3b174f49ec5d6",
+              "width": 320,
+              "hashCode": 1647748677
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/55/th/171380_001.jpg?etag=74c0f839c05e6b3a9cd3b174f49ec5d6",
+              "width": 100,
+              "hashCode": 1088595804
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Wake the Neighbors",
+      "interpreter": "Oskar Haag",
+      "start": 1735018355000,
+      "startISO": "2024-12-24T06:32:35+01:00",
+      "startOffset": -3600000,
+      "end": 1735018608000,
+      "endISO": "2024-12-24T06:36:48+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739179",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739179,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 227000,
+      "images": [
+        {
+          "alt": "Cover: Nantes - Beirut",
+          "mode": "default",
+          "text": "Nantes - Beirut",
+          "category": "imgcov",
+          "hashCode": 253484934,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/96/st/82738_001.jpg?etag=fc726383c28b13cbff6a522294d59b10",
+              "width": 400,
+              "hashCode": 97820621
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/96/ex/82738_001.jpg?etag=fc726383c28b13cbff6a522294d59b10",
+              "width": 320,
+              "hashCode": 422161214
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/96/th/82738_001.jpg?etag=fc726383c28b13cbff6a522294d59b10",
+              "width": 100,
+              "hashCode": 1429172739
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Nantes",
+      "interpreter": "Beirut",
+      "start": 1735018603000,
+      "startISO": "2024-12-24T06:36:43+01:00",
+      "startOffset": -3600000,
+      "end": 1735018830000,
+      "endISO": "2024-12-24T06:40:30+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743230",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743230,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 1000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735018830000,
+      "startISO": "2024-12-24T06:40:30+01:00",
+      "startOffset": -3600000,
+      "end": 1735018831000,
+      "endISO": "2024-12-24T06:40:31+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739180",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739180,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 167000,
+      "images": [
+        {
+          "alt": "Cover: Busy - Sharktank",
+          "mode": "default",
+          "text": "Busy - Sharktank",
+          "category": "imgcov",
+          "hashCode": 2093446710,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/21/st/122659_001.jpg?etag=fe35aa117f406733adeeca51b8011038",
+              "width": 400,
+              "hashCode": 1854540635
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/21/ex/122659_001.jpg?etag=fe35aa117f406733adeeca51b8011038",
+              "width": 320,
+              "hashCode": 793272266
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/21/th/122659_001.jpg?etag=fe35aa117f406733adeeca51b8011038",
+              "width": 100,
+              "hashCode": 765350549
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Busy",
+      "interpreter": "Sharktank",
+      "start": 1735018831000,
+      "startISO": "2024-12-24T06:40:31+01:00",
+      "startOffset": -3600000,
+      "end": 1735018998000,
+      "endISO": "2024-12-24T06:43:18+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743231",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743231,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 201000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Mental Health",
+      "subtitle": "Wie geht's jungen Menschen in Österreich?",
+      "moderator": null,
+      "start": 1735018998000,
+      "startISO": "2024-12-24T06:43:18+01:00",
+      "startOffset": -3600000,
+      "end": 1735019199000,
+      "endISO": "2024-12-24T06:46:39+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2738736",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2738736,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 274000,
+      "images": [
+        {
+          "alt": "Cover: December Will Be Magic Again - Kate Bush",
+          "mode": "default",
+          "text": "December Will Be Magic Again - Kate Bush",
+          "category": "imgcov",
+          "hashCode": 1721259279,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/38/st/102109_001.jpg?etag=cb13b51ce3e1b87e21c80ed5656f0959",
+              "width": 400,
+              "hashCode": 57544382
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/38/ex/102109_001.jpg?etag=cb13b51ce3e1b87e21c80ed5656f0959",
+              "width": 320,
+              "hashCode": 1118812751
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/38/th/102109_001.jpg?etag=cb13b51ce3e1b87e21c80ed5656f0959",
+              "width": 100,
+              "hashCode": 1617531730
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "December Will Be Magic Again",
+      "interpreter": "Kate Bush",
+      "start": 1735019195000,
+      "startISO": "2024-12-24T06:46:35+01:00",
+      "startOffset": -3600000,
+      "end": 1735019469000,
+      "endISO": "2024-12-24T06:51:09+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2741984",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2741984,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 38000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735019465000,
+      "startISO": "2024-12-24T06:51:05+01:00",
+      "startOffset": -3600000,
+      "end": 1735019503000,
+      "endISO": "2024-12-24T06:51:43+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739182",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739182,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 210000,
+      "images": [
+        {
+          "alt": "Cover: Sometimes All Ways - Dora Jar",
+          "mode": "default",
+          "text": "Sometimes All Ways - Dora Jar",
+          "category": "imgcov",
+          "hashCode": 1120030064,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/10/st/181750_001.jpg?etag=0d67422e0f986d409fc4074ba9792b66",
+              "width": 400,
+              "hashCode": 846474271
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/10/ex/181750_001.jpg?etag=0d67422e0f986d409fc4074ba9792b66",
+              "width": 320,
+              "hashCode": 214794098
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/10/th/181750_001.jpg?etag=0d67422e0f986d409fc4074ba9792b66",
+              "width": 100,
+              "hashCode": 1773416913
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Sometimes All Ways",
+      "interpreter": "Dora Jar",
+      "start": 1735019502000,
+      "startISO": "2024-12-24T06:51:42+01:00",
+      "startOffset": -3600000,
+      "end": 1735019712000,
+      "endISO": "2024-12-24T06:55:12+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739184",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739184,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": "<p>LP* Libertatia<br/>: Ja, Panik<br/>Komponist: Andreas Spechtl</p>",
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 179000,
+      "images": [
+        {
+          "alt": "Cover: Libertatia - Ja Panik",
+          "mode": "default",
+          "text": "Libertatia - Ja Panik",
+          "category": "imgcov",
+          "hashCode": 716834783,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/86/st/81813_001.jpg?etag=40ad7662617958c78e4389c8d7c5dce3",
+              "width": 400,
+              "hashCode": 1232576793
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/86/ex/81813_001.jpg?etag=40ad7662617958c78e4389c8d7c5dce3",
+              "width": 320,
+              "hashCode": 1752558628
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/86/th/81813_001.jpg?etag=40ad7662617958c78e4389c8d7c5dce3",
+              "width": 100,
+              "hashCode": 98775325
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Libertatia",
+      "interpreter": "Ja Panik",
+      "start": 1735019710000,
+      "startISO": "2024-12-24T06:55:10+01:00",
+      "startOffset": -3600000,
+      "end": 1735019889000,
+      "endISO": "2024-12-24T06:58:09+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743234",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743234,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 2000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735019889000,
+      "startISO": "2024-12-24T06:58:09+01:00",
+      "startOffset": -3600000,
+      "end": 1735019891000,
+      "endISO": "2024-12-24T06:58:11+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743235",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743235,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 114000,
+      "images": [
+        {
+          "category": "imgcov",
+          "copyright": "",
+          "alt": "Cover: Lil Boo Thang - Paul Russell",
+          "text": "Lil Boo Thang - Paul Russell",
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/78/st/152707_001.jpg?etag=7467d7677e2ff6d7194c252407fa93b5",
+              "width": 400,
+              "hashCode": 1950052501
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/78/ex/152707_001.jpg?etag=7467d7677e2ff6d7194c252407fa93b5",
+              "width": 320,
+              "hashCode": 888784132
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/78/th/152707_001.jpg?etag=7467d7677e2ff6d7194c252407fa93b5",
+              "width": 100,
+              "hashCode": 669838683
+            }
+          ],
+          "mode": "default",
+          "hashCode": 798807459
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Lil Boo Thang",
+      "interpreter": "Paul Russell",
+      "start": 1735019890000,
+      "startISO": "2024-12-24T06:58:10+01:00",
+      "startOffset": -3600000,
+      "end": 1735020004000,
+      "endISO": "2024-12-24T07:00:04+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743236",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743236,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "N",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 171000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "News",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735020004000,
+      "startISO": "2024-12-24T07:00:04+01:00",
+      "startOffset": -3600000,
+      "end": 1735020175000,
+      "endISO": "2024-12-24T07:02:55+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743237",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743237,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 14000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735020172000,
+      "startISO": "2024-12-24T07:02:52+01:00",
+      "startOffset": -3600000,
+      "end": 1735020186000,
+      "endISO": "2024-12-24T07:03:06+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739191",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739191,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 202000,
+      "images": [
+        {
+          "alt": "Cover: Life (ft Robyn) - Jamie XX",
+          "mode": "default",
+          "text": "Life (ft Robyn) - Jamie XX",
+          "category": "imgcov",
+          "hashCode": 1287255205,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/61/st/171994_001.jpg?etag=68d66b34d0e5803f18338562660cb5b4",
+              "width": 400,
+              "hashCode": 512522588
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/61/ex/171994_001.jpg?etag=68d66b34d0e5803f18338562660cb5b4",
+              "width": 320,
+              "hashCode": 1573790957
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/61/th/171994_001.jpg?etag=68d66b34d0e5803f18338562660cb5b4",
+              "width": 100,
+              "hashCode": 1162553524
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Life (ft Robyn)",
+      "interpreter": "Jamie XX",
+      "start": 1735020193000,
+      "startISO": "2024-12-24T07:03:13+01:00",
+      "startOffset": -3600000,
+      "end": 1735020395000,
+      "endISO": "2024-12-24T07:06:35+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739192",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739192,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 180000,
+      "images": [
+        {
+          "alt": "Cover: Move On - Arai",
+          "mode": "default",
+          "text": "Move On - Arai",
+          "category": "imgcov",
+          "hashCode": 39363264,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/89/st/180433_001.jpg?etag=716d2e158681abec0742b0545856490f",
+              "width": 400,
+              "hashCode": 218175114
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/89/ex/180433_001.jpg?etag=716d2e158681abec0742b0545856490f",
+              "width": 320,
+              "hashCode": 1279443483
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/89/th/180433_001.jpg?etag=716d2e158681abec0742b0545856490f",
+              "width": 100,
+              "hashCode": 1456900998
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Move On",
+      "interpreter": "Arai",
+      "start": 1735020394000,
+      "startISO": "2024-12-24T07:06:34+01:00",
+      "startOffset": -3600000,
+      "end": 1735020574000,
+      "endISO": "2024-12-24T07:09:34+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739194",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739194,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 203000,
+      "images": [
+        {
+          "alt": "Cover: Mystery Of Love (edit) - Soap&Skin",
+          "mode": "default",
+          "text": "Mystery Of Love (edit) - Soap&Skin",
+          "category": "imgcov",
+          "hashCode": 57485743,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/99/st/181814_001.jpg?etag=4695b851f60c63677fb4cdb38b4de79e",
+              "width": 400,
+              "hashCode": 907876219
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/99/ex/181814_001.jpg?etag=4695b851f60c63677fb4cdb38b4de79e",
+              "width": 320,
+              "hashCode": 153392150
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/99/th/181814_001.jpg?etag=4695b851f60c63677fb4cdb38b4de79e",
+              "width": 100,
+              "hashCode": 1712014965
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Mystery Of Love (edit)",
+      "interpreter": "Soap&Skin",
+      "start": 1735020575000,
+      "startISO": "2024-12-24T07:09:35+01:00",
+      "startOffset": -3600000,
+      "end": 1735020778000,
+      "endISO": "2024-12-24T07:12:58+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739195",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739195,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 183000,
+      "images": [
+        {
+          "alt": "Cover: Shine On - Kooks",
+          "mode": "default",
+          "text": "Shine On - Kooks",
+          "category": "imgcov",
+          "hashCode": 572062095,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/80/st/83581_001.jpg?etag=64617055985b72be9cfa2e1c8aa525ae",
+              "width": 400,
+              "hashCode": 2074848903
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/80/ex/83581_001.jpg?etag=64617055985b72be9cfa2e1c8aa525ae",
+              "width": 320,
+              "hashCode": 1554867068
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/80/th/83581_001.jpg?etag=64617055985b72be9cfa2e1c8aa525ae",
+              "width": 100,
+              "hashCode": 888766275
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Shine On",
+      "interpreter": "Kooks",
+      "start": 1735020776000,
+      "startISO": "2024-12-24T07:12:56+01:00",
+      "startOffset": -3600000,
+      "end": 1735020959000,
+      "endISO": "2024-12-24T07:15:59+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743241",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743241,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 44000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735020958000,
+      "startISO": "2024-12-24T07:15:58+01:00",
+      "startOffset": -3600000,
+      "end": 1735021002000,
+      "endISO": "2024-12-24T07:16:42+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743238",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743238,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 100000,
+      "images": [
+        {
+          "category": "imgred",
+          "copyright": "FM4",
+          "alt": "Brief",
+          "text": "FM4 Ombudsmann",
+          "versions": [
+            {
+              "width": 434,
+              "path": "https://radiobilder.orf.at/fm4/imgred/width434/keep/RME_imgred_B_1630668253188.jpg?etag=558db4edabbdd5d9eb19a9294aaafcb9",
+              "hashCode": 1929581951
+            },
+            {
+              "width": 320,
+              "path": "https://radiobilder.orf.at/fm4/imgred/width320/keep/RME_imgred_B_1630668253188.jpg?etag=fbddd37b16ec6c053f24c34ca0753fad",
+              "hashCode": 1473822422
+            },
+            {
+              "width": 160,
+              "path": "https://radiobilder.orf.at/fm4/imgred/width160/keep/RME_imgred_B_1630668253188.jpg?etag=7395e776ce02d29f9193adf26ffc3b15",
+              "hashCode": 256749475
+            },
+            {
+              "width": 100,
+              "path": "https://radiobilder.orf.at/fm4/imgred/width100/keep/RME_imgred_B_1630668253188.jpg?etag=c6ce91f176af125acbd5447fcdb3143e",
+              "hashCode": 1965960029
+            }
+          ],
+          "mode": "default",
+          "hashCode": 1372742944
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "FM4 Ombudsmann",
+      "subtitle": "\"Geschenk Regierung\"",
+      "moderator": null,
+      "start": 1735021001000,
+      "startISO": "2024-12-24T07:16:41+01:00",
+      "startOffset": -3600000,
+      "end": 1735021101000,
+      "endISO": "2024-12-24T07:18:21+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739197",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739197,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 246000,
+      "images": [
+        {
+          "alt": "Cover: Future Politics - Austra",
+          "mode": "default",
+          "text": "Future Politics - Austra",
+          "category": "imgcov",
+          "hashCode": 560243501,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/44/st/84502_001.jpg?etag=e859341fe70f0df2b7828195f9d0979d",
+              "width": 400,
+              "hashCode": 1758124866
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/44/ex/84502_001.jpg?etag=e859341fe70f0df2b7828195f9d0979d",
+              "width": 320,
+              "hashCode": 2016860595
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/44/th/84502_001.jpg?etag=e859341fe70f0df2b7828195f9d0979d",
+              "width": 100,
+              "hashCode": 426772748
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Future Politics",
+      "interpreter": "Austra",
+      "start": 1735021101000,
+      "startISO": "2024-12-24T07:18:21+01:00",
+      "startOffset": -3600000,
+      "end": 1735021347000,
+      "endISO": "2024-12-24T07:22:27+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739198",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739198,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 208000,
+      "images": [
+        {
+          "alt": "Cover: If I Could - Camo & Krooked ft Joe Killington",
+          "mode": "default",
+          "text": "If I Could - Camo & Krooked ft Joe Killington",
+          "category": "imgcov",
+          "hashCode": 150401156,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/09/st/84442_001.jpg?etag=de77fad90cff7aa65619ecf332a387e2",
+              "width": 400,
+              "hashCode": 435459203
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/09/ex/84442_001.jpg?etag=de77fad90cff7aa65619ecf332a387e2",
+              "width": 320,
+              "hashCode": 84522632
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/09/th/84442_001.jpg?etag=de77fad90cff7aa65619ecf332a387e2",
+              "width": 100,
+              "hashCode": 1766811321
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "If I Could",
+      "interpreter": "Camo & Krooked ft Joe Killington",
+      "start": 1735021346000,
+      "startISO": "2024-12-24T07:22:26+01:00",
+      "startOffset": -3600000,
+      "end": 1735021554000,
+      "endISO": "2024-12-24T07:25:54+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743245",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743245,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 8000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735021553000,
+      "startISO": "2024-12-24T07:25:53+01:00",
+      "startOffset": -3600000,
+      "end": 1735021561000,
+      "endISO": "2024-12-24T07:26:01+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743246",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743246,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 33000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735021560000,
+      "startISO": "2024-12-24T07:26:00+01:00",
+      "startOffset": -3600000,
+      "end": 1735021593000,
+      "endISO": "2024-12-24T07:26:33+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2738760",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2738760,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 232000,
+      "images": [
+        {
+          "category": "imgcov-fallback",
+          "copyright": "",
+          "alt": "Cover: Niemand was schuldig - Wanda",
+          "text": "Niemand was schuldig - Wanda",
+          "versions": [
+            {
+              "width": 400,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width400/keep/fm4_cover.jpg?etag=1c8b717a8a1b3ffc52068df3f243e6a2",
+              "hashCode": 513441715
+            },
+            {
+              "width": 320,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width320/keep/fm4_cover.jpg?etag=18f69a683021d0478dffc168da611647",
+              "hashCode": 165437057
+            },
+            {
+              "width": 160,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width160/keep/fm4_cover.jpg?etag=6675b448ca972b7adba45a945c7c1f33",
+              "hashCode": 1626649201
+            },
+            {
+              "width": 100,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width100/keep/fm4_cover.jpg?etag=a904da6b802b402708eba6fc7f95f26b",
+              "hashCode": 338783362
+            }
+          ],
+          "mode": "default",
+          "hashCode": 837708521
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Niemand was schuldig",
+      "interpreter": "Wanda",
+      "start": 1735021588000,
+      "startISO": "2024-12-24T07:26:28+01:00",
+      "startOffset": -3600000,
+      "end": 1735021820000,
+      "endISO": "2024-12-24T07:30:20+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739200",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739200,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 272000,
+      "images": [
+        {
+          "alt": "Cover: Cooler Couleur - Crookers ft Yelle",
+          "mode": "default",
+          "text": "Cooler Couleur - Crookers ft Yelle",
+          "category": "imgcov",
+          "hashCode": 2042591716,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/27/st/88547_001.jpg?etag=73e010b994b2ab86bc2bdfe169acda4b",
+              "width": 400,
+              "hashCode": 1260533483
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/27/ex/88547_001.jpg?etag=73e010b994b2ab86bc2bdfe169acda4b",
+              "width": 320,
+              "hashCode": 740551648
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/27/th/88547_001.jpg?etag=73e010b994b2ab86bc2bdfe169acda4b",
+              "width": 100,
+              "hashCode": 1703081695
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Cooler Couleur",
+      "interpreter": "Crookers ft Yelle",
+      "start": 1735021814000,
+      "startISO": "2024-12-24T07:30:14+01:00",
+      "startOffset": -3600000,
+      "end": 1735022086000,
+      "endISO": "2024-12-24T07:34:46+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2741219",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2741219,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 24000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Brockhoff bleibt zu Weihnachten gern drinnen",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735022086000,
+      "startISO": "2024-12-24T07:34:46+01:00",
+      "startOffset": -3600000,
+      "end": 1735022110000,
+      "endISO": "2024-12-24T07:35:10+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739202",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739202,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 195000,
+      "images": [
+        {
+          "alt": "Cover: The Carpet Song - Brockhoff",
+          "mode": "default",
+          "text": "The Carpet Song - Brockhoff",
+          "category": "imgcov",
+          "hashCode": 2000814308,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/65/st/183014_001.jpg?etag=9d3cae3c157c72045ae7aaeaad005cfa",
+              "width": 400,
+              "hashCode": 1898636126
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/65/ex/183014_001.jpg?etag=9d3cae3c157c72045ae7aaeaad005cfa",
+              "width": 320,
+              "hashCode": 837367757
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/65/th/183014_001.jpg?etag=9d3cae3c157c72045ae7aaeaad005cfa",
+              "width": 100,
+              "hashCode": 721255058
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "The Carpet Song",
+      "interpreter": "Brockhoff",
+      "start": 1735022106000,
+      "startISO": "2024-12-24T07:35:06+01:00",
+      "startOffset": -3600000,
+      "end": 1735022301000,
+      "endISO": "2024-12-24T07:38:21+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739203",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739203,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 180000,
+      "images": [
+        {
+          "alt": "Cover: Murder On The Dance Floor - Royel Otis",
+          "mode": "default",
+          "text": "Murder On The Dance Floor - Royel Otis",
+          "category": "imgcov",
+          "hashCode": 1177149212,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/84/st/162423_001.jpg?etag=8add05367e1703067b49ece517146471",
+              "width": 400,
+              "hashCode": 1916468759
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/84/ex/162423_001.jpg?etag=8add05367e1703067b49ece517146471",
+              "width": 320,
+              "hashCode": 855200390
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/84/th/162423_001.jpg?etag=8add05367e1703067b49ece517146471",
+              "width": 100,
+              "hashCode": 703422425
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Murder On The Dance Floor",
+      "interpreter": "Royel Otis",
+      "start": 1735022300000,
+      "startISO": "2024-12-24T07:38:20+01:00",
+      "startOffset": -3600000,
+      "end": 1735022480000,
+      "endISO": "2024-12-24T07:41:20+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743251",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743251,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 48000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735022479000,
+      "startISO": "2024-12-24T07:41:19+01:00",
+      "startOffset": -3600000,
+      "end": 1735022527000,
+      "endISO": "2024-12-24T07:42:07+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743242",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743242,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 204000,
+      "images": [
+        {
+          "category": "imgcov-fallback",
+          "copyright": "",
+          "alt": "Cover: To My Bones - Wallis Bird (Live @ FM4 Morning Show)",
+          "text": "To My Bones - Wallis Bird (Live @ FM4 Morning Show)",
+          "versions": [
+            {
+              "width": 400,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width400/keep/fm4_cover.jpg?etag=1c8b717a8a1b3ffc52068df3f243e6a2",
+              "hashCode": 513441715
+            },
+            {
+              "width": 320,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width320/keep/fm4_cover.jpg?etag=18f69a683021d0478dffc168da611647",
+              "hashCode": 165437057
+            },
+            {
+              "width": 160,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width160/keep/fm4_cover.jpg?etag=6675b448ca972b7adba45a945c7c1f33",
+              "hashCode": 1626649201
+            },
+            {
+              "width": 100,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width100/keep/fm4_cover.jpg?etag=a904da6b802b402708eba6fc7f95f26b",
+              "hashCode": 338783362
+            }
+          ],
+          "mode": "default",
+          "hashCode": 1900918641
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "To My Bones",
+      "interpreter": "Wallis Bird (Live @ FM4 Morning Show)",
+      "start": 1735022525000,
+      "startISO": "2024-12-24T07:42:05+01:00",
+      "startOffset": -3600000,
+      "end": 1735022729000,
+      "endISO": "2024-12-24T07:45:29+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743247",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743247,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 8000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735022728000,
+      "startISO": "2024-12-24T07:45:28+01:00",
+      "startOffset": -3600000,
+      "end": 1735022736000,
+      "endISO": "2024-12-24T07:45:36+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739206",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739206,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 252000,
+      "images": [
+        {
+          "alt": "Cover: Brazil - Declan McKenna",
+          "mode": "default",
+          "text": "Brazil - Declan McKenna",
+          "category": "imgcov",
+          "hashCode": 1376014369,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/18/st/58373_001.jpg?etag=7549fcf9802bb4df30f38ea6b0a1c687",
+              "width": 400,
+              "hashCode": 1725420974
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/18/ex/58373_001.jpg?etag=7549fcf9802bb4df30f38ea6b0a1c687",
+              "width": 320,
+              "hashCode": 2049564487
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/18/th/58373_001.jpg?etag=7549fcf9802bb4df30f38ea6b0a1c687",
+              "width": 100,
+              "hashCode": 394068856
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Brazil",
+      "interpreter": "Declan McKenna",
+      "start": 1735022734000,
+      "startISO": "2024-12-24T07:45:34+01:00",
+      "startOffset": -3600000,
+      "end": 1735022986000,
+      "endISO": "2024-12-24T07:49:46+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743252",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743252,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 64000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735022980000,
+      "startISO": "2024-12-24T07:49:40+01:00",
+      "startOffset": -3600000,
+      "end": 1735023044000,
+      "endISO": "2024-12-24T07:50:44+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2738737",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2738737,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 164000,
+      "images": [
+        {
+          "category": "imgcov-fallback",
+          "copyright": "",
+          "alt": "Cover: Ace Of Spades - Motörhead",
+          "text": "Ace Of Spades - Motörhead",
+          "versions": [
+            {
+              "width": 400,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width400/keep/fm4_cover.jpg?etag=1c8b717a8a1b3ffc52068df3f243e6a2",
+              "hashCode": 513441715
+            },
+            {
+              "width": 320,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width320/keep/fm4_cover.jpg?etag=18f69a683021d0478dffc168da611647",
+              "hashCode": 165437057
+            },
+            {
+              "width": 160,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width160/keep/fm4_cover.jpg?etag=6675b448ca972b7adba45a945c7c1f33",
+              "hashCode": 1626649201
+            },
+            {
+              "width": 100,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width100/keep/fm4_cover.jpg?etag=a904da6b802b402708eba6fc7f95f26b",
+              "hashCode": 338783362
+            }
+          ],
+          "mode": "default",
+          "hashCode": 1844787830
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Ace Of Spades",
+      "interpreter": "Motörhead",
+      "start": 1735023043000,
+      "startISO": "2024-12-24T07:50:43+01:00",
+      "startOffset": -3600000,
+      "end": 1735023207000,
+      "endISO": "2024-12-24T07:53:27+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739208",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739208,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 167000,
+      "images": [
+        {
+          "alt": "Cover: Mary, The Anarchist - Sodl",
+          "mode": "default",
+          "text": "Mary, The Anarchist - Sodl",
+          "category": "imgcov",
+          "hashCode": 632770616,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/52/st/181364_001.jpg?etag=912228a11813d73ba688edc1fde2e649",
+              "width": 400,
+              "hashCode": 1440144888
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/52/ex/181364_001.jpg?etag=912228a11813d73ba688edc1fde2e649",
+              "width": 320,
+              "hashCode": 1793554039
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/52/th/181364_001.jpg?etag=912228a11813d73ba688edc1fde2e649",
+              "width": 100,
+              "hashCode": 234931224
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Mary, The Anarchist",
+      "interpreter": "Sodl",
+      "start": 1735023207000,
+      "startISO": "2024-12-24T07:53:27+01:00",
+      "startOffset": -3600000,
+      "end": 1735023374000,
+      "endISO": "2024-12-24T07:56:14+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2741220",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2741220,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 31000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735023372000,
+      "startISO": "2024-12-24T07:56:12+01:00",
+      "startOffset": -3600000,
+      "end": 1735023403000,
+      "endISO": "2024-12-24T07:56:43+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739210",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739210,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 178000,
+      "images": [
+        {
+          "category": "imgcov-fallback",
+          "copyright": "",
+          "alt": "Cover: Christmas In Hollis - Run DMC",
+          "text": "Christmas In Hollis - Run DMC",
+          "versions": [
+            {
+              "width": 400,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width400/keep/fm4_cover.jpg?etag=1c8b717a8a1b3ffc52068df3f243e6a2",
+              "hashCode": 513441715
+            },
+            {
+              "width": 320,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width320/keep/fm4_cover.jpg?etag=18f69a683021d0478dffc168da611647",
+              "hashCode": 165437057
+            },
+            {
+              "width": 160,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width160/keep/fm4_cover.jpg?etag=6675b448ca972b7adba45a945c7c1f33",
+              "hashCode": 1626649201
+            },
+            {
+              "width": 100,
+              "path": "https://radiobilder.orf.at/fm4/imgcov-fallback/width100/keep/fm4_cover.jpg?etag=a904da6b802b402708eba6fc7f95f26b",
+              "hashCode": 338783362
+            }
+          ],
+          "mode": "default",
+          "hashCode": 479390214
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Christmas In Hollis",
+      "interpreter": "Run DMC",
+      "start": 1735023402000,
+      "startISO": "2024-12-24T07:56:42+01:00",
+      "startOffset": -3600000,
+      "end": 1735023580000,
+      "endISO": "2024-12-24T07:59:40+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743255",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743255,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "N",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 168000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "News",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735023607000,
+      "startISO": "2024-12-24T08:00:07+01:00",
+      "startOffset": -3600000,
+      "end": 1735023775000,
+      "endISO": "2024-12-24T08:02:55+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743257",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743257,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 16000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735023773000,
+      "startISO": "2024-12-24T08:02:53+01:00",
+      "startOffset": -3600000,
+      "end": 1735023789000,
+      "endISO": "2024-12-24T08:03:09+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739216",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739216,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 172000,
+      "images": [
+        {
+          "alt": "Cover: Fluorescent Adolescent - Arctic Monkeys",
+          "mode": "default",
+          "text": "Fluorescent Adolescent - Arctic Monkeys",
+          "category": "imgcov",
+          "hashCode": 1044200264,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/55/st/82957_001.jpg?etag=f1e26eb01355650642554e55aca809fa",
+              "width": 400,
+              "hashCode": 760677013
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/55/ex/82957_001.jpg?etag=f1e26eb01355650642554e55aca809fa",
+              "width": 320,
+              "hashCode": 1280658848
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/55/th/82957_001.jpg?etag=f1e26eb01355650642554e55aca809fa",
+              "width": 100,
+              "hashCode": 570675105
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Fluorescent Adolescent",
+      "interpreter": "Arctic Monkeys",
+      "start": 1735023800000,
+      "startISO": "2024-12-24T08:03:20+01:00",
+      "startOffset": -3600000,
+      "end": 1735023972000,
+      "endISO": "2024-12-24T08:06:12+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739217",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739217,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 145000,
+      "images": [
+        {
+          "alt": "Cover: Doing It Again Baby - girl in red",
+          "mode": "default",
+          "text": "Doing It Again Baby - girl in red",
+          "category": "imgcov",
+          "hashCode": 299868635,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/08/st/164977_001.jpg?etag=7cd2cc85074a4636211dc7365f7353da",
+              "width": 400,
+              "hashCode": 1308888757
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/08/ex/164977_001.jpg?etag=7cd2cc85074a4636211dc7365f7353da",
+              "width": 320,
+              "hashCode": 247620388
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/08/th/164977_001.jpg?etag=7cd2cc85074a4636211dc7365f7353da",
+              "width": 100,
+              "hashCode": 1311002427
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Doing It Again Baby",
+      "interpreter": "girl in red",
+      "start": 1735023968000,
+      "startISO": "2024-12-24T08:06:08+01:00",
+      "startOffset": -3600000,
+      "end": 1735024113000,
+      "endISO": "2024-12-24T08:08:33+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743258",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743258,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 66000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735024112000,
+      "startISO": "2024-12-24T08:08:32+01:00",
+      "startOffset": -3600000,
+      "end": 1735024178000,
+      "endISO": "2024-12-24T08:09:38+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739219",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739219,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 254000,
+      "images": [
+        {
+          "alt": "Cover: Games - Wallners",
+          "mode": "default",
+          "text": "Games - Wallners",
+          "category": "imgcov",
+          "hashCode": 547435810,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/36/st/181236_001.jpg?etag=261acc4935fff4f7f5053864e720715a",
+              "width": 400,
+              "hashCode": 1295629389
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/36/ex/181236_001.jpg?etag=261acc4935fff4f7f5053864e720715a",
+              "width": 320,
+              "hashCode": 1938069538
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/36/th/181236_001.jpg?etag=261acc4935fff4f7f5053864e720715a",
+              "width": 100,
+              "hashCode": 379446723
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Games",
+      "interpreter": "Wallners",
+      "start": 1735024177000,
+      "startISO": "2024-12-24T08:09:37+01:00",
+      "startOffset": -3600000,
+      "end": 1735024431000,
+      "endISO": "2024-12-24T08:13:51+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739220",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739220,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 213000,
+      "images": [
+        {
+          "alt": "Cover: Hurt - Arlo Parks",
+          "mode": "default",
+          "text": "Hurt - Arlo Parks",
+          "category": "imgcov",
+          "hashCode": 1433830392,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/73/st/52112_001.jpg?etag=e3a5c1b1f42cf0f0add103f3d7150323",
+              "width": 400,
+              "hashCode": 304590520
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/73/ex/52112_001.jpg?etag=e3a5c1b1f42cf0f0add103f3d7150323",
+              "width": 320,
+              "hashCode": 824572355
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/73/th/52112_001.jpg?etag=e3a5c1b1f42cf0f0add103f3d7150323",
+              "width": 100,
+              "hashCode": 1026761598
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Hurt",
+      "interpreter": "Arlo Parks",
+      "start": 1735024422000,
+      "startISO": "2024-12-24T08:13:42+01:00",
+      "startOffset": -3600000,
+      "end": 1735024635000,
+      "endISO": "2024-12-24T08:17:15+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743259",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743259,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 144000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Paul Plener über Einsamkeit zu Weihnachten",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735024635000,
+      "startISO": "2024-12-24T08:17:15+01:00",
+      "startOffset": -3600000,
+      "end": 1735024779000,
+      "endISO": "2024-12-24T08:19:39+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739222",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739222,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 187000,
+      "images": [
+        {
+          "alt": "Cover: Lovesick - Mura Masa ft A$AP Rocky",
+          "mode": "default",
+          "text": "Lovesick - Mura Masa ft A$AP Rocky",
+          "category": "imgcov",
+          "hashCode": 2010902983,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/57/st/84416_001.jpg?etag=5a4054d1fdee3e7e12a1f9a121a624b8",
+              "width": 400,
+              "hashCode": 1550029935
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/57/ex/84416_001.jpg?etag=5a4054d1fdee3e7e12a1f9a121a624b8",
+              "width": 320,
+              "hashCode": 1030048100
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/57/th/84416_001.jpg?etag=5a4054d1fdee3e7e12a1f9a121a624b8",
+              "width": 100,
+              "hashCode": 1413585243
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Lovesick",
+      "interpreter": "Mura Masa ft A$AP Rocky",
+      "start": 1735024775000,
+      "startISO": "2024-12-24T08:19:35+01:00",
+      "startOffset": -3600000,
+      "end": 1735024962000,
+      "endISO": "2024-12-24T08:22:42+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739223",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739223,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 179000,
+      "images": [
+        {
+          "alt": "Cover: Unterwegs - Verifiziert & prod.suki",
+          "mode": "default",
+          "text": "Unterwegs - Verifiziert & prod.suki",
+          "category": "imgcov",
+          "hashCode": 1522465412,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/31/st/162326_001.jpg?etag=d39a70f16dadbaa1225c6fdc2e56937b",
+              "width": 400,
+              "hashCode": 440691633
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/31/ex/162326_001.jpg?etag=d39a70f16dadbaa1225c6fdc2e56937b",
+              "width": 320,
+              "hashCode": 1501960002
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/31/th/162326_001.jpg?etag=d39a70f16dadbaa1225c6fdc2e56937b",
+              "width": 100,
+              "hashCode": 1234384479
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Unterwegs",
+      "interpreter": "Verifiziert & prod.suki",
+      "start": 1735024961000,
+      "startISO": "2024-12-24T08:22:41+01:00",
+      "startOffset": -3600000,
+      "end": 1735025140000,
+      "endISO": "2024-12-24T08:25:40+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2741236",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2741236,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 32000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Für Verifiziert klingt Weihnachten nach Clairo",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735025140000,
+      "startISO": "2024-12-24T08:25:40+01:00",
+      "startOffset": -3600000,
+      "end": 1735025172000,
+      "endISO": "2024-12-24T08:26:12+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739225",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739225,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 195000,
+      "images": [
+        {
+          "alt": "Cover: Juna - Clairo",
+          "mode": "default",
+          "text": "Juna - Clairo",
+          "category": "imgcov",
+          "hashCode": 565138283,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/84/st/174382_001.jpg?etag=5ea1f41b6a429604f856adb15496b040",
+              "width": 400,
+              "hashCode": 1074850151
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/84/ex/174382_001.jpg?etag=5ea1f41b6a429604f856adb15496b040",
+              "width": 320,
+              "hashCode": 2136118520
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/84/th/174382_001.jpg?etag=5ea1f41b6a429604f856adb15496b040",
+              "width": 100,
+              "hashCode": 600225961
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Juna",
+      "interpreter": "Clairo",
+      "start": 1735025168000,
+      "startISO": "2024-12-24T08:26:08+01:00",
+      "startOffset": -3600000,
+      "end": 1735025363000,
+      "endISO": "2024-12-24T08:29:23+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739226",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739226,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 175000,
+      "images": [
+        {
+          "alt": "Cover: I'm With The Band (ft. Beck) - The Black Keys",
+          "mode": "default",
+          "text": "I'm With The Band (ft. Beck) - The Black Keys",
+          "category": "imgcov",
+          "hashCode": 1205573961,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/86/st/180999_001.jpg?etag=f51ea43e1e70670e790cb9b2c8696640",
+              "width": 400,
+              "hashCode": 1834519487
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/86/ex/180999_001.jpg?etag=f51ea43e1e70670e790cb9b2c8696640",
+              "width": 320,
+              "hashCode": 773251118
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/86/th/180999_001.jpg?etag=f51ea43e1e70670e790cb9b2c8696640",
+              "width": 100,
+              "hashCode": 785371697
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "I'm With The Band (ft. Beck)",
+      "interpreter": "The Black Keys",
+      "start": 1735025358000,
+      "startISO": "2024-12-24T08:29:18+01:00",
+      "startOffset": -3600000,
+      "end": 1735025533000,
+      "endISO": "2024-12-24T08:32:13+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743267",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743267,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 46000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735025532000,
+      "startISO": "2024-12-24T08:32:12+01:00",
+      "startOffset": -3600000,
+      "end": 1735025578000,
+      "endISO": "2024-12-24T08:32:58+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743260",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743260,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 274000,
+      "images": [
+        {
+          "category": "imgcov",
+          "copyright": "",
+          "alt": "Cover: King - Florence + The Machine",
+          "text": "King - Florence + The Machine",
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/29/st/113209_001.jpg?etag=334503a0f00f0bb487fbb16b5b80d71a",
+              "width": 400,
+              "hashCode": 710873468
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/29/ex/113209_001.jpg?etag=334503a0f00f0bb487fbb16b5b80d71a",
+              "width": 320,
+              "hashCode": 1772141837
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/29/th/113209_001.jpg?etag=334503a0f00f0bb487fbb16b5b80d71a",
+              "width": 100,
+              "hashCode": 964202644
+            }
+          ],
+          "mode": "default",
+          "hashCode": 1114327308
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "King",
+      "interpreter": "Florence + The Machine",
+      "start": 1735025574000,
+      "startISO": "2024-12-24T08:32:54+01:00",
+      "startOffset": -3600000,
+      "end": 1735025848000,
+      "endISO": "2024-12-24T08:37:28+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739229",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739229,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 194000,
+      "images": [
+        {
+          "alt": "Cover: Christmas Time - Smashing Pumpkins",
+          "mode": "default",
+          "text": "Christmas Time - Smashing Pumpkins",
+          "category": "imgcov",
+          "hashCode": 1073595708,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/89/st/86113_001.jpg?etag=04383fb88f50f1fe2c55fca6c6957237",
+              "width": 400,
+              "hashCode": 1845234316
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/89/ex/86113_001.jpg?etag=04383fb88f50f1fe2c55fca6c6957237",
+              "width": 320,
+              "hashCode": 1325252481
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/89/th/86113_001.jpg?etag=04383fb88f50f1fe2c55fca6c6957237",
+              "width": 100,
+              "hashCode": 1118380862
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Christmas Time",
+      "interpreter": "Smashing Pumpkins",
+      "start": 1735025846000,
+      "startISO": "2024-12-24T08:37:26+01:00",
+      "startOffset": -3600000,
+      "end": 1735026040000,
+      "endISO": "2024-12-24T08:40:40+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743269",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743269,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": "<p>52</p>",
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 14000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735026036000,
+      "startISO": "2024-12-24T08:40:36+01:00",
+      "startOffset": -3600000,
+      "end": 1735026050000,
+      "endISO": "2024-12-24T08:40:50+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739230",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739230,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 252000,
+      "images": [
+        {
+          "alt": "Cover: Babydoll - Sofie Royer",
+          "mode": "default",
+          "text": "Babydoll - Sofie Royer",
+          "category": "imgcov",
+          "hashCode": 1482323442,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/15/st/181227_001.jpg?etag=5d942724806150a4f7be6fb1b501be5b",
+              "width": 400,
+              "hashCode": 1531091090
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/15/ex/181227_001.jpg?etag=5d942724806150a4f7be6fb1b501be5b",
+              "width": 320,
+              "hashCode": 1702607837
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/15/th/181227_001.jpg?etag=5d942724806150a4f7be6fb1b501be5b",
+              "width": 100,
+              "hashCode": 143985022
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Babydoll",
+      "interpreter": "Sofie Royer",
+      "start": 1735026044000,
+      "startISO": "2024-12-24T08:40:44+01:00",
+      "startOffset": -3600000,
+      "end": 1735026296000,
+      "endISO": "2024-12-24T08:44:56+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743262",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743262,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 166000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Zu Weihnachten gibt's Tickets fürs FM4 Geburtstagsfest",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735026296000,
+      "startISO": "2024-12-24T08:44:56+01:00",
+      "startOffset": -3600000,
+      "end": 1735026462000,
+      "endISO": "2024-12-24T08:47:42+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739232",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739232,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 180000,
+      "images": [
+        {
+          "alt": "Cover: Pizza - Antilopen Gang",
+          "mode": "default",
+          "text": "Pizza - Antilopen Gang",
+          "category": "imgcov",
+          "hashCode": 237951694,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/71/st/84560_001.jpg?etag=4e4493fe32540662e5464305b21d9e00",
+              "width": 400,
+              "hashCode": 95211562
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/71/ex/84560_001.jpg?etag=4e4493fe32540662e5464305b21d9e00",
+              "width": 320,
+              "hashCode": 424770273
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/71/th/84560_001.jpg?etag=4e4493fe32540662e5464305b21d9e00",
+              "width": 100,
+              "hashCode": 1426563680
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Pizza",
+      "interpreter": "Antilopen Gang",
+      "start": 1735026458000,
+      "startISO": "2024-12-24T08:47:38+01:00",
+      "startOffset": -3600000,
+      "end": 1735026638000,
+      "endISO": "2024-12-24T08:50:38+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739233",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739233,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 175000,
+      "images": [
+        {
+          "alt": "Cover: Seabird - Alessi Brothers",
+          "mode": "default",
+          "text": "Seabird - Alessi Brothers",
+          "category": "imgcov",
+          "hashCode": 1435937497,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/22/st/160834_001.jpg?etag=15eb41b843224057dbda95f78f8ed59b",
+              "width": 400,
+              "hashCode": 1516854420
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/22/ex/160834_001.jpg?etag=15eb41b843224057dbda95f78f8ed59b",
+              "width": 320,
+              "hashCode": 1716844507
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/22/th/160834_001.jpg?etag=15eb41b843224057dbda95f78f8ed59b",
+              "width": 100,
+              "hashCode": 158221692
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Seabird",
+      "interpreter": "Alessi Brothers",
+      "start": 1735026636000,
+      "startISO": "2024-12-24T08:50:36+01:00",
+      "startOffset": -3600000,
+      "end": 1735026811000,
+      "endISO": "2024-12-24T08:53:31+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2741985",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2741985,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 34000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735026806000,
+      "startISO": "2024-12-24T08:53:26+01:00",
+      "startOffset": -3600000,
+      "end": 1735026840000,
+      "endISO": "2024-12-24T08:54:00+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739235",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739235,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 242000,
+      "images": [
+        {
+          "alt": "Cover: Where Do You Go (ft. Mira Lu Kovacs) - Daffodils",
+          "mode": "default",
+          "text": "Where Do You Go (ft. Mira Lu Kovacs) - Daffodils",
+          "category": "imgcov",
+          "hashCode": 260894632,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/26/st/175141_001.jpg?etag=c910f479efd7bccbdbc9fa33fb8dd230",
+              "width": 400,
+              "hashCode": 1682536950
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/26/ex/175141_001.jpg?etag=c910f479efd7bccbdbc9fa33fb8dd230",
+              "width": 320,
+              "hashCode": 1551161977
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/26/th/175141_001.jpg?etag=c910f479efd7bccbdbc9fa33fb8dd230",
+              "width": 100,
+              "hashCode": 7460838
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Where Do You Go (ft. Mira Lu Kovacs)",
+      "interpreter": "Daffodils",
+      "start": 1735026839000,
+      "startISO": "2024-12-24T08:53:59+01:00",
+      "startOffset": -3600000,
+      "end": 1735027081000,
+      "endISO": "2024-12-24T08:58:01+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739236",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739236,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 124000,
+      "images": [
+        {
+          "alt": "Cover: Break Me Down - Yukimi",
+          "mode": "default",
+          "text": "Break Me Down - Yukimi",
+          "category": "imgcov",
+          "hashCode": 1657472185,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/45/st/178989_001.jpg?etag=27a9e628a7ffaa1a9868142d0ca48698",
+              "width": 400,
+              "hashCode": 304967756
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/45/ex/178989_001.jpg?etag=27a9e628a7ffaa1a9868142d0ca48698",
+              "width": 320,
+              "hashCode": 756300613
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/45/th/178989_001.jpg?etag=27a9e628a7ffaa1a9868142d0ca48698",
+              "width": 100,
+              "hashCode": 1980043868
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Break Me Down",
+      "interpreter": "Yukimi",
+      "start": 1735027081000,
+      "startISO": "2024-12-24T08:58:01+01:00",
+      "startOffset": -3600000,
+      "end": 1735027205000,
+      "endISO": "2024-12-24T09:00:05+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743274",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743274,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "N",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 183000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "News",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735027202000,
+      "startISO": "2024-12-24T09:00:02+01:00",
+      "startOffset": -3600000,
+      "end": 1735027385000,
+      "endISO": "2024-12-24T09:03:05+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743276",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743276,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 16000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735027383000,
+      "startISO": "2024-12-24T09:03:03+01:00",
+      "startOffset": -3600000,
+      "end": 1735027399000,
+      "endISO": "2024-12-24T09:03:19+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739241",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739241,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 221000,
+      "images": [
+        {
+          "alt": "Cover: maybe it's u (with Sam Gellaitry) - salute",
+          "mode": "default",
+          "text": "maybe it's u (with Sam Gellaitry) - salute",
+          "category": "imgcov",
+          "hashCode": 1195233091,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/85/st/171497_001.jpg?etag=0fd16f05557e0ab53e70981fa2193fcf",
+              "width": 400,
+              "hashCode": 2006212748
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/85/ex/171497_001.jpg?etag=0fd16f05557e0ab53e70981fa2193fcf",
+              "width": 320,
+              "hashCode": 944944379
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/85/th/171497_001.jpg?etag=0fd16f05557e0ab53e70981fa2193fcf",
+              "width": 100,
+              "hashCode": 613678436
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "maybe it's u (with Sam Gellaitry)",
+      "interpreter": "salute",
+      "start": 1735027400000,
+      "startISO": "2024-12-24T09:03:20+01:00",
+      "startOffset": -3600000,
+      "end": 1735027621000,
+      "endISO": "2024-12-24T09:07:01+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739242",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739242,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 158000,
+      "images": [
+        {
+          "alt": "Cover: You Got The Love - Rockin Moroccin",
+          "mode": "default",
+          "text": "You Got The Love - Rockin Moroccin",
+          "category": "imgcov",
+          "hashCode": 1968712284,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/81/st/137249_001.jpg?etag=df266b75afd6e2044437007e1163d10c",
+              "width": 400,
+              "hashCode": 1077529466
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/81/ex/137249_001.jpg?etag=df266b75afd6e2044437007e1163d10c",
+              "width": 320,
+              "hashCode": 2138797835
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/81/th/137249_001.jpg?etag=df266b75afd6e2044437007e1163d10c",
+              "width": 100,
+              "hashCode": 597546646
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "You Got The Love",
+      "interpreter": "Rockin Moroccin",
+      "start": 1735027617000,
+      "startISO": "2024-12-24T09:06:57+01:00",
+      "startOffset": -3600000,
+      "end": 1735027775000,
+      "endISO": "2024-12-24T09:09:35+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743277",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743277,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 40000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735027772000,
+      "startISO": "2024-12-24T09:09:32+01:00",
+      "startOffset": -3600000,
+      "end": 1735027812000,
+      "endISO": "2024-12-24T09:10:12+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739244",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739244,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 220000,
+      "images": [
+        {
+          "alt": "Cover: tv off (ft. lefty gunplay) - Kendrick Lamar",
+          "mode": "default",
+          "text": "tv off (ft. lefty gunplay) - Kendrick Lamar",
+          "category": "imgcov",
+          "hashCode": 916927982,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/13/st/181434_001.jpg?etag=98965065c2f6a0225b4b3c171d93f86a",
+              "width": 400,
+              "hashCode": 1891808476
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/13/ex/181434_001.jpg?etag=98965065c2f6a0225b4b3c171d93f86a",
+              "width": 320,
+              "hashCode": 830540107
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/13/th/181434_001.jpg?etag=98965065c2f6a0225b4b3c171d93f86a",
+              "width": 100,
+              "hashCode": 728082708
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "tv off (ft. lefty gunplay)",
+      "interpreter": "Kendrick Lamar",
+      "start": 1735027809000,
+      "startISO": "2024-12-24T09:10:09+01:00",
+      "startOffset": -3600000,
+      "end": 1735028029000,
+      "endISO": "2024-12-24T09:13:49+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743281",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743281,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 43000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735028030000,
+      "startISO": "2024-12-24T09:13:50+01:00",
+      "startOffset": -3600000,
+      "end": 1735028073000,
+      "endISO": "2024-12-24T09:14:33+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2738743",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2738743,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 199000,
+      "images": [
+        {
+          "alt": "Cover: Pocketful Of Sunshine - Natasha Bedingfield",
+          "mode": "default",
+          "text": "Pocketful Of Sunshine - Natasha Bedingfield",
+          "category": "imgcov",
+          "hashCode": 1585852977,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/72/st/93603_001.jpg?etag=f62c668bd9a9e06ad9d1b8aaf8680bf4",
+              "width": 400,
+              "hashCode": 1508521152
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/72/ex/93603_001.jpg?etag=f62c668bd9a9e06ad9d1b8aaf8680bf4",
+              "width": 320,
+              "hashCode": 2028502987
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/72/th/93603_001.jpg?etag=f62c668bd9a9e06ad9d1b8aaf8680bf4",
+              "width": 100,
+              "hashCode": 177169034
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Pocketful Of Sunshine",
+      "interpreter": "Natasha Bedingfield",
+      "start": 1735028070000,
+      "startISO": "2024-12-24T09:14:30+01:00",
+      "startOffset": -3600000,
+      "end": 1735028269000,
+      "endISO": "2024-12-24T09:17:49+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739246",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739246,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 198000,
+      "images": [
+        {
+          "alt": "Cover: Zoo - Leyya",
+          "mode": "default",
+          "text": "Zoo - Leyya",
+          "category": "imgcov",
+          "hashCode": 1916958193,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/49/st/84739_001.jpg?etag=41163807c62ce2f861f4661e2c60e38b",
+              "width": 400,
+              "hashCode": 1429358161
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/49/ex/84739_001.jpg?etag=41163807c62ce2f861f4661e2c60e38b",
+              "width": 320,
+              "hashCode": 1949339996
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/49/th/84739_001.jpg?etag=41163807c62ce2f861f4661e2c60e38b",
+              "width": 100,
+              "hashCode": 98006043
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Zoo",
+      "interpreter": "Leyya",
+      "start": 1735028266000,
+      "startISO": "2024-12-24T09:17:46+01:00",
+      "startOffset": -3600000,
+      "end": 1735028464000,
+      "endISO": "2024-12-24T09:21:04+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743278",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743278,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 99000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Die FM4 Weihnachtsfamilie",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735028464000,
+      "startISO": "2024-12-24T09:21:04+01:00",
+      "startOffset": -3600000,
+      "end": 1735028563000,
+      "endISO": "2024-12-24T09:22:43+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739248",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739248,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 265000,
+      "images": [
+        {
+          "alt": "Cover: Bitter Sweet Symphony - Verve",
+          "mode": "default",
+          "text": "Bitter Sweet Symphony - Verve",
+          "category": "imgcov",
+          "hashCode": 390171011,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/42/st/82569_001.jpg?etag=ece01e49df378e626e51db80b665ede0",
+              "width": 400,
+              "hashCode": 1677954673
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/42/ex/82569_001.jpg?etag=ece01e49df378e626e51db80b665ede0",
+              "width": 320,
+              "hashCode": 1157972838
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/42/th/82569_001.jpg?etag=ece01e49df378e626e51db80b665ede0",
+              "width": 100,
+              "hashCode": 1285660505
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Bitter Sweet Symphony",
+      "interpreter": "Verve",
+      "start": 1735028559000,
+      "startISO": "2024-12-24T09:22:39+01:00",
+      "startOffset": -3600000,
+      "end": 1735028824000,
+      "endISO": "2024-12-24T09:27:04+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743282",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743282,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 12000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735028817000,
+      "startISO": "2024-12-24T09:26:57+01:00",
+      "startOffset": -3600000,
+      "end": 1735028829000,
+      "endISO": "2024-12-24T09:27:09+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739249",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739249,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 182000,
+      "images": [
+        {
+          "alt": "Cover: Bug - Fontaines D.C.",
+          "mode": "default",
+          "text": "Bug - Fontaines D.C.",
+          "category": "imgcov",
+          "hashCode": 1816570432,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/73/st/180419_001.jpg?etag=58d77eb63cf333de90e32cd515565749",
+              "width": 400,
+              "hashCode": 1275058512
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/73/ex/180419_001.jpg?etag=58d77eb63cf333de90e32cd515565749",
+              "width": 320,
+              "hashCode": 213790143
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/73/th/180419_001.jpg?etag=58d77eb63cf333de90e32cd515565749",
+              "width": 100,
+              "hashCode": 1344832672
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Bug",
+      "interpreter": "Fontaines D.C.",
+      "start": 1735028825000,
+      "startISO": "2024-12-24T09:27:05+01:00",
+      "startOffset": -3600000,
+      "end": 1735029007000,
+      "endISO": "2024-12-24T09:30:07+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2740914",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2740914,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 32000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735029002000,
+      "startISO": "2024-12-24T09:30:02+01:00",
+      "startOffset": -3600000,
+      "end": 1735029034000,
+      "endISO": "2024-12-24T09:30:34+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739251",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739251,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 202000,
+      "images": [
+        {
+          "alt": "Cover: My Power - Chika",
+          "mode": "default",
+          "text": "My Power - Chika",
+          "category": "imgcov",
+          "hashCode": 908334719,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/60/st/87504_001.jpg?etag=c7715e3bf95b3d5617b9199952e9aad4",
+              "width": 400,
+              "hashCode": 1611769401
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/60/ex/87504_001.jpg?etag=c7715e3bf95b3d5617b9199952e9aad4",
+              "width": 320,
+              "hashCode": 2131751236
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/60/th/87504_001.jpg?etag=c7715e3bf95b3d5617b9199952e9aad4",
+              "width": 100,
+              "hashCode": 280417283
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "My Power",
+      "interpreter": "Chika",
+      "start": 1735029034000,
+      "startISO": "2024-12-24T09:30:34+01:00",
+      "startOffset": -3600000,
+      "end": 1735029236000,
+      "endISO": "2024-12-24T09:33:56+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739252",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739252,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 164000,
+      "images": [
+        {
+          "alt": "Cover: Snowglobe - UPSAHL",
+          "mode": "default",
+          "text": "Snowglobe - UPSAHL",
+          "category": "imgcov",
+          "hashCode": 460934928,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/76/st/159485_001.jpg?etag=6d6417a61517a60162def04bcd9757ba",
+              "width": 400,
+              "hashCode": 1623478097
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/76/ex/159485_001.jpg?etag=6d6417a61517a60162def04bcd9757ba",
+              "width": 320,
+              "hashCode": 562209728
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/76/th/159485_001.jpg?etag=6d6417a61517a60162def04bcd9757ba",
+              "width": 100,
+              "hashCode": 996413087
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Snowglobe",
+      "interpreter": "UPSAHL",
+      "start": 1735029236000,
+      "startISO": "2024-12-24T09:33:56+01:00",
+      "startOffset": -3600000,
+      "end": 1735029400000,
+      "endISO": "2024-12-24T09:36:40+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2741245",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2741245,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 22000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Avec musiziert zu Weihnachten",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735029400000,
+      "startISO": "2024-12-24T09:36:40+01:00",
+      "startOffset": -3600000,
+      "end": 1735029422000,
+      "endISO": "2024-12-24T09:37:02+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739254",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739254,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 165000,
+      "images": [
+        {
+          "alt": "Cover: Real Love - AVEC",
+          "mode": "default",
+          "text": "Real Love - AVEC",
+          "category": "imgcov",
+          "hashCode": 549734343,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/51/st/176488_001.jpg?etag=a33e753cb4cfb4d806adf9b06c58d398",
+              "width": 400,
+              "hashCode": 708058675
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/51/ex/176488_001.jpg?etag=a33e753cb4cfb4d806adf9b06c58d398",
+              "width": 320,
+              "hashCode": 353209694
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/51/th/176488_001.jpg?etag=a33e753cb4cfb4d806adf9b06c58d398",
+              "width": 100,
+              "hashCode": 1911832509
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Real Love",
+      "interpreter": "AVEC",
+      "start": 1735029418000,
+      "startISO": "2024-12-24T09:36:58+01:00",
+      "startOffset": -3600000,
+      "end": 1735029583000,
+      "endISO": "2024-12-24T09:39:43+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743286",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743286,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 26000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735029580000,
+      "startISO": "2024-12-24T09:39:40+01:00",
+      "startOffset": -3600000,
+      "end": 1735029606000,
+      "endISO": "2024-12-24T09:40:06+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2740085",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2740085,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 185000,
+      "images": [
+        {
+          "alt": "Cover: Gold Lion - Yeah Yeah Yeahs",
+          "mode": "default",
+          "text": "Gold Lion - Yeah Yeah Yeahs",
+          "category": "imgcov",
+          "hashCode": 1660141705,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/37/st/82663_001.jpg?etag=6ec42aebaadf37a660c5d9504b3ec14a",
+              "width": 400,
+              "hashCode": 583266219
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/37/ex/82663_001.jpg?etag=6ec42aebaadf37a660c5d9504b3ec14a",
+              "width": 320,
+              "hashCode": 1103248054
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/37/th/82663_001.jpg?etag=6ec42aebaadf37a660c5d9504b3ec14a",
+              "width": 100,
+              "hashCode": 748085899
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Gold Lion",
+      "interpreter": "Yeah Yeah Yeahs",
+      "start": 1735029603000,
+      "startISO": "2024-12-24T09:40:03+01:00",
+      "startOffset": -3600000,
+      "end": 1735029788000,
+      "endISO": "2024-12-24T09:43:08+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743287",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743287,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "B",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 156000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Das würdet ihr FM4 zu Weihnachten schenken",
+      "subtitle": null,
+      "moderator": null,
+      "start": 1735029788000,
+      "startISO": "2024-12-24T09:43:08+01:00",
+      "startOffset": -3600000,
+      "end": 1735029944000,
+      "endISO": "2024-12-24T09:45:44+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739255",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739255,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 169000,
+      "images": [
+        {
+          "alt": "Cover: Milk - KÄSSY",
+          "mode": "default",
+          "text": "Milk - KÄSSY",
+          "category": "imgcov",
+          "hashCode": 1412979398,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/42/st/182200_001.jpg?etag=0f98ebd04552be7ddb3649f05a077240",
+              "width": 400,
+              "hashCode": 841641763
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/42/ex/182200_001.jpg?etag=0f98ebd04552be7ddb3649f05a077240",
+              "width": 320,
+              "hashCode": 1902910132
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/42/th/182200_001.jpg?etag=0f98ebd04552be7ddb3649f05a077240",
+              "width": 100,
+              "hashCode": 833434349
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Milk",
+      "interpreter": "KÄSSY",
+      "start": 1735029940000,
+      "startISO": "2024-12-24T09:45:40+01:00",
+      "startOffset": -3600000,
+      "end": 1735030109000,
+      "endISO": "2024-12-24T09:48:29+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743289",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743289,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 1000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735030109000,
+      "startISO": "2024-12-24T09:48:29+01:00",
+      "startOffset": -3600000,
+      "end": 1735030110000,
+      "endISO": "2024-12-24T09:48:30+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739258",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739258,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 157000,
+      "images": [
+        {
+          "alt": "Cover: One Foot - Greentea Peng",
+          "mode": "default",
+          "text": "One Foot - Greentea Peng",
+          "category": "imgcov",
+          "hashCode": 1178890920,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/25/st/182554_001.jpg?etag=6f49112a43d8e8a04122a3f7b8669ab8",
+              "width": 400,
+              "hashCode": 1743835087
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/25/ex/182554_001.jpg?etag=6f49112a43d8e8a04122a3f7b8669ab8",
+              "width": 320,
+              "hashCode": 682566718
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/25/th/182554_001.jpg?etag=6f49112a43d8e8a04122a3f7b8669ab8",
+              "width": 100,
+              "hashCode": 876056097
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "One Foot",
+      "interpreter": "Greentea Peng",
+      "start": 1735030110000,
+      "startISO": "2024-12-24T09:48:30+01:00",
+      "startOffset": -3600000,
+      "end": 1735030267000,
+      "endISO": "2024-12-24T09:51:07+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739259",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739259,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": "<p>T* Punching In A Dream<br/>ausführendes Ensemble: The Naked & Famos<br/>Komponist: Alisa Xayalith<br/>Komponist: Thom Powers<br/>Komponist: Aaron Short<br/>Komponist: David Beadle<br/>Komponist: Jesse Wood</p>",
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 238000,
+      "images": [
+        {
+          "alt": "Cover: Punching In A Dream - The Naked & Famous",
+          "mode": "default",
+          "text": "Punching In A Dream - The Naked & Famous",
+          "category": "imgcov",
+          "hashCode": 1132558871,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/99/st/83426_001.jpg?etag=b0d8a258fedb53e4f07f90510c2e87b7",
+              "width": 400,
+              "hashCode": 1501088293
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/99/ex/83426_001.jpg?etag=b0d8a258fedb53e4f07f90510c2e87b7",
+              "width": 320,
+              "hashCode": 981106458
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/99/th/83426_001.jpg?etag=b0d8a258fedb53e4f07f90510c2e87b7",
+              "width": 100,
+              "hashCode": 1462526885
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Punching In A Dream",
+      "interpreter": "The Naked & Famous",
+      "start": 1735030266000,
+      "startISO": "2024-12-24T09:51:06+01:00",
+      "startOffset": -3600000,
+      "end": 1735030504000,
+      "endISO": "2024-12-24T09:55:04+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743291",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743291,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 36000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735030505000,
+      "startISO": "2024-12-24T09:55:05+01:00",
+      "startOffset": -3600000,
+      "end": 1735030541000,
+      "endISO": "2024-12-24T09:55:41+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2739261",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2739261,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 133000,
+      "images": [
+        {
+          "alt": "Cover: Motorola - Filly",
+          "mode": "default",
+          "text": "Motorola - Filly",
+          "category": "imgcov",
+          "hashCode": 1140407770,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/72/st/126609_001.jpg?etag=f7dc011b4bb5646a3935d9cc0b803791",
+              "width": 400,
+              "hashCode": 427365460
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/72/ex/126609_001.jpg?etag=f7dc011b4bb5646a3935d9cc0b803791",
+              "width": 320,
+              "hashCode": 633902909
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/72/th/126609_001.jpg?etag=f7dc011b4bb5646a3935d9cc0b803791",
+              "width": 100,
+              "hashCode": 2102441572
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Motorola",
+      "interpreter": "Filly",
+      "start": 1735030538000,
+      "startISO": "2024-12-24T09:55:38+01:00",
+      "startOffset": -3600000,
+      "end": 1735030671000,
+      "endISO": "2024-12-24T09:57:51+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MO/20241224/item/2743290",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743290,
+      "broadcastDay": 20241224,
+      "programKey": "4MO",
+      "program": "4MO",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 145000,
+      "images": [
+        {
+          "category": "imgcov",
+          "copyright": "",
+          "alt": "Cover: Glorious - Sudan Archives",
+          "text": "Glorious - Sudan Archives",
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/66/st/36290_001.jpg?etag=fa62d9ca606bbb6b2b29f51fba6f4376",
+              "width": 400,
+              "hashCode": 1958547252
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/66/ex/36290_001.jpg?etag=fa62d9ca606bbb6b2b29f51fba6f4376",
+              "width": 320,
+              "hashCode": 1816438209
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/66/th/36290_001.jpg?etag=fa62d9ca606bbb6b2b29f51fba6f4376",
+              "width": 100,
+              "hashCode": 627195134
+            }
+          ],
+          "mode": "default",
+          "hashCode": 531706756
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Glorious",
+      "interpreter": "Sudan Archives",
+      "start": 1735030671000,
+      "startISO": "2024-12-24T09:57:51+01:00",
+      "startOffset": -3600000,
+      "end": 1735030816000,
+      "endISO": "2024-12-24T10:00:16+01:00",
+      "endOffset": -3600000
+    }
+  ],
+  "streams": [
+    {
+      "alias": "7DaysTue2",
+      "title": null,
+      "loopStreamId": "2024-12-24_0600_tl_54_7DaysTue2_161021.mp3",
+      "start": 1735016417000,
+      "startISO": "2024-12-24T06:00:17+01:00",
+      "startOffset": -3600000,
+      "end": 1735030817000,
+      "endISO": "2024-12-24T10:00:17+01:00",
+      "endOffset": -3600000
+    }
+  ],
+  "marks": [
+    {
+      "type": "in",
+      "timestamp": 1735016580000,
+      "timestampISO": "2024-12-24T06:03:00+01:00",
+      "timestampOffset": -3600000
+    },
+    {
+      "type": "out",
+      "timestamp": 1735020004000,
+      "timestampISO": "2024-12-24T07:00:04+01:00",
+      "timestampOffset": -3600000
+    },
+    {
+      "type": "in",
+      "timestamp": 1735020172000,
+      "timestampISO": "2024-12-24T07:02:52+01:00",
+      "timestampOffset": -3600000
+    },
+    {
+      "type": "out",
+      "timestamp": 1735023607000,
+      "timestampISO": "2024-12-24T08:00:07+01:00",
+      "timestampOffset": -3600000
+    },
+    {
+      "type": "in",
+      "timestamp": 1735023773000,
+      "timestampISO": "2024-12-24T08:02:53+01:00",
+      "timestampOffset": -3600000
+    },
+    {
+      "type": "out",
+      "timestamp": 1735027202000,
+      "timestampISO": "2024-12-24T09:00:02+01:00",
+      "timestampOffset": -3600000
+    },
+    {
+      "type": "in",
+      "timestamp": 1735027383000,
+      "timestampISO": "2024-12-24T09:03:03+01:00",
+      "timestampOffset": -3600000
+    },
+    {
+      "type": "out",
+      "timestamp": 1735030817000,
+      "timestampISO": "2024-12-24T10:00:17+01:00",
+      "timestampOffset": -3600000
+    }
+  ]
+}

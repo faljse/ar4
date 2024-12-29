@@ -1,0 +1,1372 @@
+https://loopstreamfm4.apa.at/?channel=fm4&shoutcast=0&player=radiothek_v1&referer=fm4.orf.at&_=1735358412322&userid=148d7ca6-dc0a-456f-aae7-128e0813d3b1&id=2024-12-24_0459_tl_54_7DaysTue1_161020.mp3&offset=0&offsetende=3631000
+channel=fm4
+shoutcast=0
+player=radiothek_v1
+referer=fm4.orf.at
+_=1735358408136
+userid=148d7ca6-dc0a-456f-aae7-128e0813d3b1
+id=2024-12-24_0600_tl_54_7DaysTue2_161021.mp3
+offset=163000
+offsetende=14400000
+
+
+"streams": [
+{
+"alias": "7DaysTue2",
+"title": null,
+"loopStreamId": "2024-12-24_0600_tl_54_7DaysTue2_161021.mp3",
+"start": 1735016417000,
+"startISO": "2024-12-24T06:00:17+01:00",
+"startOffset": -3600000,
+"end": 1735030817000,
+"endISO": "2024-12-24T10:00:17+01:00",
+"endOffset": -3600000
+}
+],
+
+
+curl 'https://loopstreamfm4.apa.at/?channel=fm4&shoutcast=0&player=radiothek_v1&referer=fm4.orf.at&_=1735358408136&userid=148d7ca6-dc0a-456f-aae7-128e0813d3b1&id=2024-12-24_0600_tl_54_7DaysTue2_161021.mp3&offset=163000&offsetende=14400000' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0' -H 'Accept: audio/webm,audio/ogg,audio/wav,audio/*;q=0.9,application/ogg;q=0.7,video/*;q=0.6,*/*;q=0.5' -H 'Accept-Language: en-US,en;q=0.5' -H 'Range: bytes=0-' -H 'Connection: keep-alive' -H 'Referer: https://fm4.orf.at/' -H 'Sec-Fetch-Dest: audio' -H 'Sec-Fetch-Mode: no-cors' -H 'Sec-Fetch-Site: cross-site' -H 'DNT: 1' -H 'Sec-GPC: 1' -H 'Accept-Encoding: identity' -H 'Priority: u=4'
+{
+
+  "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224",
+  "station": "fm4",
+  "entity": "Broadcast",
+  "id": 35836,
+  "broadcastDay": 20241224,
+  "programKey": "4MG",
+  "program": "4MG",
+  "title": "Morgengrauen",
+  "subtitle": "<p>See the Sunrise: Aufstehen leicht gemacht</p>",
+  "ressort": null,
+  "state": "C",
+  "isOnDemand": true,
+  "isGeoProtected": false,
+  "isAdFree": false,
+  "start": 1735012786000,
+  "startISO": "2024-12-24T04:59:46+01:00",
+  "startOffset": -3600000,
+  "scheduledStart": 1735012800000,
+  "scheduledStartISO": "2024-12-24T05:00:00+01:00",
+  "scheduledStartOffset": -3600000,
+  "end": 1735016417000,
+  "endISO": "2024-12-24T06:00:17+01:00",
+  "endOffset": -3600000,
+  "scheduledEnd": 1735016400000,
+  "scheduledEndISO": "2024-12-24T06:00:00+01:00",
+  "scheduledEndOffset": -3600000,
+  "niceTime": 1735012800000,
+  "niceTimeISO": "2024-12-24T05:00:00+01:00",
+  "niceTimeOffset": -3600000,
+  "description": null,
+  "pressRelease": null,
+  "moderator": null,
+  "url": "https://fm4.orf.at/radio/stories/3027863",
+  "images": [
+    {
+      "alt": "Eine Kaffeetasse",
+      "mode": "default",
+      "text": "Morgengrauen",
+      "category": "imgprog",
+      "hashCode": 648114055,
+      "versions": [
+        {
+          "path": "https://radiobilder.orf.at/fm4/imgprog/width1750/keep/RME_imgprog_4MG_1664615560242.jpg?etag=b3012be0c54991dfe15d959c978f35d5",
+          "width": 1750,
+          "hashCode": 2141628549
+        },
+        {
+          "path": "https://radiobilder.orf.at/fm4/imgprog/width875/keep/RME_imgprog_4MG_1664615560242.jpg?etag=9598b753142a5734fce458c60d7c9b5d",
+          "width": 875,
+          "hashCode": 2079304838
+        },
+        {
+          "path": "https://radiobilder.orf.at/fm4/imgprog/width434/keep/RME_imgprog_4MG_1664615560242.jpg?etag=ea29f50c148c21bc95b559543c4a4fd1",
+          "width": 434,
+          "hashCode": 1650865408
+        }
+      ],
+      "copyright": "Radio FM4"
+    }
+  ],
+  "tags": [],
+  "oe1tags": [],
+  "items": [
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2743210",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743210,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 20300,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735012786000,
+      "startISO": "2024-12-24T04:59:46+01:00",
+      "startOffset": -3600000,
+      "end": 1735012806300,
+      "endISO": "2024-12-24T05:00:06+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2743211",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743211,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 35000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735012804000,
+      "startISO": "2024-12-24T05:00:04+01:00",
+      "startOffset": -3600000,
+      "end": 1735012839000,
+      "endISO": "2024-12-24T05:00:39+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736935",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736935,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 149000,
+      "images": [
+        {
+          "alt": "Cover: Sao Paulo Motoboy - Manu Chao",
+          "mode": "default",
+          "text": "Sao Paulo Motoboy - Manu Chao",
+          "category": "imgcov",
+          "hashCode": 1830386285,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/93/st/172391_001.jpg?etag=af3bd8f21f4a3922db302ad9abf662f6",
+              "width": 400,
+              "hashCode": 334059799
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/93/ex/172391_001.jpg?etag=af3bd8f21f4a3922db302ad9abf662f6",
+              "width": 320,
+              "hashCode": 727208570
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/93/th/172391_001.jpg?etag=af3bd8f21f4a3922db302ad9abf662f6",
+              "width": 100,
+              "hashCode": 2009135911
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Sao Paulo Motoboy",
+      "interpreter": "Manu Chao",
+      "start": 1735012838000,
+      "startISO": "2024-12-24T05:00:38+01:00",
+      "startOffset": -3600000,
+      "end": 1735012987000,
+      "endISO": "2024-12-24T05:03:07+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2743214",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743214,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 10000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735012986000,
+      "startISO": "2024-12-24T05:03:06+01:00",
+      "startOffset": -3600000,
+      "end": 1735012996000,
+      "endISO": "2024-12-24T05:03:16+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736937",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736937,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 242000,
+      "images": [
+        {
+          "alt": "Cover: Heite Grob Ma Tote Aus - Voodoo Jürgens",
+          "mode": "default",
+          "text": "Heite Grob Ma Tote Aus - Voodoo Jürgens",
+          "category": "imgcov",
+          "hashCode": 232286536,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/56/st/84382_001.jpg?etag=dd8e74a9d4b521763f9fa93d9052524b",
+              "width": 400,
+              "hashCode": 553730051
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/56/ex/84382_001.jpg?etag=dd8e74a9d4b521763f9fa93d9052524b",
+              "width": 320,
+              "hashCode": 1073711886
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/56/th/84382_001.jpg?etag=dd8e74a9d4b521763f9fa93d9052524b",
+              "width": 100,
+              "hashCode": 777622067
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Heite Grob Ma Tote Aus",
+      "interpreter": "Voodoo Jürgens",
+      "start": 1735012995000,
+      "startISO": "2024-12-24T05:03:15+01:00",
+      "startOffset": -3600000,
+      "end": 1735013237000,
+      "endISO": "2024-12-24T05:07:17+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736938",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736938,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 169000,
+      "images": [
+        {
+          "alt": "Cover: Bliss - Yung Lean & FKA Twigs",
+          "mode": "default",
+          "text": "Bliss - Yung Lean & FKA Twigs",
+          "category": "imgcov",
+          "hashCode": 1841751244,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/45/st/118054_001.jpg?etag=8cbfd48084b2b6f00cea5ce6b2351e5e",
+              "width": 400,
+              "hashCode": 947309707
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/45/ex/118054_001.jpg?etag=8cbfd48084b2b6f00cea5ce6b2351e5e",
+              "width": 320,
+              "hashCode": 113958662
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/45/th/118054_001.jpg?etag=8cbfd48084b2b6f00cea5ce6b2351e5e",
+              "width": 100,
+              "hashCode": 1672581477
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Bliss",
+      "interpreter": "Yung Lean & FKA Twigs",
+      "start": 1735013234000,
+      "startISO": "2024-12-24T05:07:14+01:00",
+      "startOffset": -3600000,
+      "end": 1735013403000,
+      "endISO": "2024-12-24T05:10:03+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2743213",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743213,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 18000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735013402000,
+      "startISO": "2024-12-24T05:10:02+01:00",
+      "startOffset": -3600000,
+      "end": 1735013420000,
+      "endISO": "2024-12-24T05:10:20+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736940",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736940,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 156000,
+      "images": [
+        {
+          "alt": "Cover: Mind Control - Giant Rooks",
+          "mode": "default",
+          "text": "Mind Control - Giant Rooks",
+          "category": "imgcov",
+          "hashCode": 496715691,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/63/st/180408_001.jpg?etag=f9a6d1c1fed3108963fcc462861c2ce0",
+              "width": 400,
+              "hashCode": 1825252756
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/63/ex/180408_001.jpg?etag=f9a6d1c1fed3108963fcc462861c2ce0",
+              "width": 320,
+              "hashCode": 763984387
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/63/th/180408_001.jpg?etag=f9a6d1c1fed3108963fcc462861c2ce0",
+              "width": 100,
+              "hashCode": 794638428
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Mind Control",
+      "interpreter": "Giant Rooks",
+      "start": 1735013420000,
+      "startISO": "2024-12-24T05:10:20+01:00",
+      "startOffset": -3600000,
+      "end": 1735013576000,
+      "endISO": "2024-12-24T05:12:56+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736941",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736941,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 147000,
+      "images": [
+        {
+          "alt": "Cover: Take Out The Trash - Sladek",
+          "mode": "default",
+          "text": "Take Out The Trash - Sladek",
+          "category": "imgcov",
+          "hashCode": 823185029,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/81/st/76384_001.jpg?etag=352ea3e57adf25eae162ba23f5c5ec5d",
+              "width": 400,
+              "hashCode": 1183371825
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/81/ex/76384_001.jpg?etag=352ea3e57adf25eae162ba23f5c5ec5d",
+              "width": 320,
+              "hashCode": 663389990
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/81/th/76384_001.jpg?etag=352ea3e57adf25eae162ba23f5c5ec5d",
+              "width": 100,
+              "hashCode": 1780243353
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Take Out The Trash",
+      "interpreter": "Sladek",
+      "start": 1735013572000,
+      "startISO": "2024-12-24T05:12:52+01:00",
+      "startOffset": -3600000,
+      "end": 1735013719000,
+      "endISO": "2024-12-24T05:15:19+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2743215",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743215,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 13000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735013718000,
+      "startISO": "2024-12-24T05:15:18+01:00",
+      "startOffset": -3600000,
+      "end": 1735013731000,
+      "endISO": "2024-12-24T05:15:31+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736942",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736942,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": "<p>T* Don't Want To Fight<br/>: Alabama Shakes</p>",
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 229000,
+      "images": [
+        {
+          "alt": "Cover: Don't Wanna Fight - Alabama Shakes",
+          "mode": "default",
+          "text": "Don't Wanna Fight - Alabama Shakes",
+          "category": "imgcov",
+          "hashCode": 687388649,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/40/st/81413_001.jpg?etag=fc9c74386aed895737bf1e8d98d93103",
+              "width": 400,
+              "hashCode": 1216944810
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/40/ex/81413_001.jpg?etag=fc9c74386aed895737bf1e8d98d93103",
+              "width": 320,
+              "hashCode": 1736926645
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/40/th/81413_001.jpg?etag=fc9c74386aed895737bf1e8d98d93103",
+              "width": 100,
+              "hashCode": 114407308
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Don't Wanna Fight",
+      "interpreter": "Alabama Shakes",
+      "start": 1735013729000,
+      "startISO": "2024-12-24T05:15:29+01:00",
+      "startOffset": -3600000,
+      "end": 1735013958000,
+      "endISO": "2024-12-24T05:19:18+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736944",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736944,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 207000,
+      "images": [
+        {
+          "alt": "Cover: Die For Me (feat. Lil Yachty) - Jean Dawson",
+          "mode": "default",
+          "text": "Die For Me (feat. Lil Yachty) - Jean Dawson",
+          "category": "imgcov",
+          "hashCode": 647350682,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/32/st/179096_001.jpg?etag=6ebdacb83b9ec7f9f983ad971c1af4a7",
+              "width": 400,
+              "hashCode": 1866941071
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/32/ex/179096_001.jpg?etag=6ebdacb83b9ec7f9f983ad971c1af4a7",
+              "width": 320,
+              "hashCode": 805672702
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/32/th/179096_001.jpg?etag=6ebdacb83b9ec7f9f983ad971c1af4a7",
+              "width": 100,
+              "hashCode": 752950113
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Die For Me (feat. Lil Yachty)",
+      "interpreter": "Jean Dawson",
+      "start": 1735013962000,
+      "startISO": "2024-12-24T05:19:22+01:00",
+      "startOffset": -3600000,
+      "end": 1735014169000,
+      "endISO": "2024-12-24T05:22:49+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736945",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736945,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 243000,
+      "images": [
+        {
+          "alt": "Cover: A Way - Siren",
+          "mode": "default",
+          "text": "A Way - Siren",
+          "category": "imgcov",
+          "hashCode": 1211051715,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/07/st/82297_001.jpg?etag=b16409dbe3c68216753a5c30952c481b",
+              "width": 400,
+              "hashCode": 237925410
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/07/ex/82297_001.jpg?etag=b16409dbe3c68216753a5c30952c481b",
+              "width": 320,
+              "hashCode": 757907245
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/07/th/82297_001.jpg?etag=b16409dbe3c68216753a5c30952c481b",
+              "width": 100,
+              "hashCode": 1093426708
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "A Way",
+      "interpreter": "Siren",
+      "start": 1735014165000,
+      "startISO": "2024-12-24T05:22:45+01:00",
+      "startOffset": -3600000,
+      "end": 1735014408000,
+      "endISO": "2024-12-24T05:26:48+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2741998",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2741998,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": null,
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 34000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735014407000,
+      "startISO": "2024-12-24T05:26:47+01:00",
+      "startOffset": -3600000,
+      "end": 1735014441000,
+      "endISO": "2024-12-24T05:27:21+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736946",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736946,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": "<p>T* Keep On Dancing (Makossa & Megablast Short Disco Version)<br/>ausführendes Ensemble: Parov Stelar<br/>Komponist: Markus Füreder<br/>: Marvin Gaye</p>",
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 269000,
+      "images": [
+        {
+          "alt": "Cover: Keep On Dancing (Makossa & Megablast Short Disco Version) - Parov Stelar ft. Marvin Gaye",
+          "mode": "default",
+          "text": "Keep On Dancing (Makossa & Megablast Short Disco Version) - Parov Stelar ft. Marvin Gaye",
+          "category": "imgcov",
+          "hashCode": 1028496748,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/28/st/88441_001.jpg?etag=68d27e6da23e2d8be83b41ffa305c8dc",
+              "width": 400,
+              "hashCode": 1036855902
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/28/ex/88441_001.jpg?etag=68d27e6da23e2d8be83b41ffa305c8dc",
+              "width": 320,
+              "hashCode": 1556837737
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/28/th/88441_001.jpg?etag=68d27e6da23e2d8be83b41ffa305c8dc",
+              "width": 100,
+              "hashCode": 294496216
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Keep On Dancing (Makossa & Megablast Short Disco Version)",
+      "interpreter": "Parov Stelar ft. Marvin Gaye",
+      "start": 1735014441000,
+      "startISO": "2024-12-24T05:27:21+01:00",
+      "startOffset": -3600000,
+      "end": 1735014710000,
+      "endISO": "2024-12-24T05:31:50+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736947",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736947,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 174000,
+      "images": [
+        {
+          "alt": "Cover: Do It Again (Ft. Mallrat) - Benee",
+          "mode": "default",
+          "text": "Do It Again (Ft. Mallrat) - Benee",
+          "category": "imgcov",
+          "hashCode": 2066429627,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/14/st/150019_001.jpg?etag=e58af9eed19ebf34380963bc4cd6aac9",
+              "width": 400,
+              "hashCode": 700899916
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/14/ex/150019_001.jpg?etag=e58af9eed19ebf34380963bc4cd6aac9",
+              "width": 320,
+              "hashCode": 360368453
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/14/th/150019_001.jpg?etag=e58af9eed19ebf34380963bc4cd6aac9",
+              "width": 100,
+              "hashCode": 1918991268
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Do It Again (Ft. Mallrat)",
+      "interpreter": "Benee",
+      "start": 1735014707000,
+      "startISO": "2024-12-24T05:31:47+01:00",
+      "startOffset": -3600000,
+      "end": 1735014881000,
+      "endISO": "2024-12-24T05:34:41+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2743216",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743216,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 20000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735014882000,
+      "startISO": "2024-12-24T05:34:42+01:00",
+      "startOffset": -3600000,
+      "end": 1735014902000,
+      "endISO": "2024-12-24T05:35:02+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736949",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736949,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 156000,
+      "images": [
+        {
+          "alt": "Cover: Free - Mavi Phoenix",
+          "mode": "default",
+          "text": "Free - Mavi Phoenix",
+          "category": "imgcov",
+          "hashCode": 316078318,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/22/st/172741_001.jpg?etag=e2896342c91530bb26f1f15aeb14dba7",
+              "width": 400,
+              "hashCode": 993473626
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/22/ex/172741_001.jpg?etag=e2896342c91530bb26f1f15aeb14dba7",
+              "width": 320,
+              "hashCode": 2054741995
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/22/th/172741_001.jpg?etag=e2896342c91530bb26f1f15aeb14dba7",
+              "width": 100,
+              "hashCode": 681602486
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Free",
+      "interpreter": "Mavi Phoenix",
+      "start": 1735014902000,
+      "startISO": "2024-12-24T05:35:02+01:00",
+      "startOffset": -3600000,
+      "end": 1735015058000,
+      "endISO": "2024-12-24T05:37:38+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736950",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736950,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 165000,
+      "images": [
+        {
+          "alt": "Cover: Problematic - BoyWithUke",
+          "mode": "default",
+          "text": "Problematic - BoyWithUke",
+          "category": "imgcov",
+          "hashCode": 1305469737,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/89/st/155709_001.jpg?etag=b288998693dd537b4bbff0987ef7d868",
+              "width": 400,
+              "hashCode": 1273650871
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/89/ex/155709_001.jpg?etag=b288998693dd537b4bbff0987ef7d868",
+              "width": 320,
+              "hashCode": 212382502
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/89/th/155709_001.jpg?etag=b288998693dd537b4bbff0987ef7d868",
+              "width": 100,
+              "hashCode": 1346240313
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Problematic",
+      "interpreter": "BoyWithUke",
+      "start": 1735015056000,
+      "startISO": "2024-12-24T05:37:36+01:00",
+      "startOffset": -3600000,
+      "end": 1735015221000,
+      "endISO": "2024-12-24T05:40:21+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2740911",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2740911,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 34000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735015217000,
+      "startISO": "2024-12-24T05:40:17+01:00",
+      "startOffset": -3600000,
+      "end": 1735015251000,
+      "endISO": "2024-12-24T05:40:51+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736952",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736952,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 178000,
+      "images": [
+        {
+          "alt": "Cover: Girls Gang - Dina Summer",
+          "mode": "default",
+          "text": "Girls Gang - Dina Summer",
+          "category": "imgcov",
+          "hashCode": 38056622,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/79/st/178221_001.jpg?etag=c55750f217a281d77997a6e7246ead09",
+              "width": 400,
+              "hashCode": 605349019
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/79/ex/178221_001.jpg?etag=c55750f217a281d77997a6e7246ead09",
+              "width": 320,
+              "hashCode": 1666617388
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/79/th/178221_001.jpg?etag=c55750f217a281d77997a6e7246ead09",
+              "width": 100,
+              "hashCode": 1069727093
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Girls Gang",
+      "interpreter": "Dina Summer",
+      "start": 1735015251000,
+      "startISO": "2024-12-24T05:40:51+01:00",
+      "startOffset": -3600000,
+      "end": 1735015429000,
+      "endISO": "2024-12-24T05:43:49+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2743217",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743217,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 197000,
+      "images": [
+        {
+          "category": "imgcov",
+          "copyright": "",
+          "alt": "Cover: 10/15 - 5K HD",
+          "text": "10/15 - 5K HD",
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/34/st/30152_001.jpg?etag=0c4bd637179553a3fd15b1eeeffdc7ee",
+              "width": 400,
+              "hashCode": 791999841
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/34/ex/30152_001.jpg?etag=0c4bd637179553a3fd15b1eeeffdc7ee",
+              "width": 320,
+              "hashCode": 1311981676
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/34/th/30152_001.jpg?etag=0c4bd637179553a3fd15b1eeeffdc7ee",
+              "width": 100,
+              "hashCode": 539352277
+            }
+          ],
+          "mode": "default",
+          "hashCode": 2145872044
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "10/15",
+      "interpreter": "5K HD",
+      "start": 1735015429000,
+      "startISO": "2024-12-24T05:43:49+01:00",
+      "startOffset": -3600000,
+      "end": 1735015626000,
+      "endISO": "2024-12-24T05:47:06+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2743218",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743218,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 21000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735015626000,
+      "startISO": "2024-12-24T05:47:06+01:00",
+      "startOffset": -3600000,
+      "end": 1735015647000,
+      "endISO": "2024-12-24T05:47:27+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736954",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736954,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 194000,
+      "images": [
+        {
+          "alt": "Cover: Nobody Speak - DJ Shadow ft Run The Jewels",
+          "mode": "default",
+          "text": "Nobody Speak - DJ Shadow ft Run The Jewels",
+          "category": "imgcov",
+          "hashCode": 1541854351,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/33/st/84413_001.jpg?etag=4d89af563413d061dc77d508830681c7",
+              "width": 400,
+              "hashCode": 704881091
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/33/ex/84413_001.jpg?etag=4d89af563413d061dc77d508830681c7",
+              "width": 320,
+              "hashCode": 184899256
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/33/th/84413_001.jpg?etag=4d89af563413d061dc77d508830681c7",
+              "width": 100,
+              "hashCode": 2036233209
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Nobody Speak",
+      "interpreter": "DJ Shadow ft Run The Jewels",
+      "start": 1735015645000,
+      "startISO": "2024-12-24T05:47:25+01:00",
+      "startOffset": -3600000,
+      "end": 1735015839000,
+      "endISO": "2024-12-24T05:50:39+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736955",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736955,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 233000,
+      "images": [
+        {
+          "alt": "Cover: The Seed - Roots ft. Cody Chesnutt",
+          "mode": "default",
+          "text": "The Seed - Roots ft. Cody Chesnutt",
+          "category": "imgcov",
+          "hashCode": 1395065768,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/82/st/88524_001.jpg?etag=e61e97f2f2ed4c868ebcd8feb2c9eba5",
+              "width": 400,
+              "hashCode": 269214082
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/82/ex/88524_001.jpg?etag=e61e97f2f2ed4c868ebcd8feb2c9eba5",
+              "width": 320,
+              "hashCode": 789195917
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/82/th/88524_001.jpg?etag=e61e97f2f2ed4c868ebcd8feb2c9eba5",
+              "width": 100,
+              "hashCode": 1062138036
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "The Seed",
+      "interpreter": "Roots ft. Cody Chesnutt",
+      "start": 1735015837000,
+      "startISO": "2024-12-24T05:50:37+01:00",
+      "startOffset": -3600000,
+      "end": 1735016070000,
+      "endISO": "2024-12-24T05:54:30+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2743219",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2743219,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "J",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 5000,
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "start": 1735016068000,
+      "startISO": "2024-12-24T05:54:28+01:00",
+      "startOffset": -3600000,
+      "end": 1735016073000,
+      "endISO": "2024-12-24T05:54:33+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736956",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736956,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 215000,
+      "images": [
+        {
+          "alt": "Cover: Out Of Luck (ft. Lolo Zouaï & Amber Mark) - Tkay Maidza",
+          "mode": "default",
+          "text": "Out Of Luck (ft. Lolo Zouaï & Amber Mark) - Tkay Maidza",
+          "category": "imgcov",
+          "hashCode": 2147162199,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/80/st/155488_001.png?etag=7aac52a870cc5e35a621c21458553fce",
+              "width": 400,
+              "hashCode": 289019812
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/80/ex/155488_001.png?etag=7aac52a870cc5e35a621c21458553fce",
+              "width": 320,
+              "hashCode": 1350288181
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/80/th/155488_001.png?etag=7aac52a870cc5e35a621c21458553fce",
+              "width": 100,
+              "hashCode": 1386056300
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Out Of Luck (ft. Lolo Zouaï & Amber Mark)",
+      "interpreter": "Tkay Maidza",
+      "start": 1735016069000,
+      "startISO": "2024-12-24T05:54:29+01:00",
+      "startOffset": -3600000,
+      "end": 1735016284000,
+      "endISO": "2024-12-24T05:58:04+01:00",
+      "endOffset": -3600000
+    },
+    {
+      "href": "https://audioapi.orf.at/fm4/api/json/4.0/broadcast/4MG/20241224/item/2736958",
+      "station": "fm4",
+      "entity": "BroadcastItem",
+      "id": 2736958,
+      "broadcastDay": 20241224,
+      "programKey": "4MG",
+      "program": "4MG",
+      "type": "M",
+      "description": null,
+      "state": "C",
+      "isOnDemand": true,
+      "isGeoProtected": false,
+      "isCompleted": true,
+      "duration": 124000,
+      "images": [
+        {
+          "alt": "Cover: Mansard Roof - Vampire Weekend",
+          "mode": "default",
+          "text": "Mansard Roof - Vampire Weekend",
+          "category": "imgcov",
+          "hashCode": 1680642820,
+          "versions": [
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/00/st/168220_001.jpg?etag=f0058984d55cbae2b9ebffc688220bc3",
+              "width": 400,
+              "hashCode": 951193675
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/00/ex/168220_001.jpg?etag=f0058984d55cbae2b9ebffc688220bc3",
+              "width": 320,
+              "hashCode": 110074694
+            },
+            {
+              "path": "https://radiobilder.orf.at/radiothek/covers/00/th/168220_001.jpg?etag=f0058984d55cbae2b9ebffc688220bc3",
+              "width": 100,
+              "hashCode": 1668697509
+            }
+          ],
+          "copyright": ""
+        }
+      ],
+      "oe1tags": [],
+      "tags": [],
+      "songId": null,
+      "isAdFree": false,
+      "title": "Mansard Roof",
+      "interpreter": "Vampire Weekend",
+      "start": 1735016283000,
+      "startISO": "2024-12-24T05:58:03+01:00",
+      "startOffset": -3600000,
+      "end": 1735016407000,
+      "endISO": "2024-12-24T06:00:07+01:00",
+      "endOffset": -3600000
+    }
+  ],
+  "streams": [
+    {
+      "alias": "7DaysTue1",
+      "title": null,
+      "loopStreamId": "2024-12-24_0459_tl_54_7DaysTue1_161020.mp3",
+      "start": 1735012786000,
+      "startISO": "2024-12-24T04:59:46+01:00",
+      "startOffset": -3600000,
+      "end": 1735016417000,
+      "endISO": "2024-12-24T06:00:17+01:00",
+      "endOffset": -3600000
+    }
+  ],
+  "marks": [
+    {
+      "type": "in",
+      "timestamp": 1735012786000,
+      "timestampISO": "2024-12-24T04:59:46+01:00",
+      "timestampOffset": -3600000
+    },
+    {
+      "type": "out",
+      "timestamp": 1735016417000,
+      "timestampISO": "2024-12-24T06:00:17+01:00",
+      "timestampOffset": -3600000
+    }
+  ]
+}
