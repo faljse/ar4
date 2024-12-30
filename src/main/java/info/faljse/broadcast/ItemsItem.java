@@ -127,7 +127,7 @@ public class ItemsItem{
 	}
 
 	public String getTitle(){
-		return title;
+		return title==null?"":title;
 	}
 
 	public int getDuration(){
@@ -175,7 +175,7 @@ public class ItemsItem{
 	}
 
 	public String getInterpreter(){
-		return interpreter;
+		return interpreter==null?"":interpreter;
 	}
 
 	public boolean isIsAdFree(){
