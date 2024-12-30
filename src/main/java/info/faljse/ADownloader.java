@@ -10,6 +10,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -60,65 +61,134 @@ public class ADownloader {
 
     private void downloadBroadcast(Broadcast bc) {
         HttpClient client = HttpClient.newHttpClient();
+        String detailUri=bc.getHref()+"?items=true";
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(bc.getHref()))
+                .uri(URI.create(detailUri))
                 .build();
         try {
             HttpResponse<String> response =
                     client.send(request, HttpResponse.BodyHandlers.ofString());
             ObjectMapper objectMapper = new ObjectMapper();
-            System.out.printf("Loading \"%s\"\n", bc.getHref());
-            var broadcastDetail = objectMapper.readValue(response.body(), ResponseDetail.class).getBroadcast();
-            executorService.submit(() -> dlStreamItem(broadcastDetail));
+            System.out.printf("Loading \"%s\"\n", detailUri);
+            String origDetailJSON=response.body();
+            var broadcastDetail = objectMapper.readValue(origDetailJSON, ResponseDetail.class).getBroadcast();
+            for(int i=0;i<broadcastDetail.getImages().size();i++) {
+                var image=broadcastDetail.getImages().get(i);
+                try {
+                    dlImage(image, i, broadcastDetail);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            for(var item:broadcastDetail.getItems()) {
+                try {
+                    dlItemImage(item, broadcastDetail);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            executorService.submit(() -> dlStreamItem(broadcastDetail, origDetailJSON));
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void dlStreamItem(Broadcast broadcastDetail) {
+    private void dlItemImage(ItemsItem item, Broadcast broadcastDetail) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
-        String dateStr = broadcastDetail.getStart();
-        dateStr = dateStr.substring(0, dateStr.indexOf("."));
+        for(int i=0;i<item.getImages().size();i++) {
+            var image=item.getImages().get(i);
+            for(var ver:image.getVersions()) {
+                Path imageFilePath = Paths.get(folderName, String.format("%d_item_%d_%d_%d.jpg", broadcastDetail.getId(), item.getId(), i, ver.getWidth()));
+                if(Files.exists(imageFilePath)) {
+                    continue;
+                }
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create(ver.getPath()))
+                        .build();
+
+                HttpResponse<byte[]> response = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
+                if (response.statusCode() == 200) {
+                    byte[] responseBody = response.body();
+                    Files.write(imageFilePath, responseBody);
+                }
+            }
+        }
+    }
+
+    private void dlImage(ImagesItem image, int i, Broadcast broadcastDetail) throws IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+        for(var version: image.getVersions()) {
+            Path imageFilePath = Paths.get(folderName, String.format("%d_%d_%d.jpg", broadcastDetail.getId(), i, version.getWidth()));
+            if(Files.exists(imageFilePath)) {
+                continue;
+            }
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(version.getPath()))
+                    .build();
+
+            HttpResponse<byte[]> response = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
+            if (response.statusCode() == 200) {
+                byte[] responseBody = response.body();
+                Files.write(imageFilePath, responseBody);
+            }
+        }
+    }
+
+
+
+    private void dlStreamItem(Broadcast broadcastDetail, String origDetailJSON) {
+        HttpClient client = HttpClient.newHttpClient();
+        var jsonOutFile=Paths.get(folderName, String.format("%d.json", broadcastDetail.getId())).toFile();
+        if(!jsonOutFile.exists()) {
+            try (var writer = new BufferedWriter(new FileWriter(jsonOutFile))) {
+                writer.write(origDetailJSON);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            System.out.printf("Skip (File exists): %s\n",jsonOutFile.toString());
+        }
+
         String lastFileURL="";
         for (int i = 0; i < broadcastDetail.getStreams().size(); i++) {
             var stream=broadcastDetail.getStreams().get(i);
-            String fileName = String.format("%s_%s_%d.mp3", dateStr, broadcastDetail.getId(), i);
+            String fileName = String.format("%d_%d.mp3", broadcastDetail.getId(), i);
             if (Paths.get(folderName, fileName).toFile().exists()) {
-                System.out.printf("Skip %d\n", broadcastDetail.getId());
+                System.out.printf("Skip (File exists)%d\n", broadcastDetail.getId());
                 return;
             }
             var streamURL=stream.getUrls().getProgressive();
             var fileURL=streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length());
             if(fileURL.equals(lastFileURL)) {
-                System.out.printf("same url: %s\n", fileURL);
+                System.out.printf("Skip (same url): %s\n", fileURL);
                 continue;
             }
             lastFileURL=fileURL;
             dlFile(client, fileURL, fileName);
         }
 
-        try (OutputStream jsonOut = new FileOutputStream(Paths.get(folderName, String.format("%s_%s.json", dateStr, broadcastDetail.getId())).toFile())) {
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(jsonOut, broadcastDetail);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
     private void dlFile(HttpClient client, String url, String fileName) {
 
+        Path partPath=Paths.get(folderName, fileName + ".part");
+        Path finalPath=Paths.get(folderName, fileName);
+        if(Files.exists(finalPath)) {
+            System.out.printf("Skip (file exists) %s\n", finalPath);
+        }
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .build();
-        System.out.println(url);
-
         System.out.printf("Downloading %s\n", url);
 
-        Path path = Paths.get(folderName, fileName + ".part");
-        try (OutputStream outStream = new FileOutputStream(path.toFile())) {
+        try (OutputStream outStream = new FileOutputStream(partPath.toFile())) {
             HttpResponse<InputStream> response =
                     client.send(request, HttpResponse.BodyHandlers.ofInputStream());
-
             byte[] buffer = new byte[8 * 1024];
             int bytesRead;
             int totalBytesRead = 0;
@@ -131,14 +201,14 @@ public class ADownloader {
                     lastBytesRead = totalBytesRead;
                 }
             }
-
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
-        } finally {
-            File fileToMove = path.toFile();
-            fileToMove.renameTo(Paths.get(folderName, fileName).toFile());
         }
-
+        try {
+            Files.move(partPath, finalPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static List<BroadcastDay> readJSON(String jsonData) throws JsonProcessingException {

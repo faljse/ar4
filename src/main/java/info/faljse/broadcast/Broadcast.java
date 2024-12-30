@@ -218,7 +218,7 @@ public class Broadcast {
     }
 
     public List<ImagesItem> getImages() {
-        return images;
+        return images==null?List.of():images;
     }
 
     public String getScheduledEnd() {

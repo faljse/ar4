@@ -33,7 +33,10 @@ public class ItemsItem{
 	private String station;
 
 	@JsonProperty("end")
-	private long end;
+	private String end;
+
+	@JsonProperty("expiry")
+	private String expiry;
 
 	@JsonProperty("href")
 	private String href;
@@ -54,10 +57,13 @@ public class ItemsItem{
 	private List<Object> oe1tags;
 
 	@JsonProperty("images")
-	private Object images;
+	private List<ImagesItem> images;
 
 	@JsonProperty("start")
-	private long start;
+	private String start;
+
+	@JsonProperty("stream")
+	private Stream stream;
 
 	@JsonProperty("interpreter")
 	private String interpreter;
@@ -67,6 +73,10 @@ public class ItemsItem{
 
 	@JsonProperty("tags")
 	private List<Object> tags;
+
+	@JsonProperty("orfcategories")
+	private List<OrfcategoriesItem> orfcategories;
+
 
 	@JsonProperty("isGeoProtected")
 	private boolean isGeoProtected;
@@ -128,7 +138,7 @@ public class ItemsItem{
 		return station;
 	}
 
-	public long getEnd(){
+	public String getEnd(){
 		return end;
 	}
 
@@ -156,11 +166,11 @@ public class ItemsItem{
 		return oe1tags;
 	}
 
-	public Object getImages(){
-		return images;
+	public List<ImagesItem> getImages(){
+		return images==null?List.of():images;
 	}
 
-	public long getStart(){
+	public String getStart(){
 		return start;
 	}
 
@@ -206,5 +216,17 @@ public class ItemsItem{
 
 	public Object getSubtitle(){
 		return subtitle;
+	}
+
+	public List<OrfcategoriesItem> getOrfcategories() {
+		return orfcategories;
+	}
+
+	public String getExpiry() {
+		return expiry;
+	}
+
+	public Stream getStream() {
+		return stream;
 	}
 }
