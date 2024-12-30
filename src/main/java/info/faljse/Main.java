@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.concurrent.Executors;
 
 public class Main {
-    private static int threadCount=4;
+    private static int threadCount=8;
 
     public static void main(String[] args) {
         Main m=new Main();
