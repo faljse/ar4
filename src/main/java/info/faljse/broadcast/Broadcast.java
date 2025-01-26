@@ -1,10 +1,14 @@
 package info.faljse.broadcast;
 
+import java.nio.file.Path;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Broadcast {
+
+    public Path mp3file;
+
 
     @JsonProperty("moderator")
     private Object moderator;

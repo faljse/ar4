@@ -1,10 +1,14 @@
 package info.faljse;
 
+import java.net.http.HttpClient;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 
 public class Main {
-    private static int threadCount=8;
+    private static final int concurrency =8;
 
     public static void main(String[] args) {
         Main m=new Main();
@@ -16,33 +20,49 @@ public class Main {
     }
 
     private void download() throws InterruptedException {
-        var es=Executors.newFixedThreadPool(4);
-        var dlers=List.of(new ADownloader("fm4",
-            "https://audioapi.orf.at/fm4/api/json/5.0/broadcasts/",
-                threadCount),
-        new ADownloader("oe1",
-                "https://audioapi.orf.at/oe1/api/json/5.0/broadcasts/",
-                threadCount),
-        new ADownloader("oe3",
-                "https://audioapi.orf.at/oe3/api/json/5.0/broadcasts/",
-                threadCount),
-        new ADownloader("wie",
-                "https://audioapi.orf.at/wie/api/json/5.0/broadcasts/",
-                threadCount)
-        );
 
-        for(var dler:dlers) {
-           es.submit(dler::download);
-        }
-        long lastBytes=0;
-        while (!es.isTerminated()) {
-            long bytes=0;
-            for(var dler:dlers) {
-                bytes+=dler.bytesLoaded.get();
+
+        HttpClient httpClient= HttpClient.newHttpClient();
+        try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
+            var dlers = List.of(
+                    new ADownloader("fm4",
+                            "https://audioapi.orf.at/fm4/api/json/5.0/broadcasts/", httpClient,
+                            concurrency),
+                    new ADownloader("oe1",
+                            "https://audioapi.orf.at/oe1/api/json/5.0/broadcasts/", httpClient,
+                            concurrency),
+                    new ADownloader("oe3",
+                            "https://audioapi.orf.at/oe3/api/json/5.0/broadcasts/", httpClient,
+                            concurrency),
+                    new ADownloader("wie",
+                            "https://audioapi.orf.at/wie/api/json/5.0/broadcasts/", httpClient,
+                            concurrency)
+            );
+            CountDownLatch doneSignal = new CountDownLatch(dlers.size());
+            for (var dler : dlers) {
+                es.submit(() -> dler.download(doneSignal));
             }
-            System.out.printf("%d kB/s\n", (bytes-lastBytes)/1024);
-            lastBytes=bytes;
-            Thread.sleep(1000);
+            startStatsTimer(dlers);
+            doneSignal.await();
         }
+    }
+
+
+    private void startStatsTimer(List<ADownloader> dlers) {
+        Timer t=new Timer("Stats");
+        t.scheduleAtFixedRate(new TimerTask() {
+            long lastBytes = 0;
+            @Override
+            public void run() {
+                long bytes = 0;
+                String stat="";
+                for (var dler : dlers) {
+                    bytes += dler.bytesLoaded.get();
+                    stat += dler.getPermits() + " ";
+                }
+                System.out.printf(stat +"%d kB/s\n", (bytes - lastBytes) / 1024);
+                lastBytes = bytes;
+            }
+        },0,500);
     }
 }
