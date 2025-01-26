@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import info.faljse.broadcast.*;
 
+
 import java.io.*;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -13,6 +14,7 @@ import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
@@ -24,20 +26,17 @@ public class ADownloader {
     private final String folderName;
 
     private final HttpClient client;
-    private final Semaphore httpClientSemaphore;
     public AtomicLong bytesLoaded = new AtomicLong();
+    private List<FileDownload> fileDownloadList=new ArrayList<>();
 
-    public ADownloader(String folderName, String broadcastsURL, HttpClient client, int concurrency) {
+    public ADownloader(String folderName, String broadcastsURL, HttpClient client) {
         this.broadcastsURL = broadcastsURL;
         this.folderName = folderName;
         this.client=client;
-        this.httpClientSemaphore=new Semaphore(concurrency);
     }
 
-    public void download(CountDownLatch doneSignal) {
-        var es = Executors.newVirtualThreadPerTaskExecutor();
+    public void downloadMetadata(CountDownLatch doneSignal) {
         try {
-            httpClientSemaphore.acquire();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(broadcastsURL))
                     .build();
@@ -46,20 +45,77 @@ public class ADownloader {
                     client.send(request, HttpResponse.BodyHandlers.ofString());
             var broadcasts = readJSON(response.body());
             for (var broadcastDay : broadcasts) {
-                es.submit(() -> {
-                    try {
-                        downloadBroadcastDay(broadcastDay);
-                    } catch (JsonProcessingException e) {
-                        e.printStackTrace();
-                    }
-                });
+                downloadBroadcastDay(broadcastDay);
             }
         } catch (Exception e) {
             e.printStackTrace();
-
         } finally {
-            httpClientSemaphore.release();
             doneSignal.countDown();
+        }
+    }
+
+    public void downloadFiles(int concurrency) {
+        Semaphore s=new Semaphore(concurrency);
+        var es= Executors.newVirtualThreadPerTaskExecutor();
+        for(var fd:fileDownloadList){
+            es.submit(()->{
+                try {
+                    s.acquire();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }finally {
+                    s.release();
+                }
+                downloadFile(fd.url, fd.fileName);
+            });
+        }
+        es.shutdown();
+    }
+
+    private void downloadFile(String url, String fileName) {
+        Path partPath=Paths.get(folderName, fileName + ".part");
+        Path finalPath=Paths.get(folderName, fileName);
+        if(Files.exists(finalPath)) {
+            System.out.printf("Skip (file exists) %s\n", finalPath);
+        }
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .build();
+        System.out.printf("Downloading %s\n", url);
+        int totalBytesRead = 0;
+        long contentLength = -1;
+        try (OutputStream outStream = new FileOutputStream(partPath.toFile())) {
+            HttpResponse<InputStream> response =
+                    client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+            contentLength = response.headers().firstValueAsLong("content-length").getAsLong();
+            byte[] buffer = new byte[8 * 1024];
+            int bytesRead;
+
+            int lastBytesRead = 0;
+            while ((bytesRead = response.body().read(buffer)) != -1) {
+                outStream.write(buffer, 0, bytesRead);
+                this.bytesLoaded.getAndAdd(bytesRead);
+                totalBytesRead += bytesRead;
+                if (totalBytesRead - lastBytesRead > 1024 * 1024) {
+                    lastBytesRead = totalBytesRead;
+                }
+            }
+            System.out.printf("Finished %s\n", url);
+        } catch (IOException e) {
+            if(contentLength > 0 &&
+                    totalBytesRead > 0 &&
+                    contentLength != totalBytesRead &&
+                    Math.abs(contentLength-totalBytesRead) < 4096){ //Allow the file to be 4k off.
+                System.out.printf("Ignoring wrong content-length finishing download \"%s\" as \"%s\": %d bytes received instead of %d\n", url, fileName, totalBytesRead, contentLength);
+            }
+            else throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            Files.move(partPath, finalPath);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -76,13 +132,10 @@ public class ADownloader {
                 .build();
         HttpResponse<String> response;
         try {
-            httpClientSemaphore.acquire();
             response =
                     client.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
-        } finally {
-            httpClientSemaphore.release();
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -106,9 +159,7 @@ public class ADownloader {
                 e.printStackTrace();
             }
         }
-
         dlStreamItem(broadcastDetail, origDetailJSON);
-
     }
 
     private void dlItemImage(ItemsItem item, Broadcast broadcastDetail) throws IOException, InterruptedException {
@@ -138,11 +189,9 @@ public class ADownloader {
             if(Files.exists(imageFilePath)) {
                 continue;
             }
-
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(version.getPath()))
                     .build();
-
             HttpResponse<byte[]> response = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
             if (response.statusCode() == 200) {
                 byte[] responseBody = response.body();
@@ -178,69 +227,15 @@ public class ADownloader {
                 continue;
             }
             lastFileURL=fileURL;
-            dlFile(fileURL, fileName);
-        }
-
-
-    }
-
-    private void dlFile(String url, String fileName) {
-
-        Path partPath=Paths.get(folderName, fileName + ".part");
-        Path finalPath=Paths.get(folderName, fileName);
-        if(Files.exists(finalPath)) {
-            System.out.printf("Skip (file exists) %s\n", finalPath);
-        }
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .build();
-        System.out.printf("Downloading %s\n", url);
-        int totalBytesRead = 0;
-        long contentLength = -1;
-        try (OutputStream outStream = new FileOutputStream(partPath.toFile())) {
-            httpClientSemaphore.acquire();
-            HttpResponse<InputStream> response =
-                    client.send(request, HttpResponse.BodyHandlers.ofInputStream());
-            contentLength = response.headers().firstValueAsLong("content-length").getAsLong();
-            byte[] buffer = new byte[8 * 1024];
-            int bytesRead;
-
-            int lastBytesRead = 0;
-            while ((bytesRead = response.body().read(buffer)) != -1) {
-                outStream.write(buffer, 0, bytesRead);
-                this.bytesLoaded.getAndAdd(bytesRead);
-                totalBytesRead += bytesRead;
-                if (totalBytesRead - lastBytesRead > 1024 * 1024) {
-                    lastBytesRead = totalBytesRead;
-                }
-            }
-        } catch (IOException e) {
-            if(contentLength > 0 &&
-                totalBytesRead > 0 &&
-                contentLength != totalBytesRead &&
-                Math.abs(contentLength-totalBytesRead) < 4096){ //Allow the file to be 4k off.
-                System.out.printf("Wrong content-length downloading \"%s\" as \"%s\": %d bytes received instead of %d\n", url, fileName, totalBytesRead, contentLength);
-            }
-            else throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } finally {
-            httpClientSemaphore.release();
-        }
-        try {
-            Files.move(partPath, finalPath);
-        } catch (IOException e) {
-            e.printStackTrace();
+            this.fileDownloadList.add(new FileDownload(fileURL, fileName));
         }
     }
+
+
 
     private static List<BroadcastDay> readJSON(String jsonData) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(jsonData, new TypeReference<Response>() {
         }).getPayload();
-    }
-
-    public int getPermits() {
-        return httpClientSemaphore.availablePermits();
     }
 }
