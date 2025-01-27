@@ -1,5 +1,6 @@
 package info.faljse;
 
+import info.faljse.cmd.MainCmd;
 import picocli.CommandLine;
 
 public class Main  {

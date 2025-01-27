@@ -26,17 +26,17 @@ public class MainDownloader {
         downloadFiles(downloaders);
     }
 
-    public List<BroadcastDownloader> downloadMetadata() throws InterruptedException {
+    public List<StationDownloader> downloadMetadata() throws InterruptedException {
         HttpClient httpClient= HttpClient.newHttpClient();
         try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
             var aDownloaders = List.of(
-                    new BroadcastDownloader(path.resolve("fm4"),
+                    new StationDownloader(path.resolve("fm4"),
                             "https://audioapi.orf.at/fm4/api/json/5.0/broadcasts/", httpClient),
-                    new BroadcastDownloader(path.resolve("oe1"),
+                    new StationDownloader(path.resolve("oe1"),
                             "https://audioapi.orf.at/oe1/api/json/5.0/broadcasts/", httpClient),
-                    new BroadcastDownloader(path.resolve("oe3"),
+                    new StationDownloader(path.resolve("oe3"),
                             "https://audioapi.orf.at/oe3/api/json/5.0/broadcasts/", httpClient),
-                    new BroadcastDownloader(path.resolve("wie"),
+                    new StationDownloader(path.resolve("wie"),
                             "https://audioapi.orf.at/wie/api/json/5.0/broadcasts/", httpClient)
             );
             CountDownLatch doneSignal = new CountDownLatch(aDownloaders.size());
@@ -48,7 +48,7 @@ public class MainDownloader {
         }
     }
 
-    public void downloadFiles(List<BroadcastDownloader> aDownloaders) throws InterruptedException {
+    public void downloadFiles(List<StationDownloader> aDownloaders) throws InterruptedException {
         try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
             for (var aDownloader : aDownloaders) {
                 es.submit(() -> aDownloader.downloadFiles(concurrency));
@@ -60,7 +60,7 @@ public class MainDownloader {
         }
     }
 
-    private void startStatsTimer(List<BroadcastDownloader> dlers) {
+    private void startStatsTimer(List<StationDownloader> dlers) {
         Timer t=new Timer("Stats", true);
         t.scheduleAtFixedRate(new TimerTask() {
             long lastBytes = 0;

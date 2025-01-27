@@ -1,4 +1,4 @@
-package info.faljse;
+package info.faljse.cmd;
 
 import picocli.CommandLine;
 
@@ -6,6 +6,7 @@ import picocli.CommandLine;
         name = "ar4",
         subcommands = {
                 ArchiveCmd.class,
+                PlaylistCmd.class
         })
 public class MainCmd  {
 

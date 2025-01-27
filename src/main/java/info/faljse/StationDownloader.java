@@ -13,7 +13,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -22,16 +21,16 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class BroadcastDownloader {
+public class StationDownloader {
     private final String broadcastsURL;
     private final Path folder;
 
     private final HttpClient client;
     public AtomicLong bytesLoaded = new AtomicLong();
-    private List<FileDownload> fileDownloadList=new ArrayList<>();
+    private final List<FileDownload> fileDownloadList=new ArrayList<>();
     private int downloadsDone=0;
 
-    public BroadcastDownloader(Path folder, String broadcastsURL, HttpClient client) {
+    public StationDownloader(Path folder, String broadcastsURL, HttpClient client) {
         this.broadcastsURL = broadcastsURL;
         this.folder = folder;
         this.client=client;
@@ -239,8 +238,6 @@ public class BroadcastDownloader {
         }
     }
 
-
-
     private static List<BroadcastDay> readJSON(String jsonData) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(jsonData, new TypeReference<Response>() {
@@ -253,5 +250,16 @@ public class BroadcastDownloader {
 
     public String getFolderName() {
         return folder.toString();
+    }
+
+    public static class FileDownload {
+
+        public String url;
+        public final String fileName;
+
+        FileDownload(String url, String fileName) {
+            this.url=url;
+            this.fileName=fileName;
+        }
     }
 }

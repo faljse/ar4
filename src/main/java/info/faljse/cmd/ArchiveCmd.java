@@ -1,5 +1,6 @@
-package info.faljse;
+package info.faljse.cmd;
 
+import info.faljse.MainDownloader;
 import picocli.CommandLine;
 import java.nio.file.Path;
 import java.util.concurrent.Callable;

@@ -1,4 +1,4 @@
-package info.faljse;
+package info.faljse.experiments;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

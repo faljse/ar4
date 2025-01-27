@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Playlist {
 
-    Playlist(String title) {
+    public Playlist(String title) {
         this.title=title;
     }
 
@@ -18,7 +18,7 @@ public class Playlist {
     public List<Broadcast> entries=new ArrayList<>();
     public String description;
 
-    public void savem3u(Path filename) throws IOException {
+    public void savem3u(Path filename, boolean absolute) throws IOException {
         StringBuilder sb=new StringBuilder();
         sb.append("#EXTM3U\r\n");
         for(Broadcast b:entries) {
@@ -27,7 +27,11 @@ public class Playlist {
             if(!Files.exists(b.mp3file))
                 continue;
             sb.append(String.format("#EXTINF:%d, %s (%s)\r\n", b.getDuration()/1000, b.getTitle(), b.getStart()));
-            sb.append(String.format("%s\r\n", "../../"+b.mp3file.toString()));
+            String relaPath=filename.getParent().relativize(b.mp3file).toString();
+            if(absolute)
+                sb.append(String.format("%s\r\n",  b.mp3file.toAbsolutePath()));
+            else
+                sb.append(String.format("%s\r\n", relaPath));
         }
         Files.writeString(filename, sb.toString());
 
