@@ -13,9 +13,11 @@ import java.util.concurrent.TimeUnit;
 
 public class MainDownloader {
     private final Path path;
+    private final int concurrency;
 
-    public MainDownloader(Path path) {
+    public MainDownloader(Path path, int concurrency) {
         this.path=path;
+        this.concurrency=concurrency;
     }
 
     public void download() throws InterruptedException, IOException {
@@ -49,7 +51,7 @@ public class MainDownloader {
     public void downloadFiles(List<BroadcastDownloader> aDownloaders) throws InterruptedException {
         try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
             for (var aDownloader : aDownloaders) {
-                es.submit(() -> aDownloader.downloadFiles(4));
+                es.submit(() -> aDownloader.downloadFiles(concurrency));
             }
             startStatsTimer(aDownloaders);
             es.shutdown();

@@ -9,11 +9,14 @@ import java.util.concurrent.Callable;
 public class ArchiveCmd implements Callable<Integer> {
 
     @CommandLine.Parameters(paramLabel = "folder", description = "archive folder")
-    private Path archiveFolder;
+    Path archiveFolder;
+
+    @CommandLine.Option(names = {"-c", "--concurrency"}, description = "Concurrent stream downloads per radio station.", defaultValue = "4")
+    int concurrency;
 
     @Override
     public Integer call() throws Exception {
-        MainDownloader m=new MainDownloader(archiveFolder);
+        MainDownloader m=new MainDownloader(archiveFolder, concurrency);
         m.download();
         return 0;
     }
