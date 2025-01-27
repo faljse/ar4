@@ -14,8 +14,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.Executors;
 
 public class ConvertMain {
-    private static int threadCount=8;
-
     public static void main(String[] args) {
         ConvertMain m=new ConvertMain();
         try {
@@ -54,8 +52,6 @@ public class ConvertMain {
 
         for(var item:broadcast.getItems()) {
             //ffmpeg -i file.mkv -ss 00:00:20 -to 00:00:40 -c copy file-2.mkv
-
-
             var date=ZonedDateTime.parse(item.getStart());
             String dateString=date.format( DateTimeFormatter.ofPattern("yyyyMMdd-HHmm"));
 

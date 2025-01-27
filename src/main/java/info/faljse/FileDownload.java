@@ -9,6 +9,4 @@ public class FileDownload {
         this.url=url;
         this.fileName=fileName;
     }
-
-
 }

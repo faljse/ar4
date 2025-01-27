@@ -19,25 +19,27 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class ADownloader {
+public class BroadcastDownloader {
     private final String broadcastsURL;
-    private final String folderName;
+    private final Path folder;
 
     private final HttpClient client;
     public AtomicLong bytesLoaded = new AtomicLong();
     private List<FileDownload> fileDownloadList=new ArrayList<>();
     private int downloadsDone=0;
 
-    public ADownloader(String folderName, String broadcastsURL, HttpClient client) {
+    public BroadcastDownloader(Path folder, String broadcastsURL, HttpClient client) {
         this.broadcastsURL = broadcastsURL;
-        this.folderName = folderName;
+        this.folder = folder;
         this.client=client;
     }
 
     public void downloadMetadata(CountDownLatch doneSignal) {
         try {
+            Files.createDirectories(this.folder);
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(broadcastsURL))
                     .build();
@@ -55,7 +57,7 @@ public class ADownloader {
         }
     }
 
-    public void downloadFiles(int concurrency) {
+    public void downloadFiles(int concurrency)  {
         Semaphore s=new Semaphore(concurrency);
         var es= Executors.newVirtualThreadPerTaskExecutor();
         for(var fd:fileDownloadList){
@@ -72,18 +74,23 @@ public class ADownloader {
             });
         }
         es.shutdown();
+        try {
+            es.awaitTermination(1, TimeUnit.DAYS);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void downloadFile(String url, String fileName) {
-        Path partPath=Paths.get(folderName, fileName + ".part");
-        Path finalPath=Paths.get(folderName, fileName);
+        Path partPath= folder.resolve(fileName + ".part");
+        Path finalPath=folder.resolve(fileName);
         if(Files.exists(finalPath)) {
             System.out.printf("Skip (file exists) %s\n", finalPath);
         }
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .build();
-        System.out.printf("Downloading %s\n", url);
+        System.out.printf("Downloading Stream \"%s\" as \"%s\"\n", url, fileName);
         int totalBytesRead = 0;
         long contentLength = -1;
         try (OutputStream outStream = new FileOutputStream(partPath.toFile())) {
@@ -92,7 +99,6 @@ public class ADownloader {
             contentLength = response.headers().firstValueAsLong("content-length").getAsLong();
             byte[] buffer = new byte[8 * 1024];
             int bytesRead;
-
             int lastBytesRead = 0;
             while ((bytesRead = response.body().read(buffer)) != -1) {
                 outStream.write(buffer, 0, bytesRead);
@@ -141,7 +147,7 @@ public class ADownloader {
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
-        System.out.printf("Loading \"%s\"\n", detailUri);
+        System.out.printf("Broadcast json download: \"%s\"\n", detailUri);
         String origDetailJSON=response.body();
         var broadcastDetail = objectMapper.readValue(origDetailJSON, ResponseDetail.class).getBroadcast();
         for(int i=0;i<broadcastDetail.getImages().size();i++) {
@@ -168,7 +174,7 @@ public class ADownloader {
         for(int i=0;i<item.getImages().size();i++) {
             var image=item.getImages().get(i);
             for(var ver:image.getVersions()) {
-                Path imageFilePath = Paths.get(folderName, String.format("%d_item_%d_%d_%d.jpg", broadcastDetail.getId(), item.getId(), i, ver.getWidth()));
+                Path imageFilePath = folder.resolve(String.format("%d_item_%d_%d_%d.jpg", broadcastDetail.getId(), item.getId(), i, ver.getWidth()));
                 if(Files.exists(imageFilePath)) {
                     continue;
                 }
@@ -187,7 +193,7 @@ public class ADownloader {
 
     private void dlImage(ImagesItem image, int i, Broadcast broadcastDetail) throws IOException, InterruptedException {
         for(var version: image.getVersions()) {
-            Path imageFilePath = Paths.get(folderName, String.format("%d_%d_%d.jpg", broadcastDetail.getId(), i, version.getWidth()));
+            Path imageFilePath = folder.resolve(String.format("%d_%d_%d.jpg", broadcastDetail.getId(), i, version.getWidth()));
             if(Files.exists(imageFilePath)) {
                 continue;
             }
@@ -203,7 +209,7 @@ public class ADownloader {
     }
 
     private void dlStreamItem(Broadcast broadcastDetail, String origDetailJSON) {
-        var jsonOutFile=Paths.get(folderName, String.format("%d.json", broadcastDetail.getId())).toFile();
+        var jsonOutFile=folder.resolve(String.format("%d.json", broadcastDetail.getId())).toFile();
         if(!jsonOutFile.exists()) {
             try (var writer = new BufferedWriter(new FileWriter(jsonOutFile))) {
                 writer.write(origDetailJSON);
@@ -218,7 +224,7 @@ public class ADownloader {
         for (int i = 0; i < broadcastDetail.getStreams().size(); i++) {
             var stream=broadcastDetail.getStreams().get(i);
             String fileName = String.format("%d_%d.mp3", broadcastDetail.getId(), i);
-            if (Paths.get(folderName, fileName).toFile().exists()) {
+            if (folder.resolve(fileName).toFile().exists()) {
                 System.out.printf("Skip (File exists)%d\n", broadcastDetail.getId());
                 return;
             }
@@ -246,6 +252,6 @@ public class ADownloader {
     }
 
     public String getFolderName() {
-        return folderName;
+        return folder.toString();
     }
 }
