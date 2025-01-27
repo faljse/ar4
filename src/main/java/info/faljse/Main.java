@@ -6,6 +6,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -13,8 +14,8 @@ public class Main {
     public static void main(String[] args) {
         Main m=new Main();
         try {
-            var dlers=m.downloadMetadata();
-            m.downloadFiles(dlers);
+            var downloaders=m.downloadMetadata();
+            m.downloadFiles(downloaders);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -38,27 +39,24 @@ public class Main {
             for (var aDownloader : aDownloaders) {
                 es.submit(() -> aDownloader.downloadMetadata(doneSignal));
             }
-            startStatsTimer(aDownloaders);
             doneSignal.await();
             return aDownloaders;
         }
     }
 
-    public void downloadFiles(List<ADownloader> downloaders) throws InterruptedException {
+    public void downloadFiles(List<ADownloader> aDownloaders) throws InterruptedException {
         try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
-            for(var aDownloader: downloaders) {
-                es.submit(()->{
-                    aDownloader.downloadFiles(4);
-                });
-
+            for (var aDownloader : aDownloaders) {
+                es.submit(() -> aDownloader.downloadFiles(4));
             }
+            startStatsTimer(aDownloaders);
+            es.shutdown();
+            es.awaitTermination(1,TimeUnit.DAYS);
         }
     }
 
-
-
     private void startStatsTimer(List<ADownloader> dlers) {
-        Timer t=new Timer("Stats");
+        Timer t=new Timer("Stats", true);
         t.scheduleAtFixedRate(new TimerTask() {
             long lastBytes = 0;
             @Override
@@ -67,11 +65,12 @@ public class Main {
                 String stat="";
                 for (var dler : dlers) {
                     bytes += dler.bytesLoaded.get();
+                    stat += dler.getFolderName()+"("+ dler.getPercent()+"%) ";
                 }
-                System.out.printf(stat +"%d kB/s\n", (bytes - lastBytes) / 1024);
+                System.out.printf("Downloading %s %d kB/s\n", stat, (bytes - lastBytes) / 1024);
                 lastBytes = bytes;
             }
-        },0,500);
+        },0,1000);
     }
 
 

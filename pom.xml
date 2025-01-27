@@ -25,6 +25,7 @@
                     <mainClass>info.faljse.Main</mainClass>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 

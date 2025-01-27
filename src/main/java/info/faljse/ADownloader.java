@@ -28,6 +28,7 @@ public class ADownloader {
     private final HttpClient client;
     public AtomicLong bytesLoaded = new AtomicLong();
     private List<FileDownload> fileDownloadList=new ArrayList<>();
+    private int downloadsDone=0;
 
     public ADownloader(String folderName, String broadcastsURL, HttpClient client) {
         this.broadcastsURL = broadcastsURL;
@@ -61,12 +62,13 @@ public class ADownloader {
             es.submit(()->{
                 try {
                     s.acquire();
+                    downloadFile(fd.url, fd.fileName);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }finally {
+                    this.downloadsDone+=1;
                     s.release();
                 }
-                downloadFile(fd.url, fd.fileName);
             });
         }
         es.shutdown();
@@ -237,5 +239,13 @@ public class ADownloader {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(jsonData, new TypeReference<Response>() {
         }).getPayload();
+    }
+
+    public int getPercent() {
+        return (int) (((float)this.downloadsDone/(float)this.fileDownloadList.size())*100);
+    }
+
+    public String getFolderName() {
+        return folderName;
     }
 }
