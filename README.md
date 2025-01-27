@@ -1,5 +1,5 @@
 # ORF Radio archiver
-```bash
+```sh
 jdk21+,  maven
 
 mvn install
@@ -10,7 +10,7 @@ java -jar target/ar4-1.0-SNAPSHOT.jar  archive -s fm4,oe1 folderName  #save fm4,
 
 
 # Usage
-```
+```sh
 Usage: ar4 [COMMAND]
 Commands:
   archive   save streams to directory
@@ -36,7 +36,7 @@ create m3u playlist from metadata
 ```
 
 # Example
-```
+```sh
 #download last 7 days of fm4 music to folder fm4_archive
 java -jar target/ar4-1.0-SNAPSHOT.jar  archive -s fm4 fm4_archive
 
