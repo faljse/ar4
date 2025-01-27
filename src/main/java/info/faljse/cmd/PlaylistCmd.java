@@ -39,7 +39,7 @@ public class PlaylistCmd implements Callable<Integer> {
         Map<String, Playlist> plists=new HashMap<>();
         for(Path file:files) {
             System.out.println(file.getFileName());
-            if(file.toString().endsWith(".json")) {
+            if(file.getFileName().endsWith(".json")) {
                 sortIntoPlaylists(file, plists);
             }
         }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.http.HttpClient;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -14,10 +15,12 @@ import java.util.concurrent.TimeUnit;
 public class MainDownloader {
     private final Path path;
     private final int concurrency;
+    private final List<String> stations;
 
-    public MainDownloader(Path path, int concurrency) {
+    public MainDownloader(Path path, List<String> stations, int concurrency) {
         this.path=path;
         this.concurrency=concurrency;
+        this.stations=stations;
     }
 
     public void download() throws InterruptedException, IOException {
@@ -26,25 +29,22 @@ public class MainDownloader {
         downloadFiles(downloaders);
     }
 
+
+
     public List<StationDownloader> downloadMetadata() throws InterruptedException {
         HttpClient httpClient= HttpClient.newHttpClient();
         try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
-            var aDownloaders = List.of(
-                    new StationDownloader(path.resolve("fm4"),
-                            "https://audioapi.orf.at/fm4/api/json/5.0/broadcasts/", httpClient),
-                    new StationDownloader(path.resolve("oe1"),
-                            "https://audioapi.orf.at/oe1/api/json/5.0/broadcasts/", httpClient),
-                    new StationDownloader(path.resolve("oe3"),
-                            "https://audioapi.orf.at/oe3/api/json/5.0/broadcasts/", httpClient),
-                    new StationDownloader(path.resolve("wie"),
-                            "https://audioapi.orf.at/wie/api/json/5.0/broadcasts/", httpClient)
-            );
-            CountDownLatch doneSignal = new CountDownLatch(aDownloaders.size());
-            for (var aDownloader : aDownloaders) {
-                es.submit(() -> aDownloader.downloadMetadata(doneSignal));
+            List<StationDownloader> stationDownloaders=new ArrayList<>();
+            for(String station:stations) {
+                stationDownloaders.add(new StationDownloader(path.resolve(station),
+                        "https://audioapi.orf.at/" + station + "/api/json/5.0/broadcasts/", httpClient));
+            }
+            CountDownLatch doneSignal = new CountDownLatch(stationDownloaders.size());
+            for (var sDownloader : stationDownloaders) {
+                es.submit(() -> sDownloader.downloadMetadata(doneSignal));
             }
             doneSignal.await();
-            return aDownloaders;
+            return stationDownloaders;
         }
     }
 
