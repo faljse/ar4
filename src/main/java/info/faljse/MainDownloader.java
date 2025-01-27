@@ -32,12 +32,11 @@ public class MainDownloader {
 
 
     public List<StationDownloader> downloadMetadata() throws InterruptedException {
-        HttpClient httpClient= HttpClient.newHttpClient();
         try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
             List<StationDownloader> stationDownloaders=new ArrayList<>();
             for(String station:stations) {
                 stationDownloaders.add(new StationDownloader(path.resolve(station),
-                        "https://audioapi.orf.at/" + station + "/api/json/5.0/broadcasts/", httpClient));
+                        "https://audioapi.orf.at/" + station + "/api/json/5.0/broadcasts/", HttpClient.newHttpClient()));
             }
             CountDownLatch doneSignal = new CountDownLatch(stationDownloaders.size());
             for (var sDownloader : stationDownloaders) {
