@@ -15,10 +15,19 @@ public class ArchiveCmd implements Callable<Integer> {
     @CommandLine.Parameters(paramLabel = "folder", description = "archive folder")
     Path archiveFolder;
 
-    @CommandLine.Option(names = {"-c", "--concurrency"}, description = "Concurrent stream downloads per radio station.", defaultValue = "4", showDefaultValue = CommandLine.Help.Visibility.ALWAYS)
+    @CommandLine.Option(names = {"-c", "--concurrency"},
+                        description = "Concurrent stream downloads per radio station.",
+                        defaultValue = "4",
+                        showDefaultValue = CommandLine.Help.Visibility.ALWAYS)
     int concurrency;
 
-    @CommandLine.Option(names = {"-s", "--stations"}, split = "\\,", splitSynopsisLabel = ",", description = "Possible values: fm4,oe1,oe3,wie,bgl,ktn,noe,ooe,sbg,stm,tir,vbg", paramLabel = "stations", defaultValue = "fm4,oe1,oe3,wie")
+    @CommandLine.Option(names = {"-s", "--stations"},
+                        split = "\\,",
+                        splitSynopsisLabel = ",",
+                        description = "Possible values: fm4,oe1,oe3,wie,bgl,ktn,noe,ooe,sbg,stm,tir,vbg",
+                        paramLabel = "stations",
+                        defaultValue = "fm4,oe1,oe3,wie",
+                        showDefaultValue = CommandLine.Help.Visibility.ALWAYS)
     List<String> stations;
 
     @Override
