@@ -5,7 +5,7 @@ jdk21+,  maven
 mvn install
 mvn compile
 mvn package
-java -jar target/ar4-1.0-SNAPSHOT.jar  archive folderName  #save wie,fm4,oe3,oe1 radios to folder folderName
+java -jar target/ar4-1.0-SNAPSHOT.jar  archive -s fm4,oe1 folderName  #save fm4,oe1 radios to folder folderName
 ```
 
 
