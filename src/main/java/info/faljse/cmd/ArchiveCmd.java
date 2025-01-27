@@ -12,7 +12,7 @@ public class ArchiveCmd implements Callable<Integer> {
     @CommandLine.Parameters(paramLabel = "folder", description = "archive folder")
     Path archiveFolder;
 
-    @CommandLine.Option(names = {"-c", "--concurrency"}, description = "Concurrent stream downloads per radio station.", defaultValue = "4")
+    @CommandLine.Option(names = {"-c", "--concurrency"}, description = "Concurrent stream downloads per radio station.", defaultValue = "4", showDefaultValue= CommandLine.Help.Visibility.ALWAYS)
     int concurrency;
 
     @Override

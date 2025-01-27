@@ -25,7 +25,7 @@ public class PlaylistCmd implements Callable<Integer> {
     @CommandLine.Parameters(paramLabel = "playlistDir", description = "playlist folder")
     Path playlistDir;
 
-    @CommandLine.Option(names = {"-a", "--absolute"}, description = "Create m3u file with absolute paths.", defaultValue = "false")
+    @CommandLine.Option(names = {"-a", "--absolute"}, description = "Create m3u file with absolute paths.", defaultValue = "false", showDefaultValue= CommandLine.Help.Visibility.ALWAYS)
     boolean absolute;
 
     @Override
