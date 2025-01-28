@@ -11,8 +11,11 @@ This repository offers a tool for downloading and archiving streams from all 12 
 * Step 2: Download streams using -c (default:4) concurrent connections per station.
 * The tool automatically skips files that already exist, making it easy to keep your archive up-to-date. For a complete collection, simply run the tool at least once a week.
 
+
+# Build/test it
+
 ```sh
-jdk21+,  maven
+Requires jdk21+, maven
 
 mvn install
 mvn compile
