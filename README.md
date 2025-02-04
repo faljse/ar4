@@ -17,7 +17,6 @@ This repository offers a tool for downloading and archiving streams from all 12 
 ```sh
 Requires jdk21+, maven
 
-mvn install
 mvn compile
 mvn package
 java -jar target/ar4-1.0-SNAPSHOT.jar  archive -s fm4,oe1 folderName  #save fm4,oe1 radios to folder folderName
