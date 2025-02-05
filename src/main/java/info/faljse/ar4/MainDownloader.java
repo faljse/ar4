@@ -19,11 +19,13 @@ public class MainDownloader {
     private final Path path;
     private final int concurrency;
     private final List<String> stations;
+    private final int progress;
 
-    public MainDownloader(Path path, List<String> stations, int concurrency) {
+    public MainDownloader(Path path, List<String> stations, int concurrency, int progress) {
         this.path=path;
         this.concurrency=concurrency;
         this.stations=stations;
+        this.progress=progress;
     }
 
     public void download() throws InterruptedException, IOException {
@@ -79,6 +81,6 @@ public class MainDownloader {
                 log.info("Progress {} {} kB/s", stat, (bytes - lastBytes) / 1024);
                 lastBytes = bytes;
             }
-        },0,1000);
+        },0,progress* 1000L);
     }
 }

@@ -21,6 +21,12 @@ public class ArchiveCmd implements Callable<Integer> {
                         showDefaultValue = CommandLine.Help.Visibility.ALWAYS)
     int concurrency;
 
+    @CommandLine.Option(names = {"-p", "--progress"},
+            description = "Print progress every n seconds (0 to disable).",
+            defaultValue = "10",
+            showDefaultValue = CommandLine.Help.Visibility.ALWAYS)
+    int progress;
+
     @CommandLine.Option(names = {"-s", "--stations"},
                         split = "\\,",
                         splitSynopsisLabel = ",",
@@ -32,7 +38,7 @@ public class ArchiveCmd implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        MainDownloader m = new MainDownloader(archiveFolder, stations, concurrency);
+        MainDownloader m = new MainDownloader(archiveFolder, stations, concurrency, progress);
         m.download();
         return 0;
     }
