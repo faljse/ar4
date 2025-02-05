@@ -5,6 +5,7 @@ This repository offers a tool for downloading and archiving streams from all 12 
 * Archive all metadata as JSON
 * Archive broadcast and track images in all available resolutions.
 * Generate .m3u playlists from metadata for each show
+* ORF Broadcast API Version 5.0
 
 # How it works
 * Step 1: Download all Metadata (Using One connection per station)
