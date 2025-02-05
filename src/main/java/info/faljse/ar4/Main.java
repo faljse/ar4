@@ -1,6 +1,6 @@
-package info.faljse;
+package info.faljse.ar4;
 
-import info.faljse.cmd.MainCmd;
+import info.faljse.ar4.cmd.MainCmd;
 import picocli.CommandLine;
 
 public class Main  {

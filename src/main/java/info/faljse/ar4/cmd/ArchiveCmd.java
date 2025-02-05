@@ -1,6 +1,6 @@
-package info.faljse.cmd;
+package info.faljse.ar4.cmd;
 
-import info.faljse.MainDownloader;
+import info.faljse.ar4.MainDownloader;
 import picocli.CommandLine;
 
 import java.nio.file.Path;

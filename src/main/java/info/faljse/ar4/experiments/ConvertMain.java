@@ -1,9 +1,9 @@
-package info.faljse.experiments;
+package info.faljse.ar4.experiments;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import info.faljse.broadcast.Broadcast;
-import info.faljse.broadcast.ResponseDetail;
+import info.faljse.ar4.broadcast.Broadcast;
+import info.faljse.ar4.broadcast.ResponseDetail;
 
 import java.io.IOException;
 import java.nio.file.Files;

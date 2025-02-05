@@ -20,14 +20,6 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.3.0</version>
-                <configuration>
-                    <mainClass>info.faljse.Main</mainClass>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
                 <version>3.5.0</version>
                 <executions>
                     <execution>
@@ -37,7 +29,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>info.faljse.Main</mainClass>
+                    <mainClass>info.faljse.ar4.Main</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -47,12 +39,10 @@
                 <configuration>
                     <transformers>
                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>info.faljse.Main</mainClass>
+                            <mainClass>info.faljse.ar4.Main</mainClass>
                         </transformer>
                     </transformers>
                     <minimizeJar>true</minimizeJar>
-
-                    <!-- put your configurations here -->
                 </configuration>
                 <executions>
                     <execution>
@@ -65,15 +55,13 @@
             </plugin>
         </plugins>
     </build>
-
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.17.0</version>
+            <version>2.18.2</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/info.picocli/picocli -->
         <dependency>
             <groupId>info.picocli</groupId>
@@ -98,6 +86,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.16</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/dev.plexapi/plexapi -->
+        <dependency>
+            <groupId>dev.plexapi</groupId>
+            <artifactId>plexapi</artifactId>
+            <version>0.11.1</version>
         </dependency>
     </dependencies>
 </project>

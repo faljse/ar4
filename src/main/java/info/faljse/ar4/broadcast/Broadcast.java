@@ -1,4 +1,4 @@
-package info.faljse.broadcast;
+package info.faljse.ar4.broadcast;
 
 import java.nio.file.Path;
 import java.util.List;

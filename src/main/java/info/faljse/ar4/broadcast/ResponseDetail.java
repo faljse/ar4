@@ -1,8 +1,6 @@
-package info.faljse.broadcast;
+package info.faljse.ar4.broadcast;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.List;
 
 public class ResponseDetail {
 

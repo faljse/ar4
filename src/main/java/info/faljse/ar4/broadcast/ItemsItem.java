@@ -1,4 +1,4 @@
-package info.faljse.broadcast;
+package info.faljse.ar4.broadcast;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,10 +1,10 @@
-package info.faljse.cmd;
+package info.faljse.ar4.cmd;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import info.faljse.Playlist;
-import info.faljse.broadcast.Broadcast;
-import info.faljse.broadcast.ResponseDetail;
+import info.faljse.ar4.Playlist;
+import info.faljse.ar4.broadcast.Broadcast;
+import info.faljse.ar4.broadcast.ResponseDetail;
 import picocli.CommandLine;
 
 import java.io.IOException;
@@ -30,24 +30,32 @@ public class PlaylistCmd implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        convert(archiveDir, playlistDir);
+        var plists=buildPlaylist();
+        exportM3U(plists);
         return 0;
     }
 
-    private void convert(Path archiveDir, Path playlistDir) throws InterruptedException, IOException {
+    private Map<String, Playlist> buildPlaylist() throws InterruptedException, IOException {
         var files= Files.newDirectoryStream(archiveDir);
         Map<String, Playlist> plists=new HashMap<>();
         for(Path file:files) {
-            System.out.println(file.getFileName());
-            if(file.getFileName().endsWith(".json")) {
+            if(file.toString().endsWith(".json")) {
                 sortIntoPlaylists(file, plists);
             }
         }
+        return plists;
+    }
+
+    private void exportM3U(Map<String, Playlist> plists) throws IOException {
         for(Playlist p: plists.values()) {
             Files.createDirectories(playlistDir);
             p.savem3u(playlistDir.resolve(p.title + ".m3u"), absolute);
         }
     }
+
+
+
+
 
     private void sortIntoPlaylists(Path file, Map<String, Playlist> playlists) throws IOException, InterruptedException {
         ObjectMapper mapper=new ObjectMapper();

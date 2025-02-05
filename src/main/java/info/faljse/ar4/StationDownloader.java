@@ -1,9 +1,9 @@
-package info.faljse;
+package info.faljse.ar4;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import info.faljse.broadcast.*;
+import info.faljse.ar4.broadcast.*;
 
 
 import java.io.*;
