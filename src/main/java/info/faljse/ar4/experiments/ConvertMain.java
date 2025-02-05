@@ -28,7 +28,6 @@ public class ConvertMain {
              var files = Files.newDirectoryStream(dir);) {
 
             for (Path file : files) {
-                System.out.println(file.getFileName());
                 if (file.toString().endsWith(".json")) {
                     ex.submit(() -> {
                         try {

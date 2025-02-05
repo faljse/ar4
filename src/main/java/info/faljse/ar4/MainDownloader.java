@@ -1,5 +1,7 @@
 package info.faljse.ar4;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.IOException;
 import java.net.http.HttpClient;
 import java.nio.file.Files;
@@ -12,6 +14,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+@Slf4j(topic = "MainDownloader")
 public class MainDownloader {
     private final Path path;
     private final int concurrency;
@@ -24,12 +27,11 @@ public class MainDownloader {
     }
 
     public void download() throws InterruptedException, IOException {
+        log.info("Downloading to {}", this.path);
         Files.createDirectories(this.path);
-        var downloaders = downloadMetadata();
+        List<StationDownloader> downloaders = downloadMetadata();
         downloadFiles(downloaders);
     }
-
-
 
     public List<StationDownloader> downloadMetadata() throws InterruptedException {
         try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
@@ -40,6 +42,7 @@ public class MainDownloader {
             }
             CountDownLatch doneSignal = new CountDownLatch(stationDownloaders.size());
             for (var sDownloader : stationDownloaders) {
+                log.info("Start metadata download for \"{}\"", sDownloader.getFolderName());
                 es.submit(() -> sDownloader.downloadMetadata(doneSignal));
             }
             doneSignal.await();
@@ -50,12 +53,14 @@ public class MainDownloader {
     public void downloadFiles(List<StationDownloader> aDownloaders) throws InterruptedException {
         try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
             for (var aDownloader : aDownloaders) {
+                log.info("Start stream download for {}", aDownloader.getFolderName());
                 es.submit(() -> aDownloader.downloadFiles(concurrency));
             }
             startStatsTimer(aDownloaders);
             es.shutdown();
-            boolean termRes=es.awaitTermination(1, TimeUnit.DAYS);
-            System.out.println(termRes);
+            if(es.awaitTermination(1, TimeUnit.DAYS)) {
+                log.warn("Downloaders did not finish in time");
+            }
         }
     }
 
@@ -66,12 +71,12 @@ public class MainDownloader {
             @Override
             public void run() {
                 long bytes = 0;
-                String stat="";
+                StringBuilder stat= new StringBuilder();
                 for (var dler : dlers) {
                     bytes += dler.bytesLoaded.get();
-                    stat += dler.getFolderName()+"("+ dler.getPercent()+"%) ";
+                    stat.append(dler.getFolderName()).append("(").append(dler.getPercent()).append("%) ");
                 }
-                System.out.printf("Downloading %s %d kB/s\n", stat, (bytes - lastBytes) / 1024);
+                log.info("Progress {} {} kB/s", stat, (bytes - lastBytes) / 1024);
                 lastBytes = bytes;
             }
         },0,1000);

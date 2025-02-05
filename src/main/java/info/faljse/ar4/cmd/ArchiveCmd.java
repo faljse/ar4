@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-@CommandLine.Command(name = "archive", mixinStandardHelpOptions = false, version = "ar4 1.0",
+@CommandLine.Command(name = "archive", version = "ar4 1.0",
         description = "save streams to directory")
 public class ArchiveCmd implements Callable<Integer> {
     private final static String[] allStations = {"fm4", "oe1", "oe3", "wie", "bgl", "ktn", "noe", "ooe", "sbg", "stm", "tir", "vbg"};

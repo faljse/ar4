@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import info.faljse.ar4.broadcast.*;
+import lombok.extern.slf4j.Slf4j;
 
 
 import java.io.*;
@@ -21,6 +22,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Slf4j(topic = "StationDownloader")
 public class StationDownloader {
     private final String broadcastsURL;
     private final Path folder;
@@ -50,7 +52,7 @@ public class StationDownloader {
                 downloadBroadcastDay(broadcastDay);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.warn("Error downloading metadata", e);
         } finally {
             doneSignal.countDown();
         }
@@ -58,23 +60,24 @@ public class StationDownloader {
 
     public void downloadFiles(int concurrency)  {
         Semaphore s=new Semaphore(concurrency);
-        var es= Executors.newVirtualThreadPerTaskExecutor();
-        for(var fd:fileDownloadList){
-            es.submit(()->{
-                try {
-                    s.acquire();
-                    downloadFile(fd.url, fd.fileName);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }finally {
-                    this.downloadsDone+=1;
-                    s.release();
-                }
-            });
-        }
-        es.shutdown();
-        try {
-            es.awaitTermination(1, TimeUnit.DAYS);
+        try(var es= Executors.newVirtualThreadPerTaskExecutor()) {
+            for (var fd : fileDownloadList) {
+                es.submit(() -> {
+                    try {
+                        s.acquire();
+                        downloadFile(fd.url, fd.fileName);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    } finally {
+                        this.downloadsDone += 1;
+                        s.release();
+                    }
+                });
+            }
+            es.shutdown();
+            if(!es.awaitTermination(1, TimeUnit.DAYS)) {
+                log.warn("Downloaders did not finish in time");
+            }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -84,12 +87,13 @@ public class StationDownloader {
         Path partPath= folder.resolve(fileName + ".part");
         Path finalPath=folder.resolve(fileName);
         if(Files.exists(finalPath)) {
-            System.out.printf("Skip (file exists) %s\n", finalPath);
+            log.info("Skip (file exists) \"{}\" ({})", finalPath, url);
         }
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .build();
-        System.out.printf("Downloading Stream \"%s\" as \"%s\"\n", url, fileName);
+        log.info("Download  \"{}\" ({})", fileName, url);
+
         int totalBytesRead = 0;
         long contentLength = -1;
         try (OutputStream outStream = new FileOutputStream(partPath.toFile())) {
@@ -107,13 +111,13 @@ public class StationDownloader {
                     lastBytesRead = totalBytesRead;
                 }
             }
-            System.out.printf("Finished %s\n", url);
+            log.info("Done \"{}\" ({})", fileName, url);
         } catch (IOException e) {
             if(contentLength > 0 &&
                     totalBytesRead > 0 &&
                     contentLength != totalBytesRead &&
                     Math.abs(contentLength-totalBytesRead) < 4096){ //Allow the file to be 4k off.
-                System.out.printf("Ignoring wrong content-length finishing download \"%s\" as \"%s\": %d bytes received instead of %d\n", url, fileName, totalBytesRead, contentLength);
+                log.warn("Ignoring wrong content-length finishing download \"{}\" as \"{}\": {} bytes received instead of {}", url, fileName, totalBytesRead, contentLength);
             }
             else throw new RuntimeException(e);
         } catch (InterruptedException e) {
@@ -122,7 +126,7 @@ public class StationDownloader {
         try {
             Files.move(partPath, finalPath);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.warn("Error moving file", e);
         }
     }
 
@@ -139,6 +143,7 @@ public class StationDownloader {
                 .build();
         HttpResponse<String> response;
         try {
+            log.info("Downloading broadcast detail ({})", detailUri);
             response =
                     client.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
@@ -146,16 +151,16 @@ public class StationDownloader {
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
-        System.out.printf("Broadcast json download: \"%s\"\n", detailUri);
+
         String origDetailJSON=response.body();
-        var broadcastDetail = objectMapper.readValue(origDetailJSON, ResponseDetail.class).getBroadcast();
+        Broadcast broadcastDetail = objectMapper.readValue(origDetailJSON, ResponseDetail.class).getBroadcast();
         for(int i=0;i<broadcastDetail.getImages().size();i++) {
             var image=broadcastDetail.getImages().get(i);
             try {
                 dlImage(image, i, broadcastDetail);
             }
             catch (Exception e) {
-                e.printStackTrace();
+                log.warn("Error downloading image", e);
             }
         }
         for(var item:broadcastDetail.getItems()) {
@@ -163,7 +168,7 @@ public class StationDownloader {
                 dlItemImage(item, broadcastDetail);
             }
             catch (Exception e) {
-                e.printStackTrace();
+                log.warn("Error downloading item image", e);
             }
         }
         dlStreamItem(broadcastDetail, origDetailJSON);
@@ -208,33 +213,35 @@ public class StationDownloader {
     }
 
     private void dlStreamItem(Broadcast broadcastDetail, String origDetailJSON) {
-        var jsonOutFile=folder.resolve(String.format("%d.json", broadcastDetail.getId())).toFile();
+        File jsonOutFile=folder.resolve(String.format("%d.json", broadcastDetail.getId())).toFile();
         if(!jsonOutFile.exists()) {
+            log.info("Done \"{}\"", jsonOutFile);
             try (var writer = new BufferedWriter(new FileWriter(jsonOutFile))) {
                 writer.write(origDetailJSON);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         } else {
-            System.out.printf("Skip (File exists): %s\n",jsonOutFile.toString());
+            log.info("Skip (File exists): \"{}\"", jsonOutFile);
         }
 
-        String lastFileURL="";
+        String lastStreamURL="";
         for (int i = 0; i < broadcastDetail.getStreams().size(); i++) {
-            var stream=broadcastDetail.getStreams().get(i);
+            StreamsItem stream=broadcastDetail.getStreams().get(i);
             String fileName = String.format("%d_%d.mp3", broadcastDetail.getId(), i);
+            String streamURL=stream.getUrls().getProgressive();
+            streamURL=streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length()); //cut everything after .mp3
             if (folder.resolve(fileName).toFile().exists()) {
-                System.out.printf("Skip (File exists)%d\n", broadcastDetail.getId());
-                return;
-            }
-            var streamURL=stream.getUrls().getProgressive();
-            var fileURL=streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length());
-            if(fileURL.equals(lastFileURL)) {
-                System.out.printf("Skip (same url): %s\n", fileURL);
+                log.info("Skip (File exists): \"{}\" ({})", fileName, streamURL);
                 continue;
             }
-            lastFileURL=fileURL;
-            this.fileDownloadList.add(new FileDownload(fileURL, fileName));
+
+            if(streamURL.equals(lastStreamURL)) {
+                log.info("Skip (Same URL): \"{}\" ({})", fileName, streamURL);
+                continue;
+            }
+            lastStreamURL=streamURL;
+            this.fileDownloadList.add(new FileDownload(streamURL, fileName));
         }
     }
 
