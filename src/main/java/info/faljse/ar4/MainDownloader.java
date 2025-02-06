@@ -60,7 +60,7 @@ public class MainDownloader {
             }
             startStatsTimer(aDownloaders);
             es.shutdown();
-            if(es.awaitTermination(1, TimeUnit.DAYS)) {
+            if(!es.awaitTermination(1, TimeUnit.DAYS)) {
                 log.warn("Downloaders did not finish in time");
             }
         }
