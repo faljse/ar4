@@ -161,10 +161,8 @@ public class StationDownloader {
             throw new RuntimeException(e);
         }
 
-        ObjectMapper objectMapper = new ObjectMapper();
-
         String origDetailJSON=response.body();
-        Broadcast broadcastDetail = objectMapper.readValue(origDetailJSON, ResponseDetail.class).getBroadcast();
+        Broadcast broadcastDetail = new ObjectMapper().readValue(origDetailJSON, ResponseDetail.class).getBroadcast();
         for(int i=0;i<broadcastDetail.getImages().size();i++) {
             var image=broadcastDetail.getImages().get(i);
             try {
