@@ -228,23 +228,22 @@ public class StationDownloader {
             log.info("Skip (File exists): \"{}\"", jsonOutFile);
         }
 
-        String lastStreamURL="";
+        List<String> fileURLs=new ArrayList<>();
         for (int i = 0; i < broadcastDetail.getStreams().size(); i++) {
             StreamsItem stream=broadcastDetail.getStreams().get(i);
             String fileName = String.format("%d_%d.mp3", broadcastDetail.getId(), i);
             String streamURL=stream.getUrls().getProgressive();
-            streamURL=streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length()); //cut everything after .mp3
-            if (folder.resolve(fileName).toFile().exists()) {
-                log.info("Skip (File exists): \"{}\" ({})", fileName, streamURL);
-                continue;
-            }
-
-            if(streamURL.equals(lastStreamURL)) {
+            streamURL = streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length()); //cut everything after .mp3
+            if(i > 0 && fileURLs.contains(streamURL)) {
                 log.info("Skip (Same URL): \"{}\" ({})", fileName, streamURL);
                 continue;
             }
-            lastStreamURL=streamURL;
-            this.fileDownloadList.add(new FileDownload(streamURL, fileName));
+            if (folder.resolve(fileName).toFile().exists()) {
+                log.info("Skip (File exists): \"{}\" ({})", fileName, streamURL);
+            } else {
+                this.fileDownloadList.add(new FileDownload(streamURL, fileName));
+            }
+            fileURLs.add(streamURL);
         }
     }
 
