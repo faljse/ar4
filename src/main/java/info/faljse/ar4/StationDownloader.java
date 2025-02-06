@@ -55,7 +55,7 @@ public class StationDownloader {
                 downloadBroadcastDay(broadcastDay);
             }
         } catch (Exception e) {
-            log.warn("Error downloading metadata", e);
+            log.warn("Error download metadata", e);
         } finally {
             doneSignal.countDown();
         }
@@ -146,7 +146,7 @@ public class StationDownloader {
                 .build();
         HttpResponse<String> response;
         try {
-            log.info("Downloading broadcast detail ({})", detailUri);
+            log.info("Download broadcast detail ({})", detailUri);
             response =
                     client.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
@@ -163,7 +163,7 @@ public class StationDownloader {
                 dlImage(image, i, broadcastDetail);
             }
             catch (Exception e) {
-                log.warn("Error downloading image", e);
+                log.warn("Error download image", e);
             }
         }
         for(var item:broadcastDetail.getItems()) {
@@ -171,7 +171,7 @@ public class StationDownloader {
                 dlItemImage(item, broadcastDetail);
             }
             catch (Exception e) {
-                log.warn("Error downloading item image", e);
+                log.warn("Error download item image", e);
             }
         }
         dlStreamItem(broadcastDetail, origDetailJSON);

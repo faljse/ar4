@@ -29,7 +29,7 @@ public class MainDownloader {
     }
 
     public void download() throws InterruptedException, IOException {
-        log.info("Downloading to {}", this.path);
+        log.info("Download to {}", this.path);
         Files.createDirectories(this.path);
         List<StationDownloader> downloaders = downloadMetadata();
         downloadFiles(downloaders);
