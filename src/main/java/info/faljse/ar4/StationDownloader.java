@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import info.faljse.ar4.broadcast.*;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -30,6 +31,8 @@ public class StationDownloader {
     private final HttpClient client;
     public AtomicLong bytesLoaded = new AtomicLong();
     private final List<FileDownload> fileDownloadList=new ArrayList<>();
+
+    @Getter
     private int downloadsDone=0;
 
     public StationDownloader(Path folder, String broadcastsURL, HttpClient client) {
@@ -254,6 +257,10 @@ public class StationDownloader {
     public int getPercent() {
         return (int) (((float)this.downloadsDone/(float)this.fileDownloadList.size())*100);
     }
+    public int getDownloadsTotal() {
+        return this.fileDownloadList.size();
+    }
+
 
     public String getFolderName() {
         return folder.toString();
