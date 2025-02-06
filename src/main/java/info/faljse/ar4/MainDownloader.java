@@ -73,15 +73,20 @@ public class MainDownloader {
             @Override
             public void run() {
                 long bytes = 0;
+                int filesTotal=0;
+                int filesDone=0;
                 StringBuilder stat= new StringBuilder();
                 for (var dler : dlers) {
                     bytes += dler.bytesLoaded.get();
-                    stat.append(dler.getFolderName()).append("(").append(dler.getPercent());
-                    stat.append("%, ");
+                    stat.append("\"");
+                    stat.append(dler.getFolderName()).append("\":").append(dler.getPercent());
+                    stat.append("%(");
                     stat.append(dler.getDownloadsDone()).append("/").append(dler.getDownloadsTotal());
                     stat.append(") ");
+                    filesTotal+=dler.getDownloadsTotal();
+                    filesDone+=dler.getDownloadsDone();
                 }
-                log.info("Progress {} {} kB/s", stat, (bytes - lastBytes) / (1024L * progress));
+                log.info("Progress: {}%({}/{}) {} {} kB/s", (float)filesDone/filesTotal*100, filesDone,filesTotal, stat, (bytes - lastBytes) / (1024L * progress));
                 lastBytes = bytes;
             }
         },0,progress* 1000L);
