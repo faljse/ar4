@@ -108,12 +108,18 @@ public class StationDownloader {
             byte[] buffer = new byte[8 * 1024];
             int bytesRead;
             int lastBytesRead = 0;
-            while ((bytesRead = response.body().read(buffer)) != -1) {
-                outStream.write(buffer, 0, bytesRead);
-                this.bytesLoaded.getAndAdd(bytesRead);
-                totalBytesRead += bytesRead;
-                if (totalBytesRead - lastBytesRead > 1024 * 1024) {
-                    lastBytesRead = totalBytesRead;
+            try(var bodyStream=response.body()) {
+                for(;;) {
+                    bytesRead = bodyStream.read(buffer);
+                    if (bytesRead == -1) {
+                        break;
+                    }
+                    outStream.write(buffer, 0, bytesRead);
+                    this.bytesLoaded.getAndAdd(bytesRead);
+                    totalBytesRead += bytesRead;
+                    if (totalBytesRead - lastBytesRead > 1024 * 1024) {
+                        lastBytesRead = totalBytesRead;
+                    }
                 }
             }
             log.info("Done \"{}\" ({})", fileName, url);
