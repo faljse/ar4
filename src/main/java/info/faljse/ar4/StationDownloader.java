@@ -102,7 +102,9 @@ public class StationDownloader {
         try (OutputStream outStream = new FileOutputStream(partPath.toFile())) {
             HttpResponse<InputStream> response =
                     client.send(request, HttpResponse.BodyHandlers.ofInputStream());
-            contentLength = response.headers().firstValueAsLong("content-length").getAsLong();
+            var clengthOptional = response.headers().firstValueAsLong("content-length");
+            if(clengthOptional.isPresent())
+                contentLength = clengthOptional.getAsLong();
             byte[] buffer = new byte[8 * 1024];
             int bytesRead;
             int lastBytesRead = 0;
