@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import info.faljse.ar4.broadcast.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,6 +23,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+import static java.nio.file.StandardCopyOption.*;
 
 @Slf4j(topic = "StationDownloader")
 public class StationDownloader {
@@ -68,7 +70,7 @@ public class StationDownloader {
                 es.submit(() -> {
                     try {
                         s.acquire();
-                        downloadFile(fd.url, fd.fileName);
+                        downloadFile(fd.url, fd.path);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     } finally {
@@ -86,17 +88,12 @@ public class StationDownloader {
         }
     }
 
-    private void downloadFile(String url, String fileName) {
-        Path partPath= folder.resolve(fileName + ".part");
-        Path finalPath=folder.resolve(fileName);
-        if(Files.exists(finalPath)) {
-            log.info("Skip (file exists) \"{}\" ({})", finalPath, url);
-        }
+    private void downloadFile(String url, Path finalPath) {
+        Path partPath= finalPath.getParent().resolve(finalPath.getFileName().toString()+".part");
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .build();
-        log.info("Download  \"{}\" ({})", fileName, url);
-
+        log.debug("Download  \"{}\" ({})", finalPath.getFileName().toString(), url);
         int totalBytesRead = 0;
         long contentLength = -1;
         try (OutputStream outStream = new FileOutputStream(partPath.toFile())) {
@@ -124,114 +121,60 @@ public class StationDownloader {
                     totalBytesRead > 0 &&
                     contentLength != totalBytesRead &&
                     Math.abs(contentLength-totalBytesRead) < 4096){ //Allow the file to be 4k off.
-                log.warn("Ignoring wrong content-length finishing download \"{}\" as \"{}\": {} bytes received instead of {}", url, fileName, totalBytesRead, contentLength);
+                log.warn("Ignoring wrong content-length finishing download \"{}\" as \"{}\": {} bytes received instead of {}", url, finalPath.getFileName(), totalBytesRead, contentLength);
             }
             else throw new RuntimeException(e);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         try {
-            log.info("Move \"{}\" \"{}\"", partPath, finalPath);
+            log.debug("Move \"{}\" \"{}\"", partPath, finalPath.getFileName());
             Files.move(partPath, finalPath);
-            log.info("Done \"{}\" ({})", fileName, url);
+            log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
         } catch (IOException e) {
             log.warn("Error moving file", e);
         }
     }
 
-    private void downloadBroadcastDay(BroadcastDay broadcastDay) throws JsonProcessingException {
+    private void downloadBroadcastDay(BroadcastDay broadcastDay) throws IOException {
         for (Broadcast bc : broadcastDay.getBroadcasts()) {
             downloadBroadcast(bc);
         }
     }
 
-    private void downloadBroadcast(Broadcast bc) throws JsonProcessingException {
+    private void downloadBroadcast(Broadcast bc) throws IOException {
         String detailUri=bc.getHref()+"?items=true";
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(detailUri))
-                .build();
-        HttpResponse<String> response;
-        try {
-            log.info("Download broadcast detail ({})", detailUri);
-            response =
-                    client.send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        String origDetailJSON=response.body();
-        Broadcast broadcastDetail = new ObjectMapper().readValue(origDetailJSON, ResponseDetail.class).getBroadcast();
+        Path jsonPath=folder.resolve(String.format("%d.json", bc.getId()));
+        downloadFile(detailUri, jsonPath);
+        Broadcast broadcastDetail = new ObjectMapper().readValue(jsonPath.toFile(), ResponseDetail.class).getBroadcast();
         for(int i=0;i<broadcastDetail.getImages().size();i++) {
-            var image=broadcastDetail.getImages().get(i);
-            try {
-                dlImage(image, i, broadcastDetail);
-            }
-            catch (Exception e) {
-                log.warn("Error download image", e);
-            }
+            ImagesItem image=broadcastDetail.getImages().get(i);
+            queueImage(image, i, broadcastDetail);
         }
         for(var item:broadcastDetail.getItems()) {
-            try {
-                dlItemImage(item, broadcastDetail);
-            }
-            catch (Exception e) {
-                log.warn("Error download item image", e);
-            }
+            queueItemImage(item, broadcastDetail);
         }
-        dlStreamItem(broadcastDetail, origDetailJSON);
+        queueStreamItems(broadcastDetail);
     }
 
-    private void dlItemImage(ItemsItem item, Broadcast broadcastDetail) throws IOException, InterruptedException {
+    private void queueItemImage(ItemsItem item, Broadcast broadcastDetail) {
         for(int i=0;i<item.getImages().size();i++) {
             var image=item.getImages().get(i);
             for(var ver:image.getVersions()) {
                 Path imageFilePath = folder.resolve(String.format("%d_item_%d_%d_%d.jpg", broadcastDetail.getId(), item.getId(), i, ver.getWidth()));
-                if(Files.exists(imageFilePath)) {
-                    continue;
-                }
-                HttpRequest request = HttpRequest.newBuilder()
-                        .uri(URI.create(ver.getPath()))
-                        .build();
-
-                HttpResponse<byte[]> response = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
-                if (response.statusCode() == 200) {
-                    byte[] responseBody = response.body();
-                    Files.write(imageFilePath, responseBody);
-                }
+                queueDownload(ver.getPath(), imageFilePath);
             }
         }
     }
 
-    private void dlImage(ImagesItem image, int i, Broadcast broadcastDetail) throws IOException, InterruptedException {
+    private void queueImage(ImagesItem image, int i, Broadcast broadcastDetail) {
         for(var version: image.getVersions()) {
             Path imageFilePath = folder.resolve(String.format("%d_%d_%d.jpg", broadcastDetail.getId(), i, version.getWidth()));
-            if(Files.exists(imageFilePath)) {
-                continue;
-            }
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(version.getPath()))
-                    .build();
-            HttpResponse<byte[]> response = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
-            if (response.statusCode() == 200) {
-                byte[] responseBody = response.body();
-                Files.write(imageFilePath, responseBody);
-            }
+                queueDownload(version.getPath(), imageFilePath);
         }
     }
 
-    private void dlStreamItem(Broadcast broadcastDetail, String origDetailJSON) {
-        File jsonOutFile=folder.resolve(String.format("%d.json", broadcastDetail.getId())).toFile();
-        if(!jsonOutFile.exists()) {
-            log.info("Done \"{}\"", jsonOutFile);
-            try (var writer = new BufferedWriter(new FileWriter(jsonOutFile))) {
-                writer.write(origDetailJSON);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        } else {
-            log.info("Skip (File exists): \"{}\"", jsonOutFile);
-        }
-
+    private void queueStreamItems(Broadcast broadcastDetail) {
         List<String> fileURLs=new ArrayList<>();
         for (int i = 0; i < broadcastDetail.getStreams().size(); i++) {
             StreamsItem stream=broadcastDetail.getStreams().get(i);
@@ -239,45 +182,44 @@ public class StationDownloader {
             String streamURL=stream.getUrls().getProgressive();
             streamURL = streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length()); //cut everything after .mp3
             if(i > 0 && fileURLs.contains(streamURL)) {
-                log.info("Skip (Same URL): \"{}\" ({})", fileName, streamURL);
-                continue;
-            }
-            if (folder.resolve(fileName).toFile().exists()) {
-                log.info("Skip (File exists): \"{}\" ({})", fileName, streamURL);
+                log.debug("Skip (Same URL): \"{}\" ({})", fileName, streamURL);
             } else {
-                log.info("Queue \"{}\" ({})", fileName, streamURL);
-                this.fileDownloadList.add(new FileDownload(streamURL, fileName));
+                queueDownload(streamURL, folder.resolve(fileName));
             }
             fileURLs.add(streamURL);
         }
     }
 
+    private void queueDownload(String url, Path path) {
+        if(Files.exists(path)) {
+            log.debug("Skip (File exists): \"{}\"", path);
+        } else {
+            log.info("Queue \"{}\" ({})", path.getFileName(), url);
+            this.fileDownloadList.add(new FileDownload(url, path));
+        }
+    }
+
     private static List<BroadcastDay> readJSON(String jsonData) throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(jsonData, new TypeReference<Response>() {
-        }).getPayload();
+        return new ObjectMapper()
+            .readValue(jsonData, new TypeReference<Response>() {})
+            .getPayload();
     }
 
     public int getPercent() {
         return (int) (((float)this.downloadsDone/(float)this.fileDownloadList.size())*100);
     }
+
     public int getDownloadsTotal() {
         return this.fileDownloadList.size();
     }
-
 
     public String getFolderName() {
         return folder.toString();
     }
 
+    @AllArgsConstructor
     public static class FileDownload {
-
         public String url;
-        public final String fileName;
-
-        FileDownload(String url, String fileName) {
-            this.url=url;
-            this.fileName=fileName;
-        }
+        public final Path path;
     }
 }

@@ -10,7 +10,7 @@ This repository offers a tool for downloading and archiving streams from all 12 
 
 # How it works
 * Step 1: Download all Metadata (Using One connection per station)
-* Step 2: Download streams using -c (default:4) concurrent connections per station.
+* Step 2: Download streams and images using -c (default:4) concurrent connections per station.
 * The tool automatically skips files that already exist, making it easy to keep your archive up-to-date. For a complete collection, simply run the tool at least once a week.
 
 
@@ -21,7 +21,7 @@ Requires jdk21+, maven
 
 mvn compile
 mvn package
-java -jar target/ar4-1.0-SNAPSHOT.jar  archive -s fm4,oe1 folderName  #save fm4,oe1 radios to folder folderName
+java -jar target/ar4-1.0-SNAPSHOT.jar  archive -s fm4,oe1 folderName  #save fm4,oe1 archive to folder folderName
 ```
 
 
