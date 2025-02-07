@@ -86,9 +86,9 @@ public class MainDownloader {
                     filesTotal+=dler.getDownloadsTotal();
                     filesDone+=dler.getDownloadsDone();
                 }
-                log.info("Progress: {}%({}/{}) {} {} kB/s", (float)filesDone/filesTotal*100, filesDone,filesTotal, stat, (bytes - lastBytes) / (1024L * progress));
+                log.info("Progress: {}%({}/{}) {} {} kB/s", (int)((float)filesDone/filesTotal*100), filesDone,filesTotal, stat, (bytes - lastBytes) / (1024L * progress));
                 lastBytes = bytes;
             }
-        },0,progress* 1000L);
+        },1000L, progress* 1000L);
     }
 }
