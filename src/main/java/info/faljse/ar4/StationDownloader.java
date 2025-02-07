@@ -122,7 +122,7 @@ public class StationDownloader {
                     }
                 }
             }
-            log.info("Done \"{}\" ({})", fileName, url);
+
         } catch (IOException e) {
             if(contentLength > 0 &&
                     totalBytesRead > 0 &&
@@ -135,7 +135,9 @@ public class StationDownloader {
             throw new RuntimeException(e);
         }
         try {
+            log.info("Move \"{}\" \"{}\"", partPath, finalPath);
             Files.move(partPath, finalPath);
+            log.info("Done \"{}\" ({})", fileName, url);
         } catch (IOException e) {
             log.warn("Error moving file", e);
         }
