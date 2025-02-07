@@ -23,7 +23,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
-import static java.nio.file.StandardCopyOption.*;
 
 @Slf4j(topic = "StationDownloader")
 public class StationDownloader {
@@ -89,6 +88,10 @@ public class StationDownloader {
     }
 
     private void downloadFile(String url, Path finalPath) {
+        if(Files.exists(finalPath)) {
+            log.debug("Skip (File exists): \"{}\" ({})", finalPath, url);
+            return;
+        }
         Path partPath= finalPath.getParent().resolve(finalPath.getFileName().toString()+".part");
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
