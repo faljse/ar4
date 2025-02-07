@@ -105,9 +105,8 @@ public class StationDownloader {
             var clengthOptional = response.headers().firstValueAsLong("content-length");
             if(clengthOptional.isPresent())
                 contentLength = clengthOptional.getAsLong();
-            byte[] buffer = new byte[8 * 1024];
+            byte[] buffer = new byte[64 * 1024];
             int bytesRead;
-            int lastBytesRead = 0;
             try(var bodyStream=response.body()) {
                 for(;;) {
                     bytesRead = bodyStream.read(buffer);
@@ -117,9 +116,6 @@ public class StationDownloader {
                     outStream.write(buffer, 0, bytesRead);
                     this.bytesLoaded.getAndAdd(bytesRead);
                     totalBytesRead += bytesRead;
-                    if (totalBytesRead - lastBytesRead > 1024 * 1024) {
-                        lastBytesRead = totalBytesRead;
-                    }
                 }
             }
 
