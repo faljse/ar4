@@ -245,6 +245,7 @@ public class StationDownloader {
             if (folder.resolve(fileName).toFile().exists()) {
                 log.info("Skip (File exists): \"{}\" ({})", fileName, streamURL);
             } else {
+                log.info("Queue \"{}\" ({})", fileName, streamURL);
                 this.fileDownloadList.add(new FileDownload(streamURL, fileName));
             }
             fileURLs.add(streamURL);
