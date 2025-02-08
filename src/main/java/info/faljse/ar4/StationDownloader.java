@@ -123,7 +123,11 @@ public class StationDownloader {
                         Files.move(partPath, finalPath, REPLACE_EXISTING);
                         log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
                     }
-            } else if(!fileExists) {
+            } else if(fileExists) { //File with same or bigger size exists; delete .part file
+                log.debug("Delete .part file (same or bigger file size exists): \"{}\" ({})", partPath, url);
+                Files.delete(partPath);
+            }
+            else {
                 log.debug("Move \"{}\" \"{}\"", partPath, finalPath.getFileName());
                 Files.move(partPath, finalPath);
                 log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
