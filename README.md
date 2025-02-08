@@ -8,6 +8,8 @@ This repository offers a tool for downloading and archiving streams from all 12 
 * Generate .m3u playlists from metadata for each show
 * ORF Broadcast API Version 5.0
 * .mp3 files contain the complete download, while .part files are used during the download
+* No state files. Every file is checked for presence and re-downloaded if missing
+* Can be interrupted at any time.
 
 # How it works
 * Step 1: Download all Metadata (Using One connection per station)
