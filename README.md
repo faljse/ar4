@@ -1,20 +1,21 @@
 # ORF Radio archiver
 This repository offers a tool for downloading and archiving streams from all 12 ORF (Austrian Public Broadcaster) radio stations.
 
+
 * Archive full radio shows as MP3 files
 * Archive broadcast metadata as JSON
 * Archive broadcast and track images in all available resolutions
 * Archive broadcast .html page
 * Generate .m3u playlists from metadata for each show
 * ORF Broadcast API Version 5.0
-* .mp3 files contain the complete download, while .part files are used during the download
+* Files are downloaded as .part files
 * No state files. Every file is checked for presence and re-downloaded if missing
 * Can be interrupted at any time.
 
 # How it works
-* Step 1: Download all Metadata (Using One connection per station)
-* Step 2: Download streams and images using -c (default:4) concurrent connections per station.
-* The tool automatically skips files that already exist, making it easy to keep your archive up-to-date. For a complete collection, simply run the tool at least once a week.
+* Step 1: Download broadcast metadata .json files (Using One connection per station)
+* Step 2: Download streams, images, .html files using -c (default:4) concurrent connections per station.
+* The tool automatically skips files that already exist, making it easy to keep your archive up-to-date. For a complete collection, simply run the tool every day.
 
 
 # Build/test it
