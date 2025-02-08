@@ -18,11 +18,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalLong;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 @Slf4j(topic = "StationDownloader")
 public class StationDownloader {
@@ -69,8 +72,8 @@ public class StationDownloader {
                 es.submit(() -> {
                     try {
                         s.acquire();
-                        downloadFile(fd.url, fd.path);
-                    } catch (InterruptedException e) {
+                        downloadFile(fd.url, fd.path, UpdateStrategy.SkipExisting);
+                    } catch (InterruptedException|IOException e) {
                         throw new RuntimeException(e);
                     } finally {
                         this.downloadsDone += 1;
@@ -87,68 +90,83 @@ public class StationDownloader {
         }
     }
 
-    private void downloadFile(String url, Path finalPath) {
-        if(Files.exists(finalPath)) {
+    private void downloadFile(String url, Path finalPath, UpdateStrategy updateStrategy) throws IOException, InterruptedException {
+        if(UpdateStrategy.SkipExisting == updateStrategy && Files.exists(finalPath)) {
             log.debug("Skip (File exists): \"{}\" ({})", finalPath, url);
             return;
         }
-        Path partPath= finalPath.getParent().resolve(finalPath.getFileName().toString()+".part");
+        Path partPath= finalPath.getParent().resolve(finalPath.getFileName().toString() + ".part");
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .build();
+            .uri(URI.create(url))
+            .build();
         log.debug("Download  \"{}\" ({})", finalPath.getFileName().toString(), url);
-        int totalBytesRead = 0;
-        long contentLength = -1;
-        try (OutputStream outStream = new FileOutputStream(partPath.toFile())) {
-            HttpResponse<InputStream> response =
-                    client.send(request, HttpResponse.BodyHandlers.ofInputStream());
-            var clengthOptional = response.headers().firstValueAsLong("content-length");
-            if(clengthOptional.isPresent())
-                contentLength = clengthOptional.getAsLong();
-            byte[] buffer = new byte[64 * 1024];
-            int bytesRead;
-            try(var bodyStream=response.body()) {
-                for(;;) {
-                    bytesRead = bodyStream.read(buffer);
-                    if (bytesRead == -1) {
-                        break;
-                    }
-                    outStream.write(buffer, 0, bytesRead);
-                    this.bytesLoaded.getAndAdd(bytesRead);
-                    totalBytesRead += bytesRead;
-                }
-            }
-
+        HttpResponse<InputStream> response =
+            client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+        OptionalLong cLengthOptional = response.headers().firstValueAsLong("content-length");
+        long downloadedBytes;
+        try (
+            InputStream in = response.body();
+            OutputStream out = new FileOutputStream(partPath.toFile())) {
+                downloadedBytes=copyStreamWithProgress(in, out, String.format("\"%s\" (%s)", finalPath, url), cLengthOptional.orElse(-1));
         } catch (IOException e) {
-            if(contentLength > 0 &&
-                    totalBytesRead > 0 &&
-                    contentLength != totalBytesRead &&
-                    Math.abs(contentLength-totalBytesRead) < 4096){ //Allow the file to be 4k off.
-                log.warn("Ignoring wrong content-length finishing download \"{}\" as \"{}\": {} bytes received instead of {}", url, finalPath.getFileName(), totalBytesRead, contentLength);
-            }
-            else throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            log.warn("Error downloading file", e);
+            return;
         }
+
         try {
-            log.debug("Move \"{}\" \"{}\"", partPath, finalPath.getFileName());
-            Files.move(partPath, finalPath);
-            log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
+            boolean fileExists = Files.exists(finalPath);
+            if( UpdateStrategy.OverwriteIfBigger == updateStrategy &&
+                fileExists &&
+                Files.size(finalPath)!=downloadedBytes) {
+                    if(downloadedBytes > Files.size(finalPath)) {
+                        log.info("Overwrite with bigger json: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(finalPath), finalPath.getFileName(), downloadedBytes);
+                        Files.move(partPath, finalPath, REPLACE_EXISTING);
+                        log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
+                    }
+            } else if(!fileExists) {
+                log.debug("Move \"{}\" \"{}\"", partPath, finalPath.getFileName());
+                Files.move(partPath, finalPath);
+                log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
+            }
         } catch (IOException e) {
             log.warn("Error moving file", e);
         }
     }
 
-    private void downloadBroadcastDay(BroadcastDay broadcastDay) throws IOException {
+    private long copyStreamWithProgress(InputStream in, OutputStream out, String sourceInfo, long contentLength){
+        int totalBytesRead = 0;
+        byte[] buffer = new byte[16 * 1024];
+        int bytesRead;
+        try {
+            for (;;) {
+                bytesRead = in.read(buffer);
+                if (bytesRead == -1)
+                    break;
+                out.write(buffer, 0, bytesRead);
+                this.bytesLoaded.getAndAdd(bytesRead);
+                totalBytesRead += bytesRead;
+            }
+        } catch (IOException e) {
+            if (contentLength > 0 &&
+                totalBytesRead > 0 &&
+                contentLength != totalBytesRead &&
+                Math.abs(contentLength - totalBytesRead) < 4096) { //Allow the file size to be 4k off.
+                    log.warn("Ignoring wrong content-length: {} bytes received instead of {} ({})", totalBytesRead, contentLength, sourceInfo);
+            } else throw new RuntimeException(e);
+        }
+        return totalBytesRead;
+    }
+
+    private void downloadBroadcastDay(BroadcastDay broadcastDay) throws IOException, InterruptedException {
         for (Broadcast bc : broadcastDay.getBroadcasts()) {
             downloadBroadcast(bc);
         }
     }
 
-    private void downloadBroadcast(Broadcast bc) throws IOException {
+    private void downloadBroadcast(Broadcast bc) throws IOException, InterruptedException {
         String detailUri=bc.getHref()+"?items=true";
         Path jsonPath=folder.resolve(String.format("%d.json", bc.getId()));
-        downloadFile(detailUri, jsonPath);
+        downloadFile(detailUri, jsonPath, UpdateStrategy.OverwriteIfBigger);
         Broadcast broadcastDetail = new ObjectMapper().readValue(jsonPath.toFile(), ResponseDetail.class).getBroadcast();
         for(int i=0;i<broadcastDetail.getImages().size();i++) {
             ImagesItem image=broadcastDetail.getImages().get(i);
