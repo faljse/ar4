@@ -49,8 +49,12 @@ public class PlaylistCmd implements Callable<Integer> {
     private void exportM3U(Map<String, Playlist> plists) throws IOException {
         for(Playlist p: plists.values()) {
             Files.createDirectories(playlistDir);
-            p.savem3u(playlistDir.resolve(p.title + ".m3u"), absolute);
+            p.saveM3U(playlistDir.resolve(sanitizeFilename(p.title) + ".m3u"), absolute);
         }
+    }
+
+    public static String sanitizeFilename(String fileName) {
+        return fileName.replaceAll("[\\\\/:*?\"<>|]", "_");
     }
 
 

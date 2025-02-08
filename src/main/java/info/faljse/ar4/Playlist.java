@@ -20,7 +20,7 @@ public class Playlist {
     public List<Broadcast> entries=new ArrayList<>();
     public String description;
 
-    public void savem3u(Path filename, boolean absolute) throws IOException {
+    public void saveM3U(Path filename, boolean absolute) throws IOException {
         StringBuilder sb=new StringBuilder();
         sb.append("#EXTM3U\r\n");
         for(Broadcast b:entries) {
@@ -36,7 +36,6 @@ public class Playlist {
                 sb.append(String.format("%s\r\n", relaPath));
         }
         Files.writeString(filename, sb.toString());
-
     }
 
     public void exportPlex(String ip, String port, String accessToken) throws Exception {
@@ -57,9 +56,6 @@ public class Playlist {
         }
     }
 
-
-
-
     private PlexAPI plexLogin(String ip, String port, String accessToken) throws Exception {
         PlexAPI sdk = PlexAPI.builder().ip(ip)
                 .port(port)
@@ -74,8 +70,6 @@ public class Playlist {
             res.toString();
             // handle response
         }
-
-
         return sdk;
     }
 }
