@@ -73,7 +73,7 @@ public class StationDownloader {
                 es.submit(() -> {
                     try {
                         s.acquire();
-                        downloadFile(fd.url(), fd.path(), SkipExisting);
+                        downloadFile(fd.url(), fd.path(), fd.updateStrategy());
                     } catch (InterruptedException|IOException e) {
                         throw new RuntimeException(e);
                     } finally {
