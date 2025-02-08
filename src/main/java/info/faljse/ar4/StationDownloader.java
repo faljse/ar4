@@ -140,7 +140,7 @@ public class StationDownloader {
 
     private long copyStreamWithProgress(InputStream in, OutputStream out, String sourceInfo, long contentLength){
         int totalBytesRead = 0;
-        byte[] buffer = new byte[16 * 1024];
+        byte[] buffer = new byte[4 * 1024];
         int bytesRead;
         try {
             for (;;) {
