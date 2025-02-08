@@ -225,7 +225,7 @@ public class StationDownloader {
         if(updateStrategy== SkipExisting && Files.exists(path)) {
             log.debug("Skip queue (File exists): \"{}\"", path);
         } else {
-            log.info("Queue \"{}\" ({})", path.getFileName(), url);
+            log.debug("Queue \"{}\" ({})", path.getFileName(), url);
             this.fileDownloadList.add(new FileDownload(url, path, updateStrategy));
         }
     }
