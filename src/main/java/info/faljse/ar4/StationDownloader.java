@@ -179,6 +179,8 @@ public class StationDownloader {
         for(var item:broadcastDetail.getItems()) {
             queueItemImage(item, broadcastDetail);
         }
+        if(broadcastDetail.getLink()!=null && broadcastDetail.getLink().getUrl()!=null && !broadcastDetail.getLink().getUrl().isEmpty())
+            queueDownload(broadcastDetail.getLink().getUrl(), folder.resolve(String.format("%d.html", broadcastDetail.getId())));
         queueStreamItems(broadcastDetail);
     }
 
