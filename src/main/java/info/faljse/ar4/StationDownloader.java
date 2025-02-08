@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import info.faljse.ar4.broadcast.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,6 +24,8 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
+import static info.faljse.ar4.UpdateStrategy.OverwriteIfBigger;
+import static info.faljse.ar4.UpdateStrategy.SkipExisting;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 @Slf4j(topic = "StationDownloader")
@@ -72,7 +73,7 @@ public class StationDownloader {
                 es.submit(() -> {
                     try {
                         s.acquire();
-                        downloadFile(fd.url, fd.path, UpdateStrategy.SkipExisting);
+                        downloadFile(fd.url(), fd.path(), SkipExisting);
                     } catch (InterruptedException|IOException e) {
                         throw new RuntimeException(e);
                     } finally {
@@ -91,7 +92,7 @@ public class StationDownloader {
     }
 
     private void downloadFile(String url, Path finalPath, UpdateStrategy updateStrategy) throws IOException, InterruptedException {
-        if(UpdateStrategy.SkipExisting == updateStrategy && Files.exists(finalPath)) {
+        if(SkipExisting == updateStrategy && Files.exists(finalPath)) {
             log.debug("Skip (File exists): \"{}\" ({})", finalPath, url);
             return;
         }
@@ -115,7 +116,7 @@ public class StationDownloader {
 
         try {
             boolean fileExists = Files.exists(finalPath);
-            if( UpdateStrategy.OverwriteIfBigger == updateStrategy &&
+            if( OverwriteIfBigger == updateStrategy &&
                 fileExists &&
                 Files.size(finalPath)!=downloadedBytes) {
                     if(downloadedBytes > Files.size(finalPath)) {
@@ -170,7 +171,8 @@ public class StationDownloader {
     private void downloadBroadcast(Broadcast bc) throws IOException, InterruptedException {
         String detailUri=bc.getHref()+"?items=true";
         Path jsonPath=folder.resolve(String.format("%d.json", bc.getId()));
-        downloadFile(detailUri, jsonPath, UpdateStrategy.OverwriteIfBigger);
+        downloadFile(detailUri, jsonPath,
+            OverwriteIfBigger); //broadcast .json will change during the 7 days it is online. We will use the version with the largest file size.
         Broadcast broadcastDetail = new ObjectMapper().readValue(jsonPath.toFile(), ResponseDetail.class).getBroadcast();
         for(int i=0;i<broadcastDetail.getImages().size();i++) {
             ImagesItem image=broadcastDetail.getImages().get(i);
@@ -180,7 +182,9 @@ public class StationDownloader {
             queueItemImage(item, broadcastDetail);
         }
         if(broadcastDetail.getLink()!=null && broadcastDetail.getLink().getUrl()!=null && !broadcastDetail.getLink().getUrl().isEmpty())
-            queueDownload(broadcastDetail.getLink().getUrl(), folder.resolve(String.format("%d.html", broadcastDetail.getId())));
+            queueDownload(broadcastDetail.getLink().getUrl(),
+                folder.resolve(String.format("%d.html", broadcastDetail.getId())),
+                OverwriteIfBigger); //The HTML page may change during the 7 days it is online. We will use the version with the largest file size.
         queueStreamItems(broadcastDetail);
     }
 
@@ -189,7 +193,7 @@ public class StationDownloader {
             var image=item.getImages().get(i);
             for(var ver:image.getVersions()) {
                 Path imageFilePath = folder.resolve(String.format("%d_item_%d_%d_%d.jpg", broadcastDetail.getId(), item.getId(), i, ver.getWidth()));
-                queueDownload(ver.getPath(), imageFilePath);
+                queueDownload(ver.getPath(), imageFilePath, SkipExisting);
             }
         }
     }
@@ -197,7 +201,7 @@ public class StationDownloader {
     private void queueImage(ImagesItem image, int i, Broadcast broadcastDetail) {
         for(var version: image.getVersions()) {
             Path imageFilePath = folder.resolve(String.format("%d_%d_%d.jpg", broadcastDetail.getId(), i, version.getWidth()));
-                queueDownload(version.getPath(), imageFilePath);
+                queueDownload(version.getPath(), imageFilePath, SkipExisting);
         }
     }
 
@@ -211,18 +215,18 @@ public class StationDownloader {
             if(i > 0 && fileURLs.contains(streamURL)) {
                 log.debug("Skip (Same URL): \"{}\" ({})", fileName, streamURL);
             } else {
-                queueDownload(streamURL, folder.resolve(fileName));
+                queueDownload(streamURL, folder.resolve(fileName), SkipExisting);
             }
             fileURLs.add(streamURL);
         }
     }
 
-    private void queueDownload(String url, Path path) {
-        if(Files.exists(path)) {
-            log.debug("Skip (File exists): \"{}\"", path);
+    private void queueDownload(String url, Path path, UpdateStrategy updateStrategy) {
+        if(updateStrategy== SkipExisting && Files.exists(path)) {
+            log.debug("Skip queue (File exists): \"{}\"", path);
         } else {
             log.info("Queue \"{}\" ({})", path.getFileName(), url);
-            this.fileDownloadList.add(new FileDownload(url, path));
+            this.fileDownloadList.add(new FileDownload(url, path, updateStrategy));
         }
     }
 
@@ -242,11 +246,5 @@ public class StationDownloader {
 
     public String getFolderName() {
         return folder.toString();
-    }
-
-    @AllArgsConstructor
-    public static class FileDownload {
-        public String url;
-        public final Path path;
     }
 }
