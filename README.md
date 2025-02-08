@@ -15,7 +15,7 @@ This repository offers a tool for downloading and archiving streams from all 12 
 # How it works
 * Step 1: Download broadcast metadata .json files (Using One connection per station)
 * Step 2: Download streams, images, .html files using -c (default:4) concurrent connections per station.
-* The tool automatically skips files that already exist, making it easy to keep your archive up-to-date. For a complete collection, simply run the tool every day.
+* The tool automatically skips files that already exist, making it easy to keep your archive up-to-date. **For a complete collection, simply run the tool every day**.
 
 
 # Build/test it
@@ -27,7 +27,7 @@ mvn compile
 mvn package
 java -jar target/ar4-1.0-SNAPSHOT.jar  archive -s fm4,oe1 folderName  #save fm4,oe1 archive to folder folderName
 ```
-
+`ar4-1.0-SNAPSHOT.jar` is an "Uber"-jar, that includes all its dependencies and can be used as a standalone application.
 
 # Usage
 ```sh
