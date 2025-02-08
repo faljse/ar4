@@ -22,10 +22,8 @@ public class Playlist {
 
     public void saveM3U(Path filename, boolean absolute) throws IOException {
         StringBuilder sb=new StringBuilder();
-        sb.append("#EXTM3U\r\n");
+
         for(Broadcast b:entries) {
-
-
             if(!Files.exists(b.mp3file))
                 continue;
             sb.append(String.format("#EXTINF:%d, %s (%s)\r\n", b.getDuration()/1000, b.getTitle(), b.getStart()));
@@ -35,7 +33,10 @@ public class Playlist {
             else
                 sb.append(String.format("%s\r\n", relaPath));
         }
-        Files.writeString(filename, sb.toString());
+        if(!sb.isEmpty()) {
+            sb.insert(0, "#EXTM3U\r\n");
+            Files.writeString(filename, sb.toString());
+        }
     }
 
     public void exportPlex(String ip, String port, String accessToken) throws Exception {
