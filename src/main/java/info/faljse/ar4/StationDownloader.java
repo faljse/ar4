@@ -24,7 +24,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-import static info.faljse.ar4.UpdateStrategy.OverwriteIfBigger;
+import static info.faljse.ar4.UpdateStrategy.ReplaceIfBigger;
 import static info.faljse.ar4.UpdateStrategy.SkipExisting;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
@@ -116,11 +116,11 @@ public class StationDownloader {
 
         try {
             boolean fileExists = Files.exists(finalPath);
-            if( OverwriteIfBigger == updateStrategy &&
+            if( ReplaceIfBigger == updateStrategy &&
                 fileExists &&
                 Files.size(finalPath)!=downloadedBytes) {
                     if(downloadedBytes > Files.size(finalPath)) {
-                        log.info("Overwrite with bigger json: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(finalPath), finalPath.getFileName(), downloadedBytes);
+                        log.info("Replace with bigger json: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(finalPath), finalPath.getFileName(), downloadedBytes);
                         Files.move(partPath, finalPath, REPLACE_EXISTING);
                         log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
                     }
@@ -172,7 +172,7 @@ public class StationDownloader {
         String detailUri=bc.getHref()+"?items=true";
         Path jsonPath=folder.resolve(String.format("%d.json", bc.getId()));
         downloadFile(detailUri, jsonPath,
-            OverwriteIfBigger); //broadcast .json will change during the 7 days it is online. We will use the version with the largest file size.
+                ReplaceIfBigger); //broadcast .json will change during the 7 days it is online. We will use the version with the largest file size.
         Broadcast broadcastDetail = new ObjectMapper().readValue(jsonPath.toFile(), ResponseDetail.class).getBroadcast();
         for(int i=0;i<broadcastDetail.getImages().size();i++) {
             ImagesItem image=broadcastDetail.getImages().get(i);
@@ -184,7 +184,7 @@ public class StationDownloader {
         if(broadcastDetail.getLink()!=null && broadcastDetail.getLink().getUrl()!=null && !broadcastDetail.getLink().getUrl().isEmpty())
             queueDownload(broadcastDetail.getLink().getUrl(),
                 folder.resolve(String.format("%d.html", broadcastDetail.getId())),
-                OverwriteIfBigger); //The HTML page may change during the 7 days it is online. We will use the version with the largest file size.
+                    ReplaceIfBigger); //The HTML page may change during the 7 days it is online. We will use the version with the largest file size.
         queueStreamItems(broadcastDetail);
     }
 
