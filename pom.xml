@@ -57,7 +57,6 @@
                                 <exclude>META-INF/LICENSE.*</exclude>
                                 <exclude>META-INF/**/pom.*</exclude>
                                 <exclude>META-INF/services/com.fasterxml.jackson.databind.Module</exclude>
-                                <exclude>META-INF/versions/9/module-info.class</exclude>
                             </excludes>
                         </filter>
                     </filters>
