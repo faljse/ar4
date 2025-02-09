@@ -67,18 +67,18 @@ public class StationDownloader {
     }
 
     public void downloadFiles(int concurrency)  {
-        Semaphore s=new Semaphore(concurrency);
+        Semaphore sem=new Semaphore(concurrency);
         try(var es= Executors.newVirtualThreadPerTaskExecutor()) {
-            for (var fd : fileDownloadList) {
+            for (var fileDownload : fileDownloadList) {
                 es.submit(() -> {
                     try {
-                        s.acquire();
-                        downloadFile(fd.url(), fd.path(), fd.updateStrategy());
+                        sem.acquire();
+                        downloadFile(fileDownload);
                     } catch (InterruptedException|IOException e) {
                         throw new RuntimeException(e);
                     } finally {
                         this.downloadsDone += 1;
-                        s.release();
+                        sem.release();
                     }
                 });
             }
@@ -91,16 +91,16 @@ public class StationDownloader {
         }
     }
 
-    private void downloadFile(String url, Path finalPath, UpdateStrategy updateStrategy) throws IOException, InterruptedException {
-        if(SkipExisting == updateStrategy && Files.exists(finalPath)) {
-            log.debug("Skip (File exists): \"{}\" ({})", finalPath, url);
+    private void downloadFile(FileDownload fileDownload) throws IOException, InterruptedException {
+        if(SkipExisting == fileDownload.updateStrategy() && Files.exists(fileDownload.path())) {
+            log.debug("Skip (File exists): \"{}\" ({})", fileDownload.path(), fileDownload.url());
             return;
         }
-        Path partPath= finalPath.getParent().resolve(finalPath.getFileName().toString() + ".part");
+        Path partPath= fileDownload.path().getParent().resolve(fileDownload.path().getFileName().toString() + ".part");
         HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(url))
+            .uri(URI.create(fileDownload.url()))
             .build();
-        log.debug("Download  \"{}\" ({})", finalPath.getFileName().toString(), url);
+        log.debug("Download  \"{}\" ({})", fileDownload.path().getFileName().toString(), fileDownload.url());
         HttpResponse<InputStream> response =
             client.send(request, HttpResponse.BodyHandlers.ofInputStream());
         OptionalLong cLengthOptional = response.headers().firstValueAsLong("content-length");
@@ -108,30 +108,30 @@ public class StationDownloader {
         try (
             InputStream in = response.body();
             OutputStream out = new FileOutputStream(partPath.toFile())) {
-                downloadedBytes=copyStreamWithProgress(in, out, String.format("\"%s\" (%s)", finalPath, url), cLengthOptional.orElse(-1));
+                downloadedBytes=copyStreamWithProgress(in, out, String.format("\"%s\" (%s)", fileDownload.path(), fileDownload.url()), cLengthOptional.orElse(-1));
         } catch (IOException e) {
             log.warn("Error downloading file", e);
             return;
         }
 
         try {
-            boolean fileExists = Files.exists(finalPath);
-            if( ReplaceIfBigger == updateStrategy &&
+            boolean fileExists = Files.exists(fileDownload.path());
+            if( ReplaceIfBigger == fileDownload.updateStrategy() &&
                 fileExists &&
-                Files.size(finalPath)!=downloadedBytes) {
-                    if(downloadedBytes > Files.size(finalPath)) {
-                        log.info("Replace with bigger file: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(finalPath), finalPath.getFileName(), downloadedBytes);
-                        Files.move(partPath, finalPath, REPLACE_EXISTING);
-                        log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
+                Files.size(fileDownload.path())!=downloadedBytes) {
+                    if(downloadedBytes > Files.size(fileDownload.path())) {
+                        log.info("Replace with bigger file: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(fileDownload.path()), fileDownload.path().getFileName(), downloadedBytes);
+                        Files.move(partPath, fileDownload.path(), REPLACE_EXISTING);
+                        log.info("Done \"{}\" ({})", fileDownload.path().getFileName(), fileDownload.url());
                     }
             } else if(fileExists) { //File with same or bigger size exists; delete .part file
-                log.debug("Delete .part file (same or bigger file size exists): \"{}\" ({})", partPath, url);
+                log.debug("Delete .part file (same or bigger file size exists): \"{}\" ({})", partPath, fileDownload.url());
                 Files.delete(partPath);
             }
             else {
-                log.debug("Move \"{}\" \"{}\"", partPath, finalPath.getFileName());
-                Files.move(partPath, finalPath);
-                log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
+                log.debug("Move \"{}\" \"{}\"", partPath, fileDownload.path().getFileName());
+                Files.move(partPath, fileDownload.path());
+                log.info("Done \"{}\" ({})", fileDownload.path().getFileName(), fileDownload.url());
             }
         } catch (IOException e) {
             log.warn("Error moving file", e);
@@ -171,8 +171,8 @@ public class StationDownloader {
     private void downloadBroadcast(Broadcast bc) throws IOException, InterruptedException {
         String detailUri=bc.getHref()+"?items=true";
         Path jsonPath=folder.resolve(String.format("%d.json", bc.getId()));
-        downloadFile(detailUri, jsonPath,
-                ReplaceIfBigger); //broadcast .json will change during the 7 days it is online. We will use the version with the largest file size.
+        downloadFile(new FileDownload(detailUri, jsonPath,
+            ReplaceIfBigger)); //broadcast .json will change during the 7 days it is online. We will use the version with the largest file size.
         Broadcast broadcastDetail = new ObjectMapper().readValue(jsonPath.toFile(), ResponseDetail.class).getBroadcast();
         for(int i=0;i<broadcastDetail.getImages().size();i++) {
             ImagesItem image=broadcastDetail.getImages().get(i);
