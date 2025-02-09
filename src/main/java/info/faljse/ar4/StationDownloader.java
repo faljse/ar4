@@ -120,7 +120,7 @@ public class StationDownloader {
                 fileExists &&
                 Files.size(finalPath)!=downloadedBytes) {
                     if(downloadedBytes > Files.size(finalPath)) {
-                        log.info("Replace with bigger json: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(finalPath), finalPath.getFileName(), downloadedBytes);
+                        log.info("Replace with bigger file: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(finalPath), finalPath.getFileName(), downloadedBytes);
                         Files.move(partPath, finalPath, REPLACE_EXISTING);
                         log.info("Done \"{}\" ({})", finalPath.getFileName(), url);
                     }
