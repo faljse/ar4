@@ -149,7 +149,7 @@ public class StationDownloader {
             if (contentLength > 0 &&
                 totalBytesRead > 0 &&
                 contentLength != totalBytesRead &&
-                Math.abs(contentLength - totalBytesRead) < 4096) { //Allow the file size to be 4k off.
+                Math.abs(contentLength - totalBytesRead) < 4096) { //Allow the file size to be 4k off. (The server did set the content-length short by 1b for stream downloads)
                     log.warn("Ignoring wrong content-length: {} bytes received instead of {} ({})", totalBytesRead, contentLength, sourceInfo);
             } else throw new RuntimeException(e);
         }
@@ -209,9 +209,9 @@ public class StationDownloader {
             StreamsItem stream=broadcastDetail.getStreams().get(i);
             String fileName = String.format("%d_%d.mp3", broadcastDetail.getId(), i);
             String streamURL=stream.getUrls().getProgressive();
-            streamURL = streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length()); //cut everything after .mp3
+            streamURL = streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length()); //cut everything after .mp3 (stream offsets for webplayer)
             if(i > 0 && fileURLs.contains(streamURL)) {
-                log.debug("Skip (Same URL): \"{}\" ({})", fileName, streamURL);
+                log.debug("Skip (duplicate stream URL): \"{}\" ({})", fileName, streamURL);
             } else {
                 queueDownload(streamURL, folder.resolve(fileName), SkipExisting);
             }
