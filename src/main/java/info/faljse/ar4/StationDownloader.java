@@ -46,24 +46,23 @@ public class StationDownloader {
         this.client=client;
     }
 
-    public void downloadMetadata(CountDownLatch doneSignal) {
-        try {
-            Files.createDirectories(this.folder);
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(broadcastsURL))
-                    .build();
+    public void downloadMetadata(CountDownLatch doneSignal) throws InterruptedException, IOException {
+        Files.createDirectories(this.folder);
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(broadcastsURL))
+                .build();
 
-            HttpResponse<String> response =
-                    client.send(request, HttpResponse.BodyHandlers.ofString());
-            var broadcasts = readJSON(response.body());
-            for (var broadcastDay : broadcasts) {
+        HttpResponse<String> response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
+        var broadcasts = readJSON(response.body());
+        for (var broadcastDay : broadcasts) {
+            try {
                 downloadBroadcastDay(broadcastDay);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        } catch (Exception e) {
-            log.warn("Error download metadata", e);
-        } finally {
-            doneSignal.countDown();
         }
+        doneSignal.countDown();
     }
 
     public void downloadFiles(int concurrency)  {
@@ -74,7 +73,9 @@ public class StationDownloader {
                     try {
                         sem.acquire();
                         downloadFile(fileDownload);
-                    } catch (InterruptedException|IOException e) {
+                    } catch (IOException e) {
+                        log.warn("Error downloading file \"{}\" ({})", fileDownload.path(), fileDownload.url(), e);
+                    } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     } finally {
                         this.downloadsDone += 1;
@@ -109,32 +110,25 @@ public class StationDownloader {
             InputStream in = response.body();
             OutputStream out = new FileOutputStream(partPath.toFile())) {
                 downloadedBytes=copyStreamWithProgress(in, out, String.format("\"%s\" (%s)", fileDownload.path(), fileDownload.url()), cLengthOptional.orElse(-1));
-        } catch (IOException e) {
-            log.warn("Error downloading file", e);
-            return;
         }
 
-        try {
-            boolean fileExists = Files.exists(fileDownload.path());
-            if( ReplaceIfBigger == fileDownload.updateStrategy() &&
-                fileExists &&
-                Files.size(fileDownload.path())!=downloadedBytes) {
-                    if(downloadedBytes > Files.size(fileDownload.path())) {
-                        log.info("Replace with bigger file: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(fileDownload.path()), fileDownload.path().getFileName(), downloadedBytes);
-                        Files.move(partPath, fileDownload.path(), REPLACE_EXISTING);
-                        log.info("Done \"{}\" ({})", fileDownload.path().getFileName(), fileDownload.url());
-                    }
-            } else if(fileExists) { //File with same or bigger size exists; delete .part file
-                log.debug("Delete .part file (same or bigger file size exists): \"{}\" ({})", partPath, fileDownload.url());
-                Files.delete(partPath);
-            }
-            else {
-                log.debug("Move \"{}\" \"{}\"", partPath, fileDownload.path().getFileName());
-                Files.move(partPath, fileDownload.path());
-                log.info("Done \"{}\" ({})", fileDownload.path().getFileName(), fileDownload.url());
-            }
-        } catch (IOException e) {
-            log.warn("Error moving file", e);
+        boolean fileExists = Files.exists(fileDownload.path());
+        if( ReplaceIfBigger == fileDownload.updateStrategy() &&
+            fileExists &&
+            Files.size(fileDownload.path())!=downloadedBytes) {
+                if(downloadedBytes > Files.size(fileDownload.path())) {
+                    log.info("Replace with bigger file: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(fileDownload.path()), fileDownload.path().getFileName(), downloadedBytes);
+                    Files.move(partPath, fileDownload.path(), REPLACE_EXISTING);
+                    log.info("Done \"{}\" ({})", fileDownload.path().getFileName(), fileDownload.url());
+                }
+        } else if(fileExists) { //File with same or bigger size exists; delete .part file
+            log.debug("Delete .part file (same or bigger file size exists): \"{}\" ({})", partPath, fileDownload.url());
+            Files.delete(partPath);
+        }
+        else {
+            log.debug("Move \"{}\" \"{}\"", partPath, fileDownload.path().getFileName());
+            Files.move(partPath, fileDownload.path());
+            log.info("Done \"{}\" ({})", fileDownload.path().getFileName(), fileDownload.url());
         }
     }
 
@@ -164,7 +158,11 @@ public class StationDownloader {
 
     private void downloadBroadcastDay(BroadcastDay broadcastDay) throws IOException, InterruptedException {
         for (Broadcast bc : broadcastDay.getBroadcasts()) {
-            downloadBroadcast(bc);
+            try {
+                downloadBroadcast(bc);
+            } catch (IOException e) {
+                log.warn("Error downloading broadcast \"{}\" ({})", bc.getTitle(), bc.getHref(), e);
+            }
         }
     }
 

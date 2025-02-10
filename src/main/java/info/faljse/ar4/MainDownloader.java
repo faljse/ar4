@@ -45,7 +45,11 @@ public class MainDownloader {
             CountDownLatch doneSignal = new CountDownLatch(stationDownloaders.size());
             for (var sDownloader : stationDownloaders) {
                 log.info("Start metadata download for \"{}\"", sDownloader.getFolderName());
-                es.submit(() -> sDownloader.downloadMetadata(doneSignal));
+                es.submit(() -> { try{
+                    sDownloader.downloadMetadata(doneSignal);
+                } catch (Exception e) {
+                    log.warn("Error downloading metadata for \"{}\"", sDownloader.getFolderName(), e);
+                }});
             }
             doneSignal.await();
             return stationDownloaders;
