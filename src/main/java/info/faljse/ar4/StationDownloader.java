@@ -220,7 +220,7 @@ public class StationDownloader {
         List<String> fileURLs=new ArrayList<>();
         for (int i = 0; i < broadcastDetail.getStreams().size(); i++) {
             StreamsItem stream=broadcastDetail.getStreams().get(i);
-            Path path= getBCFileName(broadcastDetail, String.format("_%d", i));
+            Path path= getBCFileName(broadcastDetail, String.format("_%d.mp3", i));
             String streamURL=stream.getUrls().getProgressive();
             streamURL = streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length()); //cut everything after .mp3 (stream offsets for webplayer)
             if(i > 0 && fileURLs.contains(streamURL)) {
