@@ -1,26 +1,17 @@
 package info.faljse.ar4.cmd;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import info.faljse.ar4.Playlist;
-import info.faljse.ar4.broadcast.Broadcast;
-import info.faljse.ar4.broadcast.ResponseDetail;
+import dev.plexapi.sdk.PlexAPI;
+import dev.plexapi.sdk.models.operations.*;
 import picocli.CommandLine;
-
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.text.Normalizer;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.Callable;
 
 @CommandLine.Command(name = "plexplaylist", mixinStandardHelpOptions = false, version = "ar4 1.0",
         description = "create playlists in plex")
 public class PlexPlaylistCmd implements Callable<Integer> {
 
-    @CommandLine.Parameters(paramLabel = "archiveDir", description = "archive folder")
-    Path archiveDir;
+    @CommandLine.Parameters(paramLabel = "m3uFile", description = "m3u file")
+    Path m3uFile;
 
     @CommandLine.Option(names = {"-i", "--ip"}, description = "plex ip", defaultValue = "127.0.0.1", showDefaultValue= CommandLine.Help.Visibility.ALWAYS)
     String ip;
@@ -34,42 +25,41 @@ public class PlexPlaylistCmd implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        var plists=buildPlaylist();
-        exportM3U(plists);
+        try {
+            exportPlex(ip, port, authToken, m3uFile);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return 0;
     }
 
-    private Map<String, Playlist> buildPlaylist() throws InterruptedException, IOException {
-        var files= Files.newDirectoryStream(archiveDir);
-        Map<String, Playlist> plists=new HashMap<>();
-        for(Path file:files) {
-            if(file.toString().endsWith(".json")) {
-                sortIntoPlaylists(file, plists);
-            }
-        }
-        return plists;
+    public void exportPlex(String ip, String port, String accessToken, Path m3uFile) throws Exception {
+        PlexAPI sdk=plexLogin(ip, port, accessToken);
+        UploadPlaylistResponse res = sdk.playlists().uploadPlaylist()
+                .path(m3uFile.toAbsolutePath().toString())
+                .force(QueryParamForce.ZERO)
+                .sectionID(11L)
+                .call();
+
+        System.out.println(res.toString());
     }
 
-    private void exportM3U(Map<String, Playlist> plists) throws Exception {
-        for(Playlist p: plists.values()) {
-            p.exportPlex(ip, port, authToken);
+    private PlexAPI plexLogin(String ip, String port, String accessToken) throws Exception {
+        PlexAPI sdk = PlexAPI.builder().ip(ip)
+                .port(port)
+                .protocol(PlexAPI.Builder.ServerProtocol.HTTP)
+                .accessToken(accessToken)
+                .build();
+
+        GetServerCapabilitiesResponse res = sdk.server().getServerCapabilities()
+                .call();
+
+        if (res.object().isPresent()) {
+            res.toString();
+            // handle response
         }
+        return sdk;
     }
 
-    private void sortIntoPlaylists(Path file, Map<String, Playlist> playlists) throws IOException, InterruptedException {
-        ObjectMapper mapper=new ObjectMapper();
-        Broadcast broadcast =
-                mapper.readValue(Files.readAllBytes(file), new TypeReference<ResponseDetail>() {}).getBroadcast();
-        broadcast.mp3file=Path.of(file.toString().substring(0,file.toString().lastIndexOf(".json"))+"_0.mp3");
-        Playlist playlist= playlists.get(broadcast.getTitle());
-        if(playlist!=null) {
-            playlist.entries.add(broadcast);
-        } else {
-            playlists.put(broadcast.getTitle(), new Playlist(broadcast.getTitle()));
-        }
-    }
-
-    private static String normalize(String input) {
-        return input == null ? null : Normalizer.normalize(input, Normalizer.Form.NFKD).replace(':','_');
-    }
 }

@@ -1,7 +1,5 @@
 package info.faljse.ar4;
 
-import dev.plexapi.sdk.PlexAPI;
-import dev.plexapi.sdk.models.operations.*;
 import info.faljse.ar4.broadcast.Broadcast;
 
 import java.io.IOException;
@@ -37,40 +35,5 @@ public class Playlist {
             sb.insert(0, "#EXTM3U\r\n");
             Files.writeString(filename, sb.toString());
         }
-    }
-
-    public void exportPlex(String ip, String port, String accessToken) throws Exception {
-        PlexAPI sdk=plexLogin(ip, port, accessToken);
-        CreatePlaylistRequest req = CreatePlaylistRequest.builder()
-                .title("asdf")
-                .type(CreatePlaylistQueryParamType.AUDIO)
-                .smart(Smart.ZERO)
-                .uri("https://hoarse-testing.info/")
-                .build();
-
-        CreatePlaylistResponse res = sdk.playlists().createPlaylist()
-                .request(req)
-                .call();
-        if (res.object().isPresent()) {
-            res.toString();
-            // handle response
-        }
-    }
-
-    private PlexAPI plexLogin(String ip, String port, String accessToken) throws Exception {
-        PlexAPI sdk = PlexAPI.builder().ip(ip)
-                .port(port)
-                .protocol(PlexAPI.Builder.ServerProtocol.HTTP)
-                .accessToken(accessToken)
-                .build();
-
-        GetServerCapabilitiesResponse res = sdk.server().getServerCapabilities()
-                .call();
-
-        if (res.object().isPresent()) {
-            res.toString();
-            // handle response
-        }
-        return sdk;
     }
 }

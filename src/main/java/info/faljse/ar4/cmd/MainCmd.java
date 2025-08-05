@@ -7,7 +7,8 @@ import picocli.CommandLine;
         subcommands = {
                 ArchiveCmd.class,
                 PlaylistCmd.class,
-                PlexPlaylistCmd.class
+                PlexPlaylistCmd.class,
+                RenameCmd.class
         })
 public class MainCmd  {
 

@@ -7,7 +7,6 @@ import info.faljse.ar4.broadcast.*;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
-
 import java.io.*;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -15,6 +14,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalLong;
@@ -63,6 +64,15 @@ public class StationDownloader {
             }
         }
         doneSignal.countDown();
+    }
+
+    private Path getBCFileName(Broadcast bc, String fileExtension) throws IOException {
+        ZonedDateTime bcDateTime = ZonedDateTime.parse(bc.getStart());
+        DateTimeFormatter bcDateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm");
+        Path broadCastFolder=folder.resolve(bc.getTitle().trim());
+        Files.createDirectories(broadCastFolder);
+        return broadCastFolder.resolve(String.format("%s_%d%s", bcDateTime.format(bcDateFormatter), bc.getId(), fileExtension));
+
     }
 
     public void downloadFiles(int concurrency)  {
@@ -138,8 +148,8 @@ public class StationDownloader {
         int bytesRead;
         try {
             for (;;) {
-                bytesRead = in.read(buffer);
-                if (bytesRead == -1)
+                bytesRead = in.readNBytes(buffer,0, buffer.length);
+                if (bytesRead == 0)
                     break;
                 out.write(buffer, 0, bytesRead);
                 this.bytesLoaded.getAndAdd(bytesRead);
@@ -166,9 +176,12 @@ public class StationDownloader {
         }
     }
 
+
+
     private void downloadBroadcast(Broadcast bc) throws IOException, InterruptedException {
         String detailUri=bc.getHref()+"?items=true";
-        Path jsonPath=folder.resolve(String.format("%d.json", bc.getId()));
+        Path jsonPath= getBCFileName(bc,".json");
+
         downloadFile(new FileDownload(detailUri, jsonPath,
             ReplaceIfBigger)); //broadcast .json will change during the 7 days it is online. We will use the version with the largest file size.
         Broadcast broadcastDetail = new ObjectMapper().readValue(jsonPath.toFile(), ResponseDetail.class).getBroadcast();
@@ -181,39 +194,39 @@ public class StationDownloader {
         }
         if(broadcastDetail.getLink()!=null && broadcastDetail.getLink().getUrl()!=null && !broadcastDetail.getLink().getUrl().isEmpty())
             queueDownload(broadcastDetail.getLink().getUrl(),
-                folder.resolve(String.format("%d.html", broadcastDetail.getId())),
+                    getBCFileName(bc,".html"),
                     ReplaceIfBigger); //The HTML page may change during the 7 days it is online. We will use the version with the largest file size.
         queueStreamItems(broadcastDetail);
     }
 
-    private void queueItemImage(ItemsItem item, Broadcast broadcastDetail) {
+    private void queueItemImage(ItemsItem item, Broadcast broadcastDetail) throws IOException {
         for(int i=0;i<item.getImages().size();i++) {
             var image=item.getImages().get(i);
             for(var ver:image.getVersions()) {
-                Path imageFilePath = folder.resolve(String.format("%d_item_%d_%d_%d.jpg", broadcastDetail.getId(), item.getId(), i, ver.getWidth()));
+                Path imageFilePath = getBCFileName( broadcastDetail,String.format("_item_%d_%d_%d.jpg", item.getId(), i, ver.getWidth()));
                 queueDownload(ver.getPath(), imageFilePath, SkipExisting);
             }
         }
     }
 
-    private void queueImage(ImagesItem image, int i, Broadcast broadcastDetail) {
+    private void queueImage(ImagesItem image, int i, Broadcast broadcastDetail) throws IOException {
         for(var version: image.getVersions()) {
-            Path imageFilePath = folder.resolve(String.format("%d_%d_%d.jpg", broadcastDetail.getId(), i, version.getWidth()));
+            Path imageFilePath = getBCFileName(broadcastDetail, String.format("_%d_%d.jpg", i, version.getWidth()));
                 queueDownload(version.getPath(), imageFilePath, SkipExisting);
         }
     }
 
-    private void queueStreamItems(Broadcast broadcastDetail) {
+    private void queueStreamItems(Broadcast broadcastDetail) throws IOException {
         List<String> fileURLs=new ArrayList<>();
         for (int i = 0; i < broadcastDetail.getStreams().size(); i++) {
             StreamsItem stream=broadcastDetail.getStreams().get(i);
-            String fileName = String.format("%d_%d.mp3", broadcastDetail.getId(), i);
+            Path path= getBCFileName(broadcastDetail, String.format("_%d", i));
             String streamURL=stream.getUrls().getProgressive();
             streamURL = streamURL.substring(0,streamURL.lastIndexOf(".mp3")+".mp3".length()); //cut everything after .mp3 (stream offsets for webplayer)
             if(i > 0 && fileURLs.contains(streamURL)) {
-                log.debug("Skip (duplicate stream URL): \"{}\" ({})", fileName, streamURL);
+                log.debug("Skip (duplicate stream URL): \"{}\" ({})", path.getFileName(), streamURL);
             } else {
-                queueDownload(streamURL, folder.resolve(fileName), SkipExisting);
+                queueDownload(streamURL, path, SkipExisting);
             }
             fileURLs.add(streamURL);
         }
