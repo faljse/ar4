@@ -125,15 +125,14 @@ public class StationDownloader {
         boolean fileExists = Files.exists(fileDownload.path());
         if( ReplaceIfBigger == fileDownload.updateStrategy() &&
             fileExists &&
-            Files.size(fileDownload.path())!=downloadedBytes) {
-                if(downloadedBytes > Files.size(fileDownload.path())) {
+            (downloadedBytes > Files.size(fileDownload.path()))) {
                     log.info("Replace with bigger file: \"{}\":{}b \"{}\":{}b", partPath,  Files.size(fileDownload.path()), fileDownload.path().getFileName(), downloadedBytes);
                     Files.move(partPath, fileDownload.path(), REPLACE_EXISTING);
                     log.info("Done \"{}\" ({})", fileDownload.path().getFileName(), fileDownload.url());
-                }
         } else if(fileExists) { //File with same or bigger size exists; delete .part file
             log.debug("Delete .part file (same or bigger file size exists): \"{}\" ({})", partPath, fileDownload.url());
-            Files.delete(partPath);
+            if(Files.exists(partPath))
+                Files.delete(partPath);
         }
         else {
             log.debug("Move \"{}\" \"{}\"", partPath, fileDownload.path().getFileName());
