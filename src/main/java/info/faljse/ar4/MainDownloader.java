@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.net.http.HttpClient;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -20,12 +22,17 @@ public class MainDownloader {
     private final int concurrency;
     private final List<String> stations;
     private final int progress;
+    private final LocalDate endDate;
+    private final LocalDate startDate;
+    DateTimeFormatter broadCastDateFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 
-    public MainDownloader(Path path, List<String> stations, int concurrency, int progress) {
+    public MainDownloader(Path path, List<String> stations, int concurrency, int progress, LocalDate startDate, LocalDate endDate) {
         this.path=path;
         this.concurrency=concurrency;
         this.stations=stations;
         this.progress=progress;
+        this.startDate=startDate;
+        this.endDate=endDate;
     }
 
     public void download() throws InterruptedException, IOException {
@@ -39,8 +46,11 @@ public class MainDownloader {
         try (var es = Executors.newVirtualThreadPerTaskExecutor()) {
             List<StationDownloader> stationDownloaders=new ArrayList<>();
             for(String station:stations) {
-                stationDownloaders.add(new StationDownloader(path.resolve(station),
-                        "https://audioapi.orf.at/" + station + "/api/json/5.0/broadcasts/", HttpClient.newHttpClient()));
+                for (LocalDate date = startDate; date.isEqual(endDate)||date.isBefore(endDate); date = date.plusDays(1)) {
+                    String dateString=broadCastDateFormatter.format(date);
+                    stationDownloaders.add(new StationDownloader(path.resolve(station),
+                        String.format("https://audioapi.orf.at/%s/api/json/5.0/broadcasts/%s", station, dateString), HttpClient.newHttpClient()));
+                }
             }
             CountDownLatch doneSignal = new CountDownLatch(stationDownloaders.size());
             for (var sDownloader : stationDownloaders) {

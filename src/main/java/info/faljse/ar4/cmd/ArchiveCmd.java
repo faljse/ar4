@@ -4,6 +4,7 @@ import info.faljse.ar4.MainDownloader;
 import picocli.CommandLine;
 
 import java.nio.file.Path;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -36,9 +37,21 @@ public class ArchiveCmd implements Callable<Integer> {
                         showDefaultValue = CommandLine.Help.Visibility.ALWAYS)
     List<String> stations;
 
+    @CommandLine.Option(names = {"--start"},
+            description = "start date",
+            required = true,
+            showDefaultValue = CommandLine.Help.Visibility.ALWAYS)
+    LocalDate startDate;
+
+    @CommandLine.Option(names = {"--end"},
+            description = "end date",
+            required = true,
+            showDefaultValue = CommandLine.Help.Visibility.ALWAYS)
+    LocalDate endDate;
+
     @Override
     public Integer call() throws Exception {
-        MainDownloader m = new MainDownloader(archiveFolder, stations, concurrency, progress);
+        MainDownloader m = new MainDownloader(archiveFolder, stations, concurrency, progress, startDate, endDate);
         m.download();
         return 0;
     }

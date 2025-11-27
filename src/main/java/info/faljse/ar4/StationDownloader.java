@@ -52,16 +52,13 @@ public class StationDownloader {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(broadcastsURL))
                 .build();
-
         HttpResponse<String> response =
                 client.send(request, HttpResponse.BodyHandlers.ofString());
         var broadcasts = readJSON(response.body());
-        for (var broadcastDay : broadcasts) {
-            try {
-                downloadBroadcastDay(broadcastDay);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        try {
+            downloadBroadcasts(broadcasts);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
         doneSignal.countDown();
     }
@@ -165,8 +162,8 @@ public class StationDownloader {
         return totalBytesRead;
     }
 
-    private void downloadBroadcastDay(BroadcastDay broadcastDay) throws IOException, InterruptedException {
-        for (Broadcast bc : broadcastDay.getBroadcasts()) {
+    private void downloadBroadcasts(List<Broadcast> broadcasts) throws IOException, InterruptedException {
+        for (Broadcast bc : broadcasts) {
             try {
                 downloadBroadcast(bc);
             } catch (IOException e) {
@@ -240,10 +237,10 @@ public class StationDownloader {
         }
     }
 
-    private static List<BroadcastDay> readJSON(String jsonData) throws JsonProcessingException {
+    private static List<Broadcast> readJSON(String jsonData) throws JsonProcessingException {
         return new ObjectMapper()
-            .readValue(jsonData, new TypeReference<Response>() {})
-            .getPayload();
+            .readValue(jsonData, new TypeReference<BroadCastDayResponse>() {}).getBroadcasts();
+
     }
 
     public int getPercent() {
